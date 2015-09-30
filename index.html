@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Dan's Joint</title>
     <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="css/hovereffects.css"/>
     <link rel="import" href="footer.html"/>
     <script src="js/vendor/modernizr.js"></script>
     <script>
@@ -15,39 +16,113 @@
   ga('create', 'UA-68149561-1', 'auto');
   ga('send', 'pageview');
 
-</script>
+
+
+
+
+
+
+
+    </script>
 </head>
 <body>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">Daniel Kamerling</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
+    </ul>
+
+    <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+            <li class=""><a href="#">Career</a></li>
+            <li class="divider"></li>
+            <li class="has-dropdown">
+                <a href="#">Projects</a>
+                <ul class="dropdown">
+                    <li><a href="#">Marvel API</a></li>
+                    <li><a href="#">Active link in dropdown</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="social-icons">
+            <li><a href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!"><i class="fi-mail"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/danielkamerling"><i class="fi-social-linkedin"></i></a></li>
+            <li><a href=""><i class="fi-social-twitter"></i></a></li>
+        </ul>
+    </section>
+
+</nav>
+<!--
 <div class="row">
     <div class="large-12 columns">
         <div class="nav-bar right">
             <ul class="button-group">
-                <li><a href="#" class="button">Link 1</a></li>
-                <li><a href="#" class="button">Link 2</a></li>
-                <li><a href="#" class="button">Link 3</a></li>
-                <li><a href="#" class="button">Link 4</a></li>
+                <li><a href="#" class="button">Experience</a></li>
+                <li><a href="#" class="button">Projects</a></li>
             </ul>
         </div>
-        <h1>Daniel Kamerling</h1>
-        <hr/>
+        <div class="small-6 columns">
+        <h1>Daniel Kamerling
+            <img src="img/linkedin.png" style="width:46px;height:45px;">
+            <img src="img/inbox.png" style="width:46px;height:45px;">
+            <img src="img/Twitter_logo_blue.png" style="width:26px;height:4 5px;">
+        </h1>
+
+        <div class="image-wrapper overlay-fade-in">
+
+            <img src="img/inbox.png" style="width:96px;height:95px;">
+
+            <div class="image-overlay-content">
+                <h2>.overlay-fade-in</h2>
+
+                <p class="price">$99.99</p>
+                <a href="#" class="button">Get it</a>
+            </div>
+        </div>
+        <img src="img/linkedin.png" style="width:96px;height:95px;">
+        <img src="img/Twitter_logo_blue.png" style="width:96px;height:95px;">
+        <!--<hr/>
+            </div>
     </div>
 </div>
 
+
+<!--
 <div class="row">
     <div class="large-12 columns">
         <img src="http://placehold.it/1000x500&text=[banner img]">
     </div>
 </div>
+-->
 
 <div class="row">
-    <hr>
-    <div class="large-8 columns">
-        <h4>About</h4>
-        <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
-        <i class="fi-social-twitter"></i>
+    <br>
+
+    <div class="large-6 columns">
+        <h4><i>"My work is a game, a very serious game."</i> - M.C. Escher</h4>
+
+        <p>My passion is the creation of elegant products that solve for the needs of consumers, the business, and the
+            team.
+            I believe data is critical to making informed decisions and that empathy is essential for true innovation.
+            On this site you will find my professional musings, software hobby projects, and other items of little
+            consequence.
+            <br><br>
+            Thanks for visiting!
+            <!--<i class="fi-social-twitter"></i>-->
     </div>
     <div class="large-4 columns">
-        <img src="http://placehold.it/400x300&text=[img]">
+        <img src="img/ramen.jpg">
+        <!--<img src="http://placehold.it/400x300&text=[img]">-->
+    </div>
+    <div class="large-2 columns">
+        <a class="twitter-timeline" href="https://twitter.com/DanKamerling" data-widget-id="649146399670427648">Tweets by @DanKamerling</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
 </div>
 
@@ -55,7 +130,6 @@
     <hr>
     <div class="large-12 columns">
         <h4>Work</h4>
-        <p>Click on each image!</p>
 
         <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
             <li>
@@ -63,31 +137,43 @@
                     <img data-caption="caption here..." src="http://placehold.it/800x500&text=[img]"></a>
             </li>
             <li>
-                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 2 here..." src="http://placehold.it/800x500&text=[img]"></a>
+                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 2 here..."
+                                                                      src="http://placehold.it/800x500&text=[img]"></a>
             </li>
             <li>
-                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 3 here..." src="http://placehold.it/800x500&text=[img]"></a>
+                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 3 here..."
+                                                                      src="http://placehold.it/800x500&text=[img]"></a>
             </li>
             <li>
-                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 4 here..." src="http://placehold.it/800x500&text=[img]"></a>
+                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 4 here..."
+                                                                      src="http://placehold.it/800x500&text=[img]"></a>
             </li>
             <li>
-                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 5 here..." src="http://placehold.it/800x500&text=[img]"></a>
+                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 5 here..."
+                                                                      src="http://placehold.it/800x500&text=[img]"></a>
             </li>
             <li>
-                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 6 here..." src="http://placehold.it/800x500&text=[img]"></a>
+                <a href="http://placehold.it/800x500&text=[img]"><img data-caption="caption 6 here..."
+                                                                      src="http://placehold.it/800x500&text=[img]"></a>
             </li>
         </ul>
     </div>
 </div>
-
+<!--
 <div class="row">
     <div class="large-12 columns">
         <hr>
         <h4>Contact Me</h4>
+
         <div class="large-4 columns">
-            Email: <a class="__cf_email__" href="/cdn-cgi/l/email-protection" data-cfemail="5c31391c31252c332e283a33303533723f3331">[email protected]</a><script data-cfhash='f9e31' type="text/javascript">
-/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */</script>
+            Email: <a class="__cf_email__" href="/cdn-cgi/l/email-protection"
+                      data-cfemail="5c31391c31252c332e283a33303533723f3331">[email protected]</a>
+            <script data-cfhash='f9e31' type="text/javascript">
+/* <![CDATA[ */!function(){try{var t="currentScript"in document?document.currentScript:function(){for(var t=document.getElementsByTagName("script"),e=t.length;e--;)if(t[e].getAttribute("data-cfhash"))return t[e]}();if(t&&t.previousSibling){var e,r,n,i,c=t.previousSibling,a=c.getAttribute("data-cfemail");if(a){for(e="",r=parseInt(a.substr(0,2),16),n=2;a.length-n;n+=2)i=parseInt(a.substr(n,2),16)^r,e+=String.fromCharCode(i);e=document.createTextNode(e),c.parentNode.replaceChild(e,c)}t.parentNode.removeChild(t);}}catch(u){}}()/* ]]> */
+
+
+
+            </script>
         </div>
         <div class="large-4 columns">
             Twitter: @DanKamerling
@@ -96,13 +182,14 @@
         </div>
     </div>
 </div>
-
+-->
 <footer class="row">
+   <!--
     <div class="large-12 columns">
         <hr/>
         <div class="row">
             <div class="large-6 columns">
-               <!-- <p>© Copyright no one at all. Go to town.</p>-->
+                <!-- <p>© Copyright no one at all. Go to town.</p>
             </div>
             <div class="large-6 columns">
                 <ul class="inline-list right">
@@ -114,6 +201,7 @@
             </div>
         </div>
     </div>
+    -->
 </footer>
 
 </body>
