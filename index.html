@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Daniel Kamerling</title>
+    <!-- I've used Bootstrap before and it works just fine with great documentation.
+    However, I try to constantly challenge myself and learn new things. That's why
+    I decided to try out Foundation.-->
     <link rel="stylesheet" href="css/foundation.css"/>
     <link rel="stylesheet" href="css/hovereffects.css"/>
    <!-- <link rel="stylesheet" href="css/gradient2.css"/>-->
     <link rel="import" href="footer.html"/>
     <script src="js/vendor/modernizr.js"></script>
+    <!-- Hard to have a quality product with any sort of data and analytics, eh?
+    On my products, I've tended towards a custom class to track standard metrics
+    for testing.  In a pinch for a hobby project or high level conversion, GA is just fine. -->
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,27 +22,45 @@
 
   ga('create', 'UA-68149561-1', 'auto');
   ga('send', 'pageview');
-
-
-
-
-
-    </script>
+</script>
 </head>
+<!-- I asked my wife for help with the background. She has more *style* then I do. hehe-->
 <body background="img/old_mathematics.png">
+<!--
+            /~\                                      ====
+           ( oo|              What are you doing     o o~~
+           _\=/_              hiding back there?    _\- /_
+\         /  _  \                                  / \ /  \
+  \      //|/.\|\\                                //| |  |\\
+____\___||__\_/__||_____                         // | |  |//
+           \             \                      //  | |  //
+             \             \                  -(]   |===(|
+               \             \                      | || |
+                 \             \                    (_)(_)
+___________________\_____________\                  |_||_|
+                             |                      |_||_|
+_____________________________|_____________________/__][__\________
+
+IF YOU ARE READING THIS THEN MAYBE YOU ARE INTERESTED IN HIRING
+A PRODUCT MANAGER WITH SOME TECHNICAL SKILLS? HEAD BACK TO THE
+HOME PAGE AND CONTACT ME THROUGH YOUR MEDIUUM OF CHOICE. =)
+-->
+
+
 <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
 
+<!-- by now you are complaining that this site isn't tested or using a more complicated framework like
+angular or ember.  Well, I've done projects with those but really didn't feel it was necessary for this
+kind of site. Chill out!-->
 <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
         <li class="name">
             <h1><a href="#">Daniel Kamerling</a></h1>
         </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
         <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
     </ul>
 
     <section class="top-bar-section">
-        <!-- Right Nav Section -->
         <ul class="right">
             <li class=""><a href="career.html">Career</a></li>
             <li class="divider"></li>
@@ -48,6 +72,8 @@
                 </ul>
             </li>
         </ul>
+        <!--Had to decide on which items to list (scrapping, visibility, etc).  I ended up
+        decorating the nav like my college apartment...sparse.-->
         <ul class="social-icons">
             <li><a href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!"><i class="fi-mail"></i></a></li>
             <li><a href="https://www.linkedin.com/in/danielkamerling"><i class="fi-social-linkedin"></i></a></li>
@@ -62,6 +88,7 @@
     <br>
 
     <div class="large-6 columns">
+        <!--Love his work-->
         <blockquote>"My work is a game, a very serious game."
             <cite>M.C. Escher</cite></blockquote>
 
@@ -74,20 +101,16 @@
             consequence.
             <br><br>
             Thanks for visiting!
-            <!--<i class="fi-social-twitter"></i>-->
     </div>
     <div class="large-4 columns">
         <img src="img/ramen.jpg">
-        <!--<img src="http://placehold.it/400x300&text=[img]">-->
     </div>
     <div class="large-2 columns">
         <a class="twitter-timeline" href="https://twitter.com/DanKamerling" data-widget-id="649146399670427648">Tweets
             by @DanKamerling</a>
+        <!--Guess I have to be careful about what I retweet now...-->
         <script>
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
-
-
         </script>
     </div>
 </div>
@@ -96,8 +119,8 @@
     <hr>
     <div class="large-12 columns ">
         <h4>Recent Work</h4>
-
-        <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-clearing>
+        <!--Nothing wrong with a bit of humble brag, eh?-->
+        <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
             <li>
                 <a class="th [radius] image-wrapper overlay-fade-in" href="http://www.slideshare.net/DanielKamerling/product-management-personas-data"
                    target="_blank">
@@ -105,6 +128,16 @@
                 <div class="image-overlay-content">
                     <h2>Presentation</h2>
                 </div>
+                </a>
+            </li>
+            <li>
+                <a class="th [radius] image-wrapper overlay-fade-in"
+                   href="https://medium.com/product-labs/two-subtle-influencers-in-product-design-36489a6eb3ea"
+                   target="_blank">
+                    <img data-caption="Article: Influencers in Product Design" src="img/whispers.jpeg">
+                    <div class="image-overlay-content">
+                        <h2>Article</h2>
+                    </div>
                 </a>
             </li>
             <li>
@@ -133,7 +166,7 @@
 </div>
 
 <footer class="row">
-
+<!--Yeah, not a true footer but its not like I have much of a site map.-->
     <div class="large-12 columns">
         <hr/>
         <div class="row">
