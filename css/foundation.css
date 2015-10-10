@@ -3872,7 +3872,7 @@ blockquote {
   blockquote cite {
     display: block;
     font-size: 0.8125rem;
-    color: #C9CBCC; }
+    color: #A2A2A2; }
     blockquote cite:before {
       content: "\2014 \0020"; }
     blockquote cite a,
