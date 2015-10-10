@@ -9,7 +9,8 @@ workhistApp.controller('WorkHistCtrl', function ($scope) {
      'description':'Responsible for executing product design through Discovery & Framing and software development using extreme programming methodology (weekly iterations, pair programming) in a client facing role. Also responsible for enablement and training of clients to build up product capabilities. Industries range from live music entertainment to mortgage lending.',
      'year': 2015,
      'company':'Pivotal',
-     'experience':[{'item':'something'},{'item':'something else'}]
+     'experience':[{'item':'Developed the product roadmap for the fraud identification product of the leading mortgage lending data company in order to target top tier banking companies to gain significant increase in market share and revenue.'},
+     {'item':'Lead the redesign of operational software for the leading entertainment ticketing company resulting in a streamlined workflow, leveraging data for business insight, and increasing tool usability.'}]
      },
 
     {'website': 'harris.com',
@@ -17,7 +18,11 @@ workhistApp.controller('WorkHistCtrl', function ($scope) {
      'title': 'Mechanical Engineer 2',
      'description':'Performed project management duties of +$200k project including supplier selection and oversight, scheduling, managing customer relationship, and leading teams across three different locations.',
      'year': 2004,
-     'company': 'Harris'
+     'company': 'Harris',
+     'experience':[{
+     'item':'Merit Award for leadership of 12 member team in three states and two plastic manufactures in the redesign of a high-visibility safety item. Managed customer relationship on an ongoing basis and achieved delivery in original launch window'},
+     {'item':'Received Exceptional Performance Award for investigating subcontractor manufacturing process and fostering the adoption of quality controls to produce record number of actuators saving the $1M project'
+     }]
      },
 
     {'website': 'riotgames.com',
@@ -25,21 +30,39 @@ workhistApp.controller('WorkHistCtrl', function ($scope) {
      'title': 'Product Manager',
      'description':'Product Manager for the 10+ member store team where I work in conjunction with eCommerce, design, and developers to insure players feel good about their purchase experience with robust service availability. Responsible for developing a product vision and roadmap, maintaining a well groomed backlog, and supporting the development process in Agile/Kanban.',
      'year': 2013,
-     'company': 'Riot'},
+     'company': 'Riot',
+     'experience':[
+     {'item':'Responsible globally for the stewardship of commerce product features on League of Legends which is a 24/7 live game as a service with 67M active players. This includes collecting player insights (i.e. surveys and focus groups), front-end and back-end development, quality assurance, and support. Responsible for selection, contracting, and management of outsourcing vendors in order to provide necessary resources for delivery'},
+     {'item':'End of Game Gifting - Released to expand channel reach and target a generous segment of the player base resulting in a roughly $5M+ feature'},
+     {'item':'Mystery Gifting - Released for annual Harrowing event which allows players to send a random gift.  Success led to feature becoming permanent followed by expansion into additional regions, products and modes resulting in over $200M+ in revenue since inception'},
+     {'item':'Store Optimization - Incremental front-end updates the store to improve player experience through design and analytics based on the over 4-18M+ visitors per week, depending on the region'},
+     {'item':'Store API - Created to scale use of 40+ store features across the company.  Leveraged by 6+ teams for 10M+ awards and transactions.  Also includes creation of admin tool for sales and promotion'
+     }]
+     },
 
      {'website': 'ibm.com',
      'logo': 'img/ibm_logo.jpg',
      'title': 'Managing Consultant',
      'description':'Responsible for defining scope, gathering requirements, performing complex quantitative analysis, programming models, and working side-by-side with the client to form business, marketing, and operations strategy.  Also experienced with program management including issue tracking, risk analysis, budget and schedule planning.',
      'year': 2011,
-     'company':'IBM'},
+     'company':'IBM',
+     'experience':[
+     {'item':'Developed innovative solutions for clients vital business issues by developing strategic frameworks and formulating actionable roadmaps across industries and functions with a focus on operations and product strategy.  Also performed business development to support sales.'},
+     {'item':'Indirect Procurement Analysis - Lead a team to review ten categories of spend for a pharmaceutical company to develop individualized plans for spend reduction. Conducted interviews and analyzed the accounts payable database to provide the client with an organization maturity model, financial analysis, creation of sub-categories, and an action plan across multiple levers to achieve savings'},
+     {'item':'Product Development - Led effort in NA to develop product management capability for a mining equipment company including the creation of a portfolio analysis framework, development of product strategy governance (competitor, market, and target descriptions, value case, roadmap), and supported the implementation of processes.  Provided project management, led training, and hosted workshops'},
+     {'item':'Strategic Profit Improvement - Performed analysis of network equipment manufacturer product development vertical including rationalization of product portfolio, outsourcing analysis with NPV based on location, level and severance, and a module pricing strategy resulting in estimated savings of $35M'}
+     ]
+     },
 
      {'website': 'sysplan.com',
      'logo': 'img/SPC_logo.png',
      'title': 'Research Engineer',
      'description':'Identified investment opportunities (~$200k-$5M) and managed progress of disruptive technology initiatives for Defense Advance Research Projects Agency (DARPA).  Example technologies include unmanned air vehicles (UAV), unmanned underwater vehicles (UUV), mesoscale oscillators, and high-frequency analog communications.',
      'year': 2008,
-     'company':'SPC'}
+     'company':'SPC',
+     'experience':[
+     {'item':'Identified military capability gaps for Department of Defense (DARPA) including a feasibility study of high-risk/reward technologies (UxVs, electronics) by conducting extensive interviews of suppliers and customers.  Gained Director approval of two pursuits for a total funding of $10M'}
+     ]}
   ];
 
   $scope.orderProp = 'year';

@@ -82,9 +82,11 @@
                 </div>
                 <div id="{{job.company}}" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
                     <h2 id="modalTitle">Experience at {{job.company}}</h2>
+                    <div class="exp">
                     <ul>
                         <li ng-repeat="exp in job.experience">{{exp.item}}</li>
                     </ul>
+                    </div>
                     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
                 </div>
 
