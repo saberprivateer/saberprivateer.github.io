@@ -1,0 +1,12 @@
+{
+  "name": "angular-phonecat",
+  "description": "Homepage of Daniel Kamerling",
+  "version": "0.0.0",
+  "homepage": "https://saberprivateer.github.io",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular-route": "1.4.x",
+    "angular-material":"0.11.x"
+  }
+}
