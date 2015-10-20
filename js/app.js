@@ -3,7 +3,8 @@
 var dhkApp = angular.module('dhkApp', [
     'ngRoute',
     'workhistApp',
-    'ngMaterial'
+    'ngMaterial',
+    'eduhistApp'
 ]);
 
 dhkApp.config(['$routeProvider',
