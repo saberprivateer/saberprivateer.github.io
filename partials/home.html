@@ -55,15 +55,20 @@ HOME PAGE AND CONTACT ME THROUGH YOUR MEDIUUM OF CHOICE. =)
         <h4>Recent Work</h4>
         <!--Nothing wrong with a bit of humble brag, eh?-->
         <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
-            <li>
+            <li ng-repeat="recentwork in recentworks | orderBy:orderProp | filter:{display:'TRUE'}">
+                <a class="th [radius] image-wrapper overlay-fade-in" href="{{recentwork.website}}" target="_blank">
+                    <img data-caption="{{recentwork.caption}}" ng-src="{{recentwork.image}}">
+                    <div class="image-overlay-content">
+                        <h2>{{recentwork.type}}</h2><!--
                 <a class="th [radius] image-wrapper overlay-fade-in" href="http://www.slideshare.net/DanielKamerling/product-management-personas-data"
                    target="_blank">
                     <img data-caption="Presentation: Personas & Data" src="img/landing/personas_data.png">
                     <div class="image-overlay-content">
-                        <h2>Presentation</h2>
+                        <h2>Presentation</h2>-->
                     </div>
                 </a>
             </li>
+            <!--
             <li>
                 <a class="th [radius] image-wrapper overlay-fade-in"
                    href="https://medium.com/product-labs/two-subtle-influencers-in-product-design-36489a6eb3ea"
@@ -93,7 +98,7 @@ HOME PAGE AND CONTACT ME THROUGH YOUR MEDIUUM OF CHOICE. =)
                         <h2>White Paper</h2>
                     </div>
                 </a>
-            </li>
+            </li>-->
         </ul>
 
     </div>

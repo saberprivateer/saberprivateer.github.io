@@ -4,7 +4,8 @@ var dhkApp = angular.module('dhkApp', [
     'ngRoute',
     'workhistApp',
     'ngMaterial',
-    'eduhistApp'
+    'eduhistApp',
+    'recentworkApp'
 ]);
 
 dhkApp.config(['$routeProvider',
@@ -12,6 +13,7 @@ dhkApp.config(['$routeProvider',
         $routeProvider.
         when('/home',{
                         templateUrl: 'partials/home.html',
+                        controller: 'RecentWorkCtrl'
                     }).
             when('/career',{
                 templateUrl: 'partials/career.html',
