@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="dhkApp">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Resume, education, and other projects of Daniel Kamerling"/>
     <title>Daniel Kamerling</title>
     <!-- I've used Bootstrap before and it works just fine with great documentation.
     However, I try to constantly challenge myself and learn new things. That's why
     I decided to try out Foundation.-->
     <link rel="stylesheet" href="css/foundation.css"/>
     <link rel="stylesheet" href="css/hovereffects.css"/>
-   <!-- <link rel="stylesheet" href="css/gradient2.css"/>-->
-    <link rel="import" href="footer.html"/>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+
     <script src="js/vendor/modernizr.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
+    <script src="js/work_controller.js"></script>
+    <script src="js/edu_controller.js"></script>
+    <script src="js/recentwork_controller.js"></script>
+    <script src="js/app.js"></script>
+
     <!-- Hard to have a quality product with any sort of data and analytics, eh?
     On my products, I've tended towards a custom class to track standard metrics
     for testing.  In a pinch for a hobby project or high level conversion, GA is just fine. -->
@@ -22,19 +38,8 @@
 
   ga('create', 'UA-68149561-1', 'auto');
   ga('send', 'pageview');
-</script>
+    </script>
 </head>
-<!-- I asked my wife for help with the background. She has more *style* then I do. hehe-->
-<body background="img/old_mathematics.png">
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NH2L9T"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NH2L9T');</script>
-<!-- End Google Tag Manager -->
 <!--
             /~\                                      ====
            ( oo|              What are you doing     o o~~
@@ -55,139 +60,26 @@ A PRODUCT MANAGER WITH SOME TECHNICAL SKILLS? HEAD BACK TO THE
 HOME PAGE AND CONTACT ME THROUGH YOUR MEDIUUM OF CHOICE. =)
 -->
 
-
-<link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
-
-<!-- by now you are complaining that this site isn't tested or using a more complicated framework like
-angular or ember.  Well, I've done projects with those but really didn't feel it was necessary for this
-kind of site. Chill out!-->
-<nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#">Daniel Kamerling</a></h1>
-        </li>
-        <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
-    </ul>
-
-    <section class="top-bar-section">
-        <ul class="right">
-            <li class=""><a href="career.html">Career</a></li>
-            <li class=""><a href="education.html">Education</a></li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-                <a href="#">Projects</a>
-                <ul class="dropdown">
-                    <li><a href="#">Marvel API</a></li>
-                    <li><a href="#">Active link in dropdown</a></li>
-                </ul>
-            </li>
-        </ul>
-        <!--Had to decide on which items to list (scrapping, visibility, etc).  I ended up
-        decorating the nav like my college apartment...sparse.-->
-        <ul class="social-icons">
-            <li><a href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!"><i class="fi-mail"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/danielkamerling"><i class="fi-social-linkedin"></i></a></li>
-            <li><a href="https://twitter.com/DanKamerling"><i class="fi-social-twitter"></i></a></li>
-            <li><a href="https://github.com/saberprivateer"><i class="fi-social-github"></i></a></li>
-        </ul>
-    </section>
-
-</nav>
-
-<div class="row">
-    <br>
-
-    <div class="large-6 columns">
-        <!--Love his work-->
-        <blockquote>"My work is a game, a very serious game."
-            <cite>M.C. Escher</cite></blockquote>
-
-        <p>My passion is the creation of <font color="#45687B">elegant products</font> that solve the needs of
-            consumers, business, and the
-            team.
-            I believe data is critical to making informed decisions and that empathy is essential for <font
-                    color="#45687B">true innovation</font>.
-            On this site you will find my professional musings, software hobby projects, and other items of little
-            consequence.
-            <br><br>
-            Thanks for visiting!
-    </div>
-    <div class="large-4 columns">
-        <img src="img/landing/ramen.jpg">
-    </div>
-    <div class="large-2 columns">
-        <a class="twitter-timeline" href="https://twitter.com/DanKamerling" data-widget-id="649146399670427648">Tweets
-            by @DanKamerling</a>
-        <!--Guess I have to be careful about what I retweet now...-->
-        <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-        </script>
-    </div>
+<!-- I asked my wife for help with the background. She has more *style* then I do. hehe-->
+<body class="layout-row" ng-style="{'background-image':'url(img/old_mathematics.png)','background-repeat':'repeat'}">
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NH2L9T"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NH2L9T');
+</script>
+<!-- End Google Tag Manager -->
+<div tabindex="-1" role="main" class="layout-column flex">
+    <md-toolbar>
+        <header ng-include src="'partials/header.html'"></header>
+    </md-toolbar>
+    <md-content ng-view md-scroll-y ng-style="{'background-color':'transparent'}">
+    </md-content>
 </div>
-
-<div class="row">
-    <hr>
-    <div class="large-12 columns ">
-        <h4>Recent Work</h4>
-        <!--Nothing wrong with a bit of humble brag, eh?-->
-        <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
-            <li>
-                <a class="th [radius] image-wrapper overlay-fade-in" href="http://www.slideshare.net/DanielKamerling/product-management-personas-data"
-                   target="_blank">
-                    <img data-caption="Presentation: Personas & Data" src="img/landing/personas_data.png">
-                <div class="image-overlay-content">
-                    <h2>Presentation</h2>
-                </div>
-                </a>
-            </li>
-            <li>
-                <a class="th [radius] image-wrapper overlay-fade-in"
-                   href="https://medium.com/product-labs/two-subtle-influencers-in-product-design-36489a6eb3ea"
-                   target="_blank">
-                    <img data-caption="Article: Influencers in Product Design" src="img/landing/whispers.jpeg">
-                    <div class="image-overlay-content">
-                        <h2>Article</h2>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="th [radius] image-wrapper overlay-fade-in"
-                   href="http://na.leagueoflegends.com/en/news/store/store-update/end-game-gifting-here"
-                   target="_blank">
-                    <img data-caption="Feature: Mystery Gifting" src="img/landing/mystery_gifting.jpg">
-                    <div class="image-overlay-content">
-                        <h2>Feature Announcement</h2>
-                    </div>
-                </a>
-            </li>
-            <li>
-                <a class="th [radius] image-wrapper overlay-fade-in"
-                   href="http://www-935.ibm.com/services/us/gbs/thoughtleadership/software-defined-supply-chain/"
-                   target="_blank">
-                    <img data-caption="Paper: Software Defined Supply Chain" src="img/landing/IBM_IBV_snip.PNG">
-                <div class="image-overlay-content">
-                    <h2>White Paper</h2>
-                </div>
-                </a>
-            </li>
-        </ul>
-
-    </div>
-</div>
-
-<footer class="row">
-<!--Yeah, not a true footer but its not like I have much of a site map.-->
-    <div class="large-12 columns">
-        <hr/>
-        <div class="row">
-            <div class="large-6 columns right">
-                <p style="font-size: small">Daniel lives in Santa Monica, California with his beautiful wife
-                    Kristin.</p>
-            </div>
-        </div>
-    </div>
-
-</footer>
-
 </body>
 </html>

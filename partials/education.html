@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="css/infocard.css"/>
+<div class="row">
+    <div class="medium-6 columns" ng-repeat="edu in edus | orderBy:orderProp:false">
+        <div class="box-too">
+            <div class="profile-card">
+                <a ng-href="http://{{edu.website}}" target="_blank">
+                <img ng-src="{{edu.logo}}">
+                </a>
+            </div>
+            <div class="info">
+                <h5 class="text-center">{{edu.title}}</h5>
+                <h6 class="text-center">{{edu.major}}</h6>
+                <h6 class="text-center">{{edu.year_start}} - {{edu.year_end}}</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        $(document).foundation();
+    </script>
+<br>
+<br>
