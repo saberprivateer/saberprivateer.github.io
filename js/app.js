@@ -24,6 +24,9 @@ dhkApp.config(['$routeProvider',
                 templateUrl: 'partials/education.html',
                 controller: 'EduHistCtrl'
             }).
+            when('/tastingroom', {
+            tempalteUrl: 'partials/tastingroom.html',
+            }).
             otherwise({
                 redirectTo: '/home'
             });
