@@ -5,25 +5,26 @@ var dhkApp = angular.module('dhkApp', [
     'workhistApp',
     'ngMaterial',
     'eduhistApp',
-    'recentworkApp'
+    'recentworkApp',
+    'mm.foundation'
 ]);
 
 dhkApp.config(['$routeProvider',
-    function($routeProvider){
+    function ($routeProvider) {
         $routeProvider.
-        when('/home',{
-                        templateUrl: 'partials/home.html',
-                        controller: 'RecentWorkCtrl'
-                    }).
-            when('/career',{
+            when('/home', {
+                templateUrl: 'partials/home.html',
+                controller: 'RecentWorkCtrl'
+            }).
+            when('/career', {
                 templateUrl: 'partials/career.html',
                 controller: 'WorkHistCtrl'
             }).
-            when('/education',{
+            when('/education', {
                 templateUrl: 'partials/education.html',
                 controller: 'EduHistCtrl'
             }).
             otherwise({
                 redirectTo: '/home'
             });
-}]);
+    }]);

@@ -14,7 +14,9 @@
     <!-- <link rel="stylesheet" href="css/gradient2.css"/>-->
     <link rel="import" href="footer.html"/>
     <script src="js/vendor/modernizr.js"></script>
+    <script src="js/foundation/foundation.reveal.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
@@ -36,6 +38,26 @@
   ga('send', 'pageview');
     </script>
 </head>
+<!--
+            /~\                                      ====
+           ( oo|              What are you doing     o o~~
+           _\=/_              hiding back there?    _\- /_
+\         /  _  \                                  / \ /  \
+  \      //|/.\|\\                                //| |  |\\
+____\___||__\_/__||_____                         // | |  |//
+           \             \                      //  | |  //
+             \             \                  -(]   |===(|
+               \             \                      | || |
+                 \             \                    (_)(_)
+___________________\_____________\                  |_||_|
+                             |                      |_||_|
+_____________________________|_____________________/__][__\________
+
+IF YOU ARE READING THIS THEN MAYBE YOU ARE INTERESTED IN HIRING
+A PRODUCT MANAGER WITH SOME TECHNICAL SKILLS? HEAD BACK TO THE
+HOME PAGE AND CONTACT ME THROUGH YOUR MEDIUUM OF CHOICE. =)
+-->
+
 <!-- I asked my wife for help with the background. She has more *style* then I do. hehe-->
 <body class="layout-row" ng-style="{'background-image':'url(img/old_mathematics.png)','background-repeat':'repeat'}">
 <!-- Google Tag Manager -->
@@ -52,18 +74,9 @@
 <!-- End Google Tag Manager -->
 <div tabindex="-1" role="main" class="layout-column flex">
     <md-toolbar>
-
         <header ng-include src="'partials/header.html'"></header>
-
     </md-toolbar>
     <md-content ng-view md-scroll-y ng-style="{'background-color':'transparent'}">
-        <!--
-                <div class="view-container">
-            <div ng-view class="view-frame" ng-style="{'background-image':'url(img/old_mathematics.png)'}">
-
-            </div>
-        </div>
-        -->
     </md-content>
 </div>
 </body>
