@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="tastingroomApp">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="description" content="Tasting Room video game"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="js/tastingroomApp.js"></script>
 </head>
-<body>
-Manage Top Level!
+<body style="background-color:#54464D">
+<div layout="column">
+    <div>
+        <md-tabs class="md-primary" md-stretch-tabs="always">
+            <md-tab label="WINERY"></md-tab>
+            <md-tab label="FORECAST"></md-tab>
+            <md-tab label="SHOP"></md-tab>
+        </md-tabs>
+    </div>
+    <div>
+        <md-tabs class="md-primary" md-stretch-tabs="always">
+            <md-tab>
+                <md-tab-label>
+                    <md-icon style="color:white;font-size:18px">work</md-icon>
+                    CELLAR
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <md-icon style="color:white;font-size:18px">local_florist</md-icon>
+                    VINEYARD
+                </md-tab-label>
+            </md-tab>
+            <md-tab>
+                <md-tab-label>
+                    <md-icon style="color:white;font-size:18px">store</md-icon>
+                    TASTING ROOM
+                </md-tab-label>
+            </md-tab>
+        </md-tabs>
+    </div>
+    <div align="middle">
+        <md-content layout-padding style="background-color:#54464D">
+            <img align="middle" ng-src="img/tastingroom/vineyard.jpg"/>
+        </md-content>
+    </div>
+    <div align="middle">
+        <md-content style="background-color:#54464D">
+            <a style="text-decoration:none" href="tastingroom.html">
+            <md-card style="background-color:#7D254B">
+                <md-card-content>
+
+                    <h1 style="color:white">START SEASON</h1>
+
+                </md-card-content>
+
+            </md-card>
+            </a>
+        </md-content>
+    </div>
+</div>
 </body>
 </html>
