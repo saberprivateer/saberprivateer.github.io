@@ -1,0 +1,25 @@
+{
+  "name": "saberprivateer.github.io",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.2"
+  },
+  "description": "Personal Website",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saberprivateer/saberprivateer.github.io.git"
+  },
+  "author": "Daniel Kamerling",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saberprivateer/saberprivateer.github.io/issues"
+  },
+  "homepage": "https://github.com/saberprivateer/saberprivateer.github.io"
+}
