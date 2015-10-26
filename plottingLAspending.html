@@ -4,18 +4,36 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="js/main.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="css/laspend.css"/>
+    <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="js/laspendapp.js"></script>
+    <script src="bower_components/materialize/bin/materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <style>
+
+        .chart rect {
+        fill: steelblue;
+        }
+
+        .chart text {
+        fill: black;
+        font: 10px sans-serif;
+        //text-anchor: end;
+        }
+
+    </style>
 </head>
-<body>
+<body ng-controller="laspendCtrl" ng-cloak>
 <md-toolbar>
     <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings">
             <md-icon>menu</md-icon>
         </md-button>
         <h2>
-            <span>Toolbar with Icon Buttons</span>
+            <span>Graphing with LA Comptroller API</span>
         </h2>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Favorite">
@@ -26,5 +44,46 @@
         </md-button>
     </div>
 </md-toolbar>
+
+<div layout="row" layout-align="center" style="margin-top:10px;margin-bottom:10px;">
+
+    <svg class="chart"></svg>
+    <script src="js/graphLAspend.js"></script>
+
+</div>
+
+
+<md-content>
+    <div>
+        <table class="highlight">
+            <thead>
+            <tr>
+                <th data-field="id">Fund</th>
+                <th data-field="ida">Expenditure</th>
+                <th data-field="idb">Activity</th>
+                <th data-field="idc">Department</th>
+                <th data-field="idd">Vendor</th>
+                <th data-field="ide">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="spend in checkbook">
+                <td>{{spend.fund_type}}</td>
+                <td>{{spend.expenditure_type}}</td>
+                <td>{{spend.government_activity}}</td>
+                <td>{{spend.department_name}}</td>
+                <td>{{spend.vendor_name}}</td>
+                <td class="price">{{spend.dollar_amount | number:0}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</md-content>
+<!--
+ng-repeat="spend in checkbook"
+
+    <li>{{spend.dollar_amount}}</li>
+    -->
 </body>
 </html>
