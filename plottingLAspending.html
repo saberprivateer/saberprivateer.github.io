@@ -4,27 +4,17 @@
     <meta charset="UTF-8">
     <title></title>
     <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
     <link rel="stylesheet" href="css/laspend.css"/>
     <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="js/manipulate.js"></script>
     <script src="js/laspendapp.js"></script>
     <script src="bower_components/materialize/bin/materialize.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-    <style>
 
-        .chart rect {
-        fill: steelblue;
-        }
-
-        .chart text {
-        fill: black;
-        font: 10px sans-serif;
-        //text-anchor: end;
-        }
-
-    </style>
 </head>
 <body ng-controller="laspendCtrl" ng-cloak>
 <md-toolbar>
@@ -45,13 +35,39 @@
     </div>
 </md-toolbar>
 
-<div layout="row" layout-align="center" style="margin-top:10px;margin-bottom:10px;">
-
-    <svg class="chart"></svg>
-    <script src="js/graphLAspend.js"></script>
-
+<div layout="row" layout-align="center center" layout-margin style="margin-top:10px;margin-bottom:10px;">
+    <div>
+        <md-input-container>
+            <label>Chart</label>
+            <md-select ng-model="chartinput.charttype" md-on-close="newdata()" ng-init="newdata()">
+                <md-option ng-repeat="rollup in rollups" value="{{rollup.charttype}}">
+                    {{rollup.charttype}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div flex-offset="5">
+        <md-input-container>
+            <label>Month</label>
+            <md-select ng-model="chartinput.month">
+                <md-option ng-repeat="month in months" value="{{month.date_month}}">
+                    {{month.date_month}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
 </div>
-
+<div layout="row" layout-align="center center" layout-margin>
+    <div>
+        <span id="chart_bar"></span>
+    </div>
+</div>
+<div layout="column" layout-align="center center" layout-margin>
+    <div>
+        <span id="chart_pie"></span>
+    </div>
+</div>
+<pre id="what"></pre>
 
 <md-content>
     <div>
@@ -67,6 +83,7 @@
             </tr>
             </thead>
             <tbody>
+
             <tr ng-repeat="spend in checkbook">
                 <td>{{spend.fund_type}}</td>
                 <td>{{spend.expenditure_type}}</td>
@@ -75,6 +92,7 @@
                 <td>{{spend.vendor_name}}</td>
                 <td class="price">{{spend.dollar_amount | number:0}}</td>
             </tr>
+
             </tbody>
         </table>
 
