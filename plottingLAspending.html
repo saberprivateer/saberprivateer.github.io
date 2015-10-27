@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="laspendApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
+    <link rel="stylesheet" href="css/laspend.css"/>
+    <link rel="stylesheet" href="bower_components/materialize/bin/materialize.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+    <script src="js/manipulate.js"></script>
+    <script src="js/laspendapp.js"></script>
+    <script src="bower_components/materialize/bin/materialize.js"></script>
+
+</head>
+<body ng-controller="laspendCtrl" ng-cloak>
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon>menu</md-icon>
+        </md-button>
+        <h2>
+            <span>Graphing with LA Comptroller API</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon style="color: greenyellow;">favorite</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+            <md-icon>more_vert</md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+<div layout="row" layout-align="center center" layout-margin style="margin-top:10px;margin-bottom:10px;">
+    <div>
+        <md-input-container>
+            <label>Chart</label>
+            <md-select ng-model="chartinput.charttype" md-on-close="newdata()" ng-init="newdata()">
+                <md-option ng-repeat="rollup in rollups" value="{{rollup.charttype}}">
+                    {{rollup.charttype}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+    <div flex-offset="5">
+        <md-input-container>
+            <label>Month</label>
+            <md-select ng-model="chartinput.month">
+                <md-option ng-repeat="month in months" value="{{month.date_month}}">
+                    {{month.date_month}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </div>
+</div>
+<div layout="row" layout-align="center center" layout-margin>
+    <div>
+        <span id="chart_bar"></span>
+    </div>
+</div>
+<div layout="column" layout-align="center center" layout-margin>
+    <div>
+        <span id="chart_pie"></span>
+    </div>
+</div>
+<pre id="what"></pre>
+
+<md-content>
+    <div>
+        <table class="highlight">
+            <thead>
+            <tr>
+                <th data-field="id">Fund</th>
+                <th data-field="ida">Expenditure</th>
+                <th data-field="idb">Activity</th>
+                <th data-field="idc">Department</th>
+                <th data-field="idd">Vendor</th>
+                <th data-field="ide">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="spend in checkbook">
+                <td>{{spend.fund_type}}</td>
+                <td>{{spend.expenditure_type}}</td>
+                <td>{{spend.government_activity}}</td>
+                <td>{{spend.department_name}}</td>
+                <td>{{spend.vendor_name}}</td>
+                <td class="price">{{spend.dollar_amount | number:0}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</md-content>
+<!--
+ng-repeat="spend in checkbook"
+
+    <li>{{spend.dollar_amount}}</li>
+    -->
+</body>
+</html>

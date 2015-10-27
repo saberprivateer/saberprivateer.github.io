@@ -9,6 +9,8 @@
     "angular-route": "1.4.x",
     "angular-material": "0.11.x",
     "jquery": "~2.1.x",
-    "angular-foundation": "0.8.x"
+    "angular-foundation": "0.8.x",
+    "angular-resource":"1.4.x",
+    "materialize":"x.x.x"
   }
 }
