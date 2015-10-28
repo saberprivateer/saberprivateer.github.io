@@ -1,9 +1,11 @@
-function getData(charttype){
+var root;
+function getData(charttype,root,callback){
 
-d3.json("js/test.json", function(error, root) {
-  if (error) throw error;
+//d3.data(root)
+//d3.json('js/test.json', function(error, root) {
+//  if (error) throw error;
   console.log("getData");
-//console.log(root[0]);
+console.log(root[0]);
 
 root.forEach(function(d) {
     d.dollar_amount = +d.dollar_amount;
@@ -69,6 +71,5 @@ console.log("This is after nest: ");
 console.log(newroot);
 
 d3transform = newroot;
-
-});
+callback(d3transform);
 };
