@@ -52,7 +52,7 @@ function redraw(){
                  data.addRows([[name, val]]);
                }
 
-            else if ($scope.chartinput.charttype!="Vendor"){
+            else if ($scope.chartinput.charttype!='Vendor'){
                console.log("<100k at "+i);
                data.addRows([[name, val]]);
             }
