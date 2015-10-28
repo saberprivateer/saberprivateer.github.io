@@ -36,8 +36,8 @@
         <!--Nothing wrong with a bit of humble brag, eh?-->
         <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-4" data-clearing>
             <li ng-repeat="recentwork in recentworks | orderBy:orderProp | filter:{display:'TRUE'}">
-                <a class="th [radius] image-wrapper overlay-fade-in" href="{{recentwork.website}}" target="_blank">
-                    <img data-caption="{{recentwork.caption}}" ng-src="{{recentwork.image}}">
+                <a class="th [radius] image-wrapper overlay-fade-in" href="{{recentwork.website}}" target="_blank" ng-cloak>
+                    <img data-caption="{{recentwork.caption}}" ng-src="{{recentwork.image}}" ng-cloak>
                     <div class="image-overlay-content">
                         <h2>{{recentwork.type}}</h2>
                    </div>

@@ -5,13 +5,13 @@
         <div class="box-too">
             <div class="profile-card">
                 <a ng-href="http://{{edu.website}}" target="_blank">
-                <img ng-src="{{edu.logo}}">
+                <img ng-src="{{edu.logo}}" ng-cloak>
                 </a>
             </div>
             <div class="info">
-                <h5 class="text-center">{{edu.title}}</h5>
-                <h6 class="text-center">{{edu.major}}</h6>
-                <h6 class="text-center">{{edu.year_start}} - {{edu.year_end}}</h6>
+                <h5 class="text-center" ng-cloak>{{edu.title}}</h5>
+                <h6 class="text-center" ng-cloak>{{edu.major}}</h6>
+                <h6 class="text-center" ng-cloak>{{edu.year_start}} - {{edu.year_end}}</h6>
             </div>
         </div>
     </div>
