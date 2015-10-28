@@ -1,40 +1,124 @@
 <!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NH2L9T"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-NH2L9T"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NH2L9T');</script>
-<!-- End Google Tag Manager -->
-<nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-        <li class="name">
-            <h1><a href="#/home">Daniel Kamerling</a></h1>
-        </li>
-        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-        <li class="toggle-topbar menu-icon"><a href=""><span></span></a></li>
-    </ul>
+})(window,document,'script','dataLayer','GTM-NH2L9T');
 
-    <section class="top-bar-section">
-        <!-- Right Nav Section -->
-        <ul class="right">
-            <li class=""><a href="#/career">Career</a></li>
-            <li class=""><a href="#/education">Education</a></li>
-            <li class="divider"></li>
-            <li class="has-dropdown">
-                <a href="#">Projects</a>
-                <ul class="dropdown">
-                    <li><a href="">Marvel API</a></li>
-                    <li><a href="#/tastingroom">The Tasting Room</a></li>
-                </ul>
-            </li>
-        </ul>
-        <ul class="social-icons">
-            <li><md-tooltip>E-Mail</md-tooltip><a href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!"><i class="fi-mail"></i></a></li>
-            <li><md-tooltip>LinkedIn</md-tooltip><a href="https://www.linkedin.com/in/danielkamerling"><i class="fi-social-linkedin"></i></a></li>
-            <li><md-tooltip>Twitter</md-tooltip><a href="https://twitter.com/DanKamerling"><i class="fi-social-twitter"></i></a></li>
-            <li><md-tooltip>GitHub</md-tooltip><a href="https://github.com/saberprivateer"><i class="fi-social-github"></i></a></li>
-        </ul>
-    </section>
-</nav>
+
+
+
+
+
+
+
+
+
+</script>
+<!-- End Google Tag Manager -->
+<style>
+    .md-toolbar-tools {
+    background-color:#333333;
+    height:50px;
+    }
+</style>
+
+
+<md-content>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <!--<div>-->
+            <a href="#/home">Daniel Kamerling</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--</div>-->
+            <!--<div>-->
+
+            <!--<md-button ng-href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!">-->
+            <a href="#/career">
+                <md-tooltip>E-Mail</md-tooltip>
+                <i class="fi-mail"></i>
+            </a>&nbsp;&nbsp;&nbsp;
+            <!--</md-button>-->
+            <!--<md-button>-->
+            <a href="#/career">
+                <md-tooltip>LinkedIn</md-tooltip>
+                <i class="fi-social-linkedin"></i>
+            </a>&nbsp;&nbsp;&nbsp;
+            <!--</md-button>-->
+            <!--<md-button>-->
+            <a href="">
+                <md-tooltip>Twitter</md-tooltip>
+                <i class="fi-social-twitter"></i>
+            </a>&nbsp;&nbsp;&nbsp;
+            <!--</md-button>-->
+            <!--<md-button>-->
+            <a href="">
+                <md-tooltip>GitHub</md-tooltip>
+                <i class="fi-social-github"></i>
+            </a>
+            <!--</md-button>-->
+            <!--</div>--><span flex></span>
+            <md-button ng-href="#/career">Career</md-button>
+            <md-button ng-href="#/education">Education</md-button>
+            <md-menu md-position-mode="target-right target" md-offset="0 50">
+                <md-button aria-label="Projects Menu" ng-click="$mdOpenMenu($event)">
+                    <i class="material-icons right" style="padding-top:5px">arrow_drop_down</i>Projects
+                </md-button>
+                <md-menu-content width="2">
+                    <md-menu-item ng-repeat="item in [{link:'plottingLAspending',nav:'Hack LA'},{link:'tastingroom',nav: 'Tasting Room'}]">
+                        <md-button ng-click="ctrl.announceClick($index)">
+                            <div layout="row">
+                                <a ng-href="{{item.link}}.html" target="_blank"><p flex>{{item.nav}}</p></a>
+                            </div>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+
+    </md-toolbar>
+</md-content>
+
+
+<!--<nav class="top-bar" data-topbar role="navigation">-->
+<!--<ul class="title-area">-->
+<!--<li class="name">-->
+<!--<h1><a href="#/home">Daniel Kamerling</a></h1>-->
+<!--</li>-->
+<!--&lt;!&ndash; Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone &ndash;&gt;-->
+<!--<li class="toggle-topbar menu-icon"><a href=""><span></span></a></li>-->
+<!--</ul>-->
+
+<!--<section class="top-bar-section">-->
+<!--&lt;!&ndash; Right Nav Section &ndash;&gt;-->
+<!--<ul class="right">-->
+<!--<li class=""><a href="#/career">Career</a></li>-->
+<!--<li class=""><a href="#/education">Education</a></li>-->
+<!--<li class="divider"></li>-->
+<!--<li class="has-dropdown">-->
+<!--<a>Projects</a>-->
+<!--<ul class="dropdown">-->
+<!--<li><a href="#/hackla">Hack LA</a></li>-->
+<!--<li><a href="#/tastingroom">The Tasting Room</a></li>-->
+<!--</ul>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul class="social-icons">-->
+<!--<li>-->
+<!--<md-tooltip>E-Mail</md-tooltip>-->
+<!--<a href="mailto:daniel.kamerling@gmail.com?Subject=Salutations!"><i class="fi-mail"></i></a></li>-->
+<!--<li>-->
+<!--<md-tooltip>LinkedIn</md-tooltip>-->
+<!--<a href="https://www.linkedin.com/in/danielkamerling"><i class="fi-social-linkedin"></i></a></li>-->
+<!--<li>-->
+<!--<md-tooltip>Twitter</md-tooltip>-->
+<!--<a href="https://twitter.com/DanKamerling"><i class="fi-social-twitter"></i></a></li>-->
+<!--<li>-->
+<!--<md-tooltip>GitHub</md-tooltip>-->
+<!--<a href="https://github.com/saberprivateer"><i class="fi-social-github"></i></a></li>-->
+<!--</ul>-->
+<!--</section>-->
+<!--</nav>-->
