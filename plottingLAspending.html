@@ -49,7 +49,7 @@
     <div flex-offset="5">
         <md-input-container>
             <label>Month</label>
-            <md-select ng-model="chartinput.month">
+            <md-select ng-model="chartinput.month" md-on-close="newdata()">
                 <md-option ng-repeat="month in months" value="{{month.date_month}}">
                     {{month.date_month}}
                 </md-option>
