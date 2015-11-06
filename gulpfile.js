@@ -12,8 +12,7 @@ gulp.task('scripts', function () {
         'bower_components/angular-animate/angular-animate.min.js',
         'bower_components/angular-aria/angular-aria.min.js',
         'bower_components/angular-material/angular-material.min.js',
-        'js/foundation.min.js',
-        'js/foundation/foundation.reveal.js'])
+        'js/foundation.min.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('./js/'));
 });
