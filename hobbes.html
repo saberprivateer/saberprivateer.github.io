@@ -21,7 +21,7 @@
         <div class="form-group">
             <div class="col-sm-2">
                 <label for="percentv">% Vainglorious</label>
-                <input type="number" class="form-control" id="percentv" placeholder="10" min="0" max="100">
+                <input type="number" class="form-control" id="percentv" placeholder="40" min="0" max="100">
             </div>
         </div>
         <div class="form-group">
@@ -33,31 +33,31 @@
         <div class="form-group">
             <div class="col-sm-2">
                 <label for="valglory">Value of Glory</label>
-                <input type="text" class="form-control" id="valglory" placeholder=".7">
+                <input type="text" class="form-control" id="valglory" placeholder=".8">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-2">
                 <label for="valpeace">Value of Peace</label>
-                <input type="text" class="form-control" id="valpeace" placeholder=".7">
+                <input type="text" class="form-control" id="valpeace" placeholder=".9">
             </div>
         </div>
         <br><br><br><br>
 
         <div class="col-sm-2">
-            <button type="submit" class="btn btn-primary" onclick="submitForm();return false;">Submit</button>
+            <button type="submit" class="btn btn-primary" onclick="submitForm();return false;">Create World</button>
         </div>
     </form>
 
     <br><br>
 
+    <h2 id="sample"></h2>
+
     <div id="p1"></div>
     <div id="p2"></div>
     <br>
 
-    <h2>The result...</h2>
-
-    <p>One day, Person 1 and Person 2 meet while competing over resources...</p>
+    <p id="story"></p>
     <br>
 
     <div id="result"></div>
@@ -70,7 +70,7 @@
     var q = 40; //The % vainglorious
     var beta = 0.7; //The % chance for a modest attack
     var p = .7; //The value of peace
-    var g = .8; //The value of war
+    var g = .8; //The value of glory
     var d = 0; //The value of death
     var l = .9; //The value of life
     var gtotal = 0;
@@ -104,9 +104,17 @@
         }
     };
 
+    function printsample(){
+        document.getElementById("sample").innerHTML = "Sample encounter...";
+        document.getElementById("story").innerHTML = "One day, Person 1 and Person 2 meet while competing over resources...";
+//        document.getElementById("p1").innerHTML = "Person 1 is " + obj1.type_full + " (" + obj1.type + ")";
+//        document.getElementById("p2").innerHTML = "Person 2 is " + obj2.type_full + " (" + obj2.type + ")";
+    }
+
     function meeting() {
         var obj1 = new person();
         var obj2 = new person();
+        printsample();
         document.getElementById("p1").innerHTML = "Person 1 is " + obj1.type_full + " (" + obj1.type + ")";
         document.getElementById("p2").innerHTML = "Person 2 is " + obj2.type_full + " (" + obj2.type + ")";
         if (obj1.type == "v" && obj2.type == "v") {
@@ -140,7 +148,7 @@
     }
 
     google.charts.load('current', {packages: ['corechart', 'bar']});
-    google.charts.setOnLoadCallback(drawStacked);
+    //google.charts.setOnLoadCallback(drawStacked);
 
     function drawStacked() {
         var data = new google.visualization.arrayToDataTable([
