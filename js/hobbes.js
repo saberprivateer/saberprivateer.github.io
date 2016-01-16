@@ -8,6 +8,8 @@
     var ptotal = 0;
     var lvtotal = 0;
     var lmtotal = 0;
+    var pop = 100;
+    var popv = 0;
 
     function submitForm() {
 
@@ -33,13 +35,113 @@
             this.type = "v";
             this.type_full = "Vainglorious"
         }
+        //this.alive = Boolean(true);
     };
 
     function printsample(){
         document.getElementById("sample").innerHTML = "Sample encounter...";
         document.getElementById("story").innerHTML = "One day, Person 1 and Person 2 meet while competing over resources...";
+        document.getElementById("simheader").innerHTML = "Simulating many encounters...";
+        document.getElementById("simstory").innerHTML = "What happens if 100 people encounter each other?";
 //        document.getElementById("p1").innerHTML = "Person 1 is " + obj1.type_full + " (" + obj1.type + ")";
 //        document.getElementById("p2").innerHTML = "Person 2 is " + obj2.type_full + " (" + obj2.type + ")";
+    }
+
+    function whowins(obj1,obj2) {
+        switch(obj1.type){
+            case "v":
+                if (obj2.type =="m") {return 1}
+                else {
+                    return (Math.round(Math.random())+1)
+                     }
+                break;
+            case "m":
+                if (obj2.type =="m") {return 3}
+                else {
+                    return 2;
+                    }
+                break;
+            default: return 0; break;
+        }
+    }
+
+    function sim(){
+        console.log("called sim");
+        var temp = new person();
+        var population = [];
+        var i;
+        popv = 0;
+        for (i=0;i<100;i++){
+            population.push(temp);
+            if (temp.type == "v") {popv = popv + 1;}
+            temp = new person();
+        }
+
+        gtotal = 0;
+        ptotal = 0;
+        lvtotal = 0;
+        lmtotal = 0;
+        pop = population.length;
+
+        var data = google.visualization.arrayToDataTable([
+                      ['Label', 'Value'],
+                      ['Population', population.length],
+                      ['% Vain', popv],
+                      ['Encounters',0],
+                      ['Glory',gtotal+lvtotal],
+                      ['Peace',ptotal+lmtotal],
+                    ]);
+
+                    var options = {
+                      width: 400, height: 240,
+                      //redFrom: 90, redTo: 100,
+                      //yellowFrom:75, yellowTo: 90,
+                      minorTicks: 5
+                    };
+
+                    var chart = new google.visualization.Gauge(document.getElementById('pop_chart_div'));
+
+                    chart.draw(data, options);
+
+//        for (i=0;i<50;i++){
+        i=0;
+        console.log("Start Timer");
+        myvar = setInterval(function(){
+
+        switch(whowins(population[i],population[i+50])){
+        case 1:
+        gtotal=gtotal+g;
+        lvtotal=lvtotal+l;
+        pop = pop - 1;
+        popv = popv - 1;
+        break;
+
+        case 2:
+        gtotal=gtotal+g;
+                lvtotal=lvtotal+l;
+                popv = popv - 1;
+        break;
+
+        case 3:
+                        ptotal=ptotal+p;
+                        lmtotal=lmtotal+2*l;
+        break;
+        }
+
+        data.setValue(0, 1, pop);
+        data.setValue(1, 1, popv);
+        data.setValue(2, 1, i);
+        data.setValue(3, 1, gtotal+lvtotal);
+        data.setValue(4, 1, ptotal+lmtotal);
+
+        chart.draw(data, options);
+        i=i+1;
+        if(i>49){
+                clearInterval(myvar);
+                }
+        },500);
+
+
     }
 
     function meeting() {
@@ -48,37 +150,30 @@
         printsample();
         document.getElementById("p1").innerHTML = "Person 1 is " + obj1.type_full + " (" + obj1.type + ")";
         document.getElementById("p2").innerHTML = "Person 2 is " + obj2.type_full + " (" + obj2.type + ")";
-        if (obj1.type == "v" && obj2.type == "v") {
-            var win = 1;
-            if (Math.random() > 0.5) {
-                win = 2;
-            }
-            document.getElementById("result").innerHTML = "For glory! Person " + win + " has triumphed!";
-            gtotal=gtotal+g;
-            lvtotal=lvtotal+l;
 
-        }
-        else {
-            if (obj1.type == "v") {
-                document.getElementById("result").innerHTML = "For glory! Person 1 has triumphed!";
-                gtotal=gtotal+g;
-                lvtotal=lvtotal+l;
-            }
-            if (obj2.type == "v") {
-                document.getElementById("result").innerHTML = "For glory! Person 2 has triumphed!";
-                gtotal=gtotal+g;
-                lvtotal=lvtotal+l;
-            }
-            if (obj1.type == "m" && obj2.type == "m") {
+        switch(whowins(obj1,obj2)) {
+        case 1:
+                document.getElementById("result").innerHTML = "For glory! Person " + 1 + " has triumphed!";
+//                gtotal=gtotal+g;
+//                lvtotal=lvtotal+l;
+                break;
+        case 2:
+                document.getElementById("result").innerHTML = "For glory! Person " + 2 + " has triumphed!";
+//                gtotal=gtotal+g;
+//                lvtotal=lvtotal+l;
+                break;
+        case 3:
                 document.getElementById("result").innerHTML = "Let there be peace! Person 1 cooperated with Person 2!";
-                ptotal=ptotal+p;
-                lmtotal=lmtotal+2*l;
+//                ptotal=ptotal+p;
+//                lmtotal=lmtotal+2*l;
+                break;
+        default: break;
             }
-        }
-        drawStacked();
+       sim();
+        //drawStacked();
     }
 
-    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.load('current', {packages: ['corechart', 'bar','gauge']});
     //google.charts.setOnLoadCallback(drawStacked);
 
     function drawStacked() {
