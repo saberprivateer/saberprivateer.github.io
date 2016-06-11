@@ -10,6 +10,7 @@
     var lmtotal = 0;
     var pop = 100;
     var popv = 0;
+    var population = [];
 
     function submitForm() {
 
@@ -65,17 +66,49 @@
         }
     }
 
+    function whowins_beta(obj1,obj2,beta) {
+            switch(obj1.type){
+                case "v":
+                    if (obj2.type =="m") {return 1}
+                    else {
+                        return (Math.round(Math.random())+1)
+                         }
+                    break;
+                case "m":
+                    if (obj2.type =="m") {return 3}
+                    else {
+                        return 2;
+                        }
+                    break;
+                default: return 0; break;
+            }
+        }
+
+
+    function createpop(){
+    var temp = new person();
+
+            var i;
+            popv = 0;
+            for (i=0;i<100;i++){
+                population.push(temp);
+                if (temp.type == "v") {popv = popv + 1;}
+                temp = new person();
+            }
+    }
+
     function sim(){
         console.log("called sim");
-        var temp = new person();
-        var population = [];
-        var i;
-        popv = 0;
-        for (i=0;i<100;i++){
-            population.push(temp);
-            if (temp.type == "v") {popv = popv + 1;}
-            temp = new person();
-        }
+//        var temp = new person();
+           //        var population = [];
+           //        var i;
+           //        popv = 0;
+           //        for (i=0;i<100;i++){
+           //            population.push(temp);
+           //            if (temp.type == "v") {popv = popv + 1;}
+           //            temp = new person();
+           //        }
+           createpop();
 
         gtotal = 0;
         ptotal = 0;
@@ -142,6 +175,20 @@
         },500);
 
 
+    }
+
+    function simscatter(){
+    console.log("called simscatter");
+    createpop();
+    gtotal = 0;
+            ptotal = 0;
+            lvtotal = 0;
+            lmtotal = 0;
+            pop = population.length;
+    var beta = .23
+
+
+    }
     }
 
     function meeting() {
