@@ -4,7 +4,7 @@ workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
         {
             'website': 'mobcrush.com',
-            'logo': 'img/jobs/pivotallabs.jpg',
+            'logo': 'img/jobs/mobcrushlogo.png',
             'title': 'Senior Product Manager',
             'description': 'Responsible for developing the product management function to support scale.  Includes building the structure for an agile development process across business, product, design, and engineering.  Mentoring other product managers for excellence.',
             'year_start': 2016,
