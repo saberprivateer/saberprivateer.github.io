@@ -2,14 +2,24 @@ var workhistApp = angular.module('workhistApp', []);
 
 workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
-
+        {
+            'website': 'mobcrush.com',
+            'logo': 'img/jobs/pivotallabs.jpg',
+            'title': 'Senior Product Manager',
+            'description': 'Responsible for developing the product management function to support scale.  Includes building the structure for an agile development process across business, product, design, and engineering.  Mentoring other product managers for excellence.',
+            'year_start': 2016,
+            'year_end': 'Present',
+            'company': 'Mobcrush',
+            'experience': [{'item': 'Developed the strategic roadmap and manage features to insure successful growth post-launch.'}
+                ]
+        },
         {
             'website': 'pivotal.io/labs',
             'logo': 'img/jobs/pivotallabs.jpg',
             'title': 'Senior Product Manager',
             'description': 'Responsible for executing product design through Discovery & Framing and software development using extreme programming methodology (weekly iterations, pair programming) in a client facing role. Also responsible for enablement and training of clients to build up product capabilities. Industries range from live music entertainment to mortgage lending.',
             'year_start': 2015,
-            'year_end': 'Present',
+            'year_end': '2016',
             'company': 'Pivotal',
             'experience': [{'item': 'Developed the product roadmap for the fraud identification product of the leading mortgage lending data company in order to target top tier banking companies to gain significant increase in market share and revenue.'},
                 {'item': 'Lead the redesign of operational software for the leading entertainment ticketing company resulting in a streamlined workflow, leveraging data for business insight, and increasing tool usability.'}]
