@@ -3,7 +3,7 @@ var eduhistApp = angular.module('eduhistApp', []);
 eduhistApp.controller('EduHistCtrl', function ($scope) {
   $scope.edus = [
 
-    {'website': 'www.virg inia.edu/',
+    {'website': 'www.virginia.edu/',
      'logo': 'img/education/UVA.png',
      'title': 'University of Virginia',
      'major': 'B.S. Mechanical Engineering',
