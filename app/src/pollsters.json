@@ -1,0 +1,188 @@
+[
+  {
+    "website": "http://www.selzerco.com/",
+    "name": "Selzer & Company",
+    "polled_johnson": true,
+    "contact": "myeoman@selzerco.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Monmouth University",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Field Research Corporation (Field Poll)",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "ABC News/Washington Post",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Elway Research",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Ciruli Associates",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Siena College",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Grove Insight",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "University of Cincinnati (Ohio Poll)",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "SurveyUSA",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Marist College",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "National Journal",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Public Policy Institute of California",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "SurveyUSA",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Fairleigh Dickinson University (PublicMind)",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Fox News/Anderson Robbins Research/Shaw & Company Research",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Muhlenberg College",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Research & Polling, Inc.",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Marquette University",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Behavior Research Center (Rocky Mountain)",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Blum & Weprin Associates",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Quinnipiac University",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "NBC News/Wall Street Journal",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "University of Connecticut",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Time/Abt SRBI",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Ipsos",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "University of Arkansas",
+    "polled_johnson": false,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "IBD/TIPP",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "CBS News/New York Times",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Public Policy Polling",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  },
+  {
+    "website": "http://www.mobcrush.com/",
+    "name": "Rasmussen Reports/Pulse Opinion Research",
+    "polled_johnson": true,
+    "contact": "daniel.kamerling@gmail.com"
+  }
+]

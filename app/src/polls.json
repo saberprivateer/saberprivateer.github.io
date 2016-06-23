@@ -1,0 +1,23 @@
+[
+  {
+    "Poll": "Economist/YouGov",
+    "Date": "6/18 - 6/20",
+    "SampleNum": 1011,
+    "SampleType": "RV",
+    "MoE": "4.2",
+    "Clinton": 43,
+    "Trump": 39,
+    "Johnson": 4,
+    "Spread": "Clinton +4"
+  },
+  {
+    "Poll": "CNN/ORC",
+    "Date": "6/15 - 6/19",
+    "SampleNum": 891,
+    "SampleType": "RV",
+    "MoE": "3.5",
+    "Clinton": 42,
+    "Trump": 38,
+    "Johnson": 9,
+    "Spread": "Clinton +4"
+  }]
