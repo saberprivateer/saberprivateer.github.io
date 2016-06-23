@@ -15,7 +15,7 @@ choiceApp.controller('ChoiceCtrl', function($scope, $http){
 
 var req = {
 method: 'GET',
-    url: 'http://www.realclearpolitics.com/epolls/json/5949_historical.js',
+    url: 'http://cors.io/?u=http://www.realclearpolitics.com/epolls/json/5949_historical.js',
 //url: 'http://elections.huffingtonpost.com/pollster/api/polls.json?topic=2016-president&page=30',
 };
 
