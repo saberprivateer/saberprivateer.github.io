@@ -1,6 +1,6 @@
 'use strict';
 
-var choiceApp = angular.module('choiceApp', ['ngMaterial'])
+var choiceApp = angular.module('choiceApp', ['ngMaterial','ngSanitize'])
     .run(function($log){
         $log.debug("MyApp is ready!");
         })
@@ -86,30 +86,34 @@ return condition ? "green" : "red";
   }
 
 $scope.header = function(filter) {
-console.log("header was called");
+if (filter == 'Mainstream'){
+//$scope.pollsterFilterSet('f');
+console.log("mainstream was called");
+$scope.headerText = 'Mainstream polling organizations as seen on <a target="_blank" href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton-5491.html">RealClearPolitics</a>';
+}
 if (filter == 'All'){
-$scope.headerText = "";
-$scope.pollsterFilterSet('all');
+$scope.headerText = 'All major polling organizations that rate A- or better on <a href="http://projects.fivethirtyeight.com/pollster-ratings/" target="_blank">FiveThirtyEight</a>';
+//$scope.pollsterFilterSet('all');
 console.log("all was called");
 }
 if (filter == 'Inclusive'){
 console.log("inclusive was called");
-$scope.pollsterFilterSet('t');
-$scope.headerText = "and have included Gary Johnson in a poll since his nomination";
+//$scope.pollsterFilterSet('t');
+$scope.headerText = 'All major polling organizations that rate A- or better on <a href="http://projects.fivethirtyeight.com/pollster-ratings/" target="_blank">FiveThirtyEight</a> and/or have included Gary Johnson in a poll since his nomination';
 }
 if (filter == 'Exclusive'){
-$scope.pollsterFilterSet('f');
-$scope.headerText = "and have NOT included Gary Johnson in a poll since his nomination";
+//$scope.pollsterFilterSet('f');
+$scope.headerText = 'All major polling organizations that rate A- or better on <a href="http://projects.fivethirtyeight.com/pollster-ratings/" target="_blank">FiveThirtyEight</a> and have NOT included Gary Johnson in a poll since his nomination';
 }
 }
 
-$scope.pollsterFilterSet = function(item){
+/*$scope.pollsterFilterSet = function(item){
 if (item == 't'){ $scope.pollsterFilter = true};
 if (item == 'f'){$scope.pollsterFilter = false};;
 if (item == 'all'){$scope.pollsterFilter = '';}
 }
 
-$scope.pollsterFilter = '';
+$scope.pollsterFilter = '';*/
 $scope.headerText='';
 
 //$scope.rccppolls=[];
@@ -119,10 +123,14 @@ $scope.headerText='';
       });
 
 
+$scope.toggle = function(flip){
+flip=!flip;
+return flip;
+}
 
 var reqpolls = {
 method: 'GET',
-url: 'http://www.realclearpolitics.com/poll/race/5949/polling_data.json',
+url: 'http://cors.io/?u=http://www.realclearpolitics.com/poll/race/5949/polling_data.json',
 };
 $http(reqpolls,{cache: true}).success(function(data){
 //console.log('reqpolls: '+data.poll[1].id);

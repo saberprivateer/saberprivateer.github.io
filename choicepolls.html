@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!--CSS-->
-    <!--<link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>-->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+    <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="../app/src/styles.css"/>
 
@@ -39,6 +39,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.js"></script>
+
+
     <!-- Angular Material Library -->
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
@@ -57,20 +60,31 @@
 <md-toolbar layout="row">
     <div class="md-toolbar-tools">
         <h1><span>Choice Polls</span></h1>
+
         <span flex></span>
-        Libertarian
+        <!--Libertarian
         <md-switch style="padding-left: 8px">
             Green
         </md-switch>
         <span flex="5"></span>
-        <md-button class="md-raised" aria-label="Learn More">
+        -->
+        <md-button class="md-raised" aria-label="Learn More" ng-click="about=true" ng-hide="about">
             About
+        </md-button>
+        <md-button class="md-raised" aria-label="Learn More" ng-click="about=false" ng-show="about">
+            Polls
         </md-button>
         <span flex="2"></span>
     </div>
 </md-toolbar>
+<div layout-padding ng-show="about">
 
-<div layout="row">
+    <h4>ABOUT</h4>
+    <p>This is my about area</p>
+
+</div>
+
+<div layout="row" ng-hide="about">
     <div layout="column" layout-align="start center">
         <div style="padding-top:8px;text-align:center"><p><a href="http://www.realclearpolitics.com/epolls/2016/president/us/general_election_trump_vs_clinton_vs_johnson-5949.html">RealClearPolitics</a> Average <br> {{rcpaveragedate}}</p></div>
         <div>
@@ -86,29 +100,34 @@
     <div flex layout="column">
         <div layout="row" flex="noshrink">
             <!--<md-whiteframe class="md-whiteframe-3dp">-->
-            <md-button class="md-raised" ng-init="header('All')" ng-click="header('All');myFilter=''">All</md-button>
-            <md-button class="md-raised" ng-click="header('Inclusive');myFilter={polled_johnson:true}">Inclusive</md-button>
-            <md-button class="md-raised" ng-click="header('Exclusive');myFilter={polled_johnson:false}">Exclusive</md-button>
+            <md-button class="md-raised" ng-init="header('Mainstream')" ng-click="header('Mainstream');myFilter={'Mainstream':'TRUE'}">Mainstream</md-button>
+            <md-button class="md-raised" ng-click="header('All');myFilter={'538 Grade':'A'}">538 - All</md-button>
+            <md-button class="md-raised" ng-click="header('Inclusive');myFilter={Include_Johnson:true}">538 - Inclusive</md-button>
+            <md-button class="md-raised" ng-click="header('Exclusive');myFilter={Include_Johnson:0}">538 - Exclusive</md-button>
             <!--</md-whiteframe>-->
 
         </div>
         <div>
-            <md-subheader class="md-no-sticky" style="background: white">All major polling organizations that rate
-                A- or better on <a href="fivethirtyeight.com">FiveThirtyEight</a> (or have included Gary Johnson)<br> {{headerText}}
+            <md-subheader class="md-no-sticky" style="background: white"><p ng-bind-html="headerText"></p>
             </md-subheader>
         </div>
         <md-content>
             <div>
-                <md-list class="md-dense">
-                    <md-list-item ng-init="pollsterFilterSet('all')"
-                                  ng-repeat="pollster in pollsters | filter: myFilter"
-                                  ng-click="null">
+                <md-list ng-if="true">
+                    <md-list-item ng-init="myFilter={'Mainstream':'TRUE'}"
+                                  class="md-dense slide" ng-repeat-start="pollster in pollsters | filter: myFilter"
+                                  ng-click="pollster.expanded=!pollster.expanded">
                         <i class="material-icons md-18"
-                           style="color: {{pollIconColor(pollster.polled_johnson)}};padding-right: 25px">
-                            {{pollIcon(pollster.polled_johnson) }}</i>
-                        <p>{{pollster.name}}</p>
+                           style="color: {{pollIconColor(pollster.Include_Johnson)}};padding-right: 25px">
+                            {{pollIcon(pollster.Include_Johnson)}}</i>
+                        <p>{{pollster.Pollster}}</p>
                         <i class="material-icons md-18">email</i>
                         <md-divider></md-divider>
+                    </md-list-item>
+                    <md-list-item ng-show="pollster.expanded" ng-repeat-end>
+                        <md-list-item-text>
+                            <p>538 Grade: {{pollster['538 Grade']}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href={{pollster.Website}} target="_blank">Website</a></p>
+                        </md-list-item-text>
                     </md-list-item>
                 </md-list>
             </div>
