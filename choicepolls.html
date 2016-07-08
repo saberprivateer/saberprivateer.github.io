@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <!--CSS-->
-    <!--<link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>-->
-    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+    <!--<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" href="../app/src/styles.css"/>
 
@@ -47,19 +47,37 @@
 
     <script src="../app/src/app.js"></script>
 
-    <!--    <script type="text/javascript">
+    <script type="text/javascript">
       !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
       analytics.load("7i7nktYihd4xfXCY7kiUqIrb7ARbTS6w");
       analytics.page()
       }}();
-    </script>-->
+    </script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68149561-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
 </head>
-<body ng-controller="ChoiceCtrl" ng-cloak layout="column" style="background:white">
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<body ng-controller="ChoiceCtrl" layout="column" ng-cloak style="background:white">
 <md-toolbar layout="row">
     <div class="md-toolbar-tools">
-        <h1><span>Choice Polls</span></h1>
+        <h2><span>Choice Polls</span></h2>
 
         <span flex></span>
         <!--Libertarian
@@ -68,19 +86,18 @@
         </md-switch>
         <span flex="5"></span>
         -->
-        <md-button class="md-raised" aria-label="Learn More" ng-click="about=true" ng-hide="about">
+        <md-button ng-cloak class="md-raised" aria-label="Learn More" ng-click="about=true" ng-hide="about">
             About
         </md-button>
-        <md-button class="md-raised" aria-label="Learn More" ng-click="about=false" ng-show="about">
+        <md-button ng-cloak class="md-raised" aria-label="Learn More" ng-click="about=false" ng-show="about">
             Polls
         </md-button>
         <span flex="2"></span>
     </div>
 </md-toolbar>
-<div layout-padding ng-show="about">
 
-    <h4>ABOUT</h4>
-    <p>This is my about area</p>
+<div layout-padding ng-show="about">
+    <p>I created this website to track which polls are including all the candidates who could theoretically earn enough electoral votes to become president.  Full disclosure: I consider myself a libertarian and intend to support Gary Johnson in 2016.  If you'd like to chat feel free to shoot me an <a href="mailto:chilledenergy@hotmail.com">e-mail</a></p>
 
 </div>
 
@@ -93,6 +110,14 @@
         <div><p style="text-align:center;padding:0 10px 0 10px">Polling at 15% is required for inclusion by the <br><a
                 href="http://www.debates.org/index.php?mact=News,cntnt01,detail,0&cntnt01articleid=58&cntnt01origid=15&cntnt01detailtemplate=newspage&cntnt01returnid=80" target="_blank">Commission
             on Presidential Debates</a></p>
+        </div>
+        <br><br>
+        <div layout="row">
+            <span class="fb-share-button" data-href="http://saberprivateer.github.io/choicepolls.html" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsaberprivateer.github.io%2Fchoicepolls.html&amp;src=sdkpreparse">Share</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <a href="https://twitter.com/share" class="twitter-share-button" data-size="large" data-text="Which polls are including all your choices?" data-hashtags="Election2016" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="mailto:?subject=Choice%20Polls&body=Find out which polls are including all your choices!"><i class="material-icons md-48">email</i></a>
         </div>
     </div>
 
@@ -111,6 +136,7 @@
             <md-subheader class="md-no-sticky" style="background: white"><p ng-bind-html="headerText"></p>
             </md-subheader>
         </div>
+
         <md-content>
             <div>
                 <md-list ng-if="true">
@@ -120,8 +146,9 @@
                         <i class="material-icons md-18"
                            style="color: {{pollIconColor(pollster.Include_Johnson)}};padding-right: 25px">
                             {{pollIcon(pollster.Include_Johnson)}}</i>
-                        <p>{{pollster.Pollster}}</p>
-                        <i class="material-icons md-18">email</i>
+                        <p flex="30">{{pollster.Pollster}}</p>
+                        <i class="material-icons md-18">{{pollIconType(pollster.Type)}}</i>
+                        <!--<i class="material-icons md-18">email</i>-->
                         <md-divider></md-divider>
                     </md-list-item>
                     <md-list-item ng-show="pollster.expanded" ng-repeat-end>
@@ -132,29 +159,7 @@
                 </md-list>
             </div>
         </md-content>
-        <!--        <md-button onclick="analytics.track('Button Pressed');" class="md-raised">Button</md-button>-->
-        <!--  <md-content>
-          <div flex>
-              <table>
-                  <tr>
-                  <th>Poll</th>
-                      <th>Date</th>
-                      <th>Clinton</th>
-                      <th>Trump</th>
-                      <th>Johnson</th>
-                  </tr>
-                  <tr  ng-repeat="poll in rcpscrape | filter: {type: 'poll_rcp_avg'}" ng-click="null">
-                      <td>{{poll.pollster}}</td>
-                      <td>{{poll.date}}</td>
-                      <td ng-repeat="candidate in poll.candidate">{{candidate.value}}</td>
-                  </tr>
-              </table>
-          </div>
-          </md-content>-->
     </div>
-    <!--</md-content>-->
-
-
 </div>
 
 <!--<script>

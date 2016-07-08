@@ -85,6 +85,16 @@ $scope.pollIconColor = function(condition) {
 return condition ? "green" : "red";
   }
 
+$scope.pollIconType = function(condition) {
+if (condition == 'School')
+{return "school";}
+if (condition == 'University'){return "school";}
+if (condition == 'Media'){return "tv"; }
+if (condition == 'Vendor'){return "poll";}
+if (condition == 'Non-Profit'){return "account_balance";}
+else {return "";}
+}
+
 $scope.header = function(filter) {
 if (filter == 'Mainstream'){
 //$scope.pollsterFilterSet('f');

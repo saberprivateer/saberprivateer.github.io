@@ -81,7 +81,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "University"
   },
   {
     "Pollster": "Grove Insight",
@@ -105,7 +105,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "School"
   },
   {
     "Pollster": "SurveyUSA",
@@ -141,7 +141,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "Media"
   },
   {
     "Pollster": "Public Policy Institute of California",
@@ -165,7 +165,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "School"
   },
   {
     "Pollster": "Fox News/Anderson Robbins Research/Shaw & Company Research",
@@ -189,7 +189,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "University"
   },
   {
     "Pollster": "Research & Polling, Inc.",
@@ -213,7 +213,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "University"
   },
   {
     "Pollster": "Behavior Research Center (Rocky Mountain)",
@@ -273,7 +273,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "School"
   },
   {
     "Pollster": "Time/Abt SRBI",
@@ -309,7 +309,7 @@
     "Include_Johnson": 0,
     "Mainstream": 0,
     "Website": 0,
-    "Type": 0
+    "Type": "School"
   },
   {
     "Pollster": "IBD/TIPP",
@@ -345,7 +345,7 @@
     "Include_Johnson": 0,
     "Mainstream": "TRUE",
     "Website": "http://orcinternational.com/",
-    "Type": "Media, Vendor"
+    "Type": "Media"
   },
   {
     "Pollster": "Los Angeles Times",
@@ -357,7 +357,7 @@
     "Include_Johnson": 0,
     "Mainstream": "TRUE",
     "Website": 0,
-    "Type": 0
+    "Type": "Media"
   },
   {
     "Pollster": "CBS News/New York Times",
@@ -430,5 +430,17 @@
     "Mainstream": "TRUE",
     "Website": "http://www.suffolk.edu/academics/10741.php",
     "Type": "University"
+  },
+  {
+    "Pollster": "Morning Consult",
+    "Live Caller With Cellphones": "yes",
+    "Internet": "no",
+    "NCPP / AAPOR / Roper": "no",
+    "538 Grade": "N/A",
+    "Banned by 538": "no",
+    "Include_Johnson": "TRUE",
+    "Mainstream": "TRUE",
+    "Website": "https://morningconsult.com/",
+    "Type": "Media"
   }
 ]
