@@ -189,7 +189,7 @@
 
 
     }
-    
+
 
     function meeting() {
         var obj1 = new person();
