@@ -25,6 +25,33 @@
     <link rel="icon" href="https://zapier.cachefly.net/static/Cvbyoe/images/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="https://zapier.cachefly.net/static/Cvbyoe/images/favicon.ico" type="image/x-icon" />
 
+    <script type="text/javascript">
+  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
+  r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.0.1-min.gz.js";
+  r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
+  i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+  return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
+  for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
+  };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
+  for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
+  function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
+  }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
+  if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
+  })(window,document);
+
+  amplitude.getInstance().init("721d32ae43efb1f9d3e3c5da7374e162");
+</script>
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-68149561-1', 'auto');
+  ga('send', 'pageview');
+  ga('send', 'zapier');
+
+</script>
 
 
     <script type="text/javascript">
@@ -86,7 +113,6 @@
         </div>
 
 
-
      <span class="hiring">
        <a href="mailto:daniel.kamerling@gmail.com?Subject=Interview Next Steps with Zapier">we're considering hiring Daniel Kamerling!</a>
      </span>
@@ -96,9 +122,9 @@
 
         <div class="links-container">
             <ul class="links logged-out">
-                <li><a href="numba1.html" target="_blank">Design 1</a></li>
-                <li><a href="numba2.html" target="_blank">Design 2</a></li>
-                <li><a href="numba3.html" target="_blank">Design 3</a></li>
+                <li><a href="numba1.html" target="_blank" onclick="amplitude.logEvent('Design1');">Design 1</a></li>
+                <li><a href="numba2.html" target="_blank" onclick="amplitude.logEvent('Design2');">Design 2</a></li>
+                <li><a href="numba3.html" target="_blank" onclick="amplitude.logEvent('Design3');">Design 3</a></li>
                 <!--<li><a href="/app/login">Log In</a></li>-->
                 <!--<li><a href="/sign-up/" class="signup button">Sign Up</a></li>-->
             </ul>
@@ -114,14 +140,14 @@
         <div class="container">
             <p>Listed below is a discussion of 3 alternative designs for <a href=https://zapier.com/zapbook/google-calendar/" target="_blank">these pages</a>.  I decided to build them using the current CSS/layout to make them feel familiar and to minimize rework using a dedicated design/wireframe tool. For all of these designs, I would want to track the overall conversion of the page.  While each individual section might improve from the changes the overall performance could also drop.</p>
 
-                <a target="_blank" href="numba1.html"><h3 class="subtitle">Design 1 - Social Confidence</h3></a>
+                <a target="_blank" onclick="amplitude.logEvent('Social Confidence');" href="numba1.html"><h3 class="subtitle">Design 1 - Social Confidence</h3></a>
                 <p class="description">By the time a user has reached a page for an app in the Zapbook they have probably already been exposed to the "500+ apps" marketing.  The frame of mind at this point is to narrow the scope to find a particular zap.  With >100 options to scroll through this can be overwhelming! Plus, there is no indication currently why these are "recommended zaps".  By showing that other users have used these same zaps will provide the user with confidence to either try one out or continue exploring.<br> <br> Hypothesis: Currently, the right button for "1-5 (of 100)" isn't clicked all that often resulting in low click-through for recommended zaps.  With this design, seeing that zaps have been used by others will provide confidence and result in more click-through. <br><br>Metrics: % click and conversion via recommended apps</p>
 
-            <a target="_blank" href="numba2.html"><h3 class="subtitle">Design 2 - Take Action!</h3></a>
+            <a target="_blank" href="numba2.html" onclick="amplitude.logEvent('Take Action');"><h3 class="subtitle">Design 2 - Take Action!</h3></a>
             <p class="description">When showing the page to a friend they remarked, "I didn't even know you could scroll down." This design attempts to make the most of the users attention the moment they reach the page to get them invested through action.  My attempt with the design is to proactively prompt thinking in the user as to how they might combine a specific app. It would also eliminate much of the various other sections to focus on building a zap.  The more the user interacts with the sight (without hitting a wall of frustration) the more likely they are to understand the value and sign-up.<br> <br> Hypothesis: Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By creating obvious interactive elements the user is more likely to find a matched app and follow through with zap creation.<br><br>Metrics: % selection of an app and conversion through "continue".</p>
 
 
-            <a target="_blank" href="numba3.html"><h3 class="subtitle">Design 3 - Human Touch</h3></a>
+            <a target="_blank" href="numba3.html" onclick="amplitude.logEvent('Human Touch');"><h3 class="subtitle">Design 3 - Human Touch</h3></a>
             <p class="description">Users may not yet have the confidence that "even I can create a zap."  A reference will help to build that confidence and also validate the value of a zap.  The particular reference can be rotated (using existing segmentation I found in the page source of lawyer, journalist, etc) based on the user to build as close a connection as possible.<br> <br> Hypothesis: Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By showing a compelling reference the equation is completed and the user feels confident to sign-up.<br><br>Metrics: % clicking "sign-up" right away!</p>
 
         </div>
