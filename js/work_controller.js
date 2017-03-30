@@ -3,12 +3,23 @@ var workhistApp = angular.module('workhistApp', []);
 workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
         {
+            'website': 'beachbody.com',
+            'logo': 'img/jobs/beachbody.png',
+            'title': 'Senior Manager - Product Management',
+            'description': 'Responsible for ecommerce, conversion optimization through testing, and introducing modern design approaches.',
+            'year_start': 2016,
+            'year_end': 'Present',
+            'company': 'Beachbody',
+            'experience': [{'item': 'Increased conversion by >2% through optimization','Redesigned the checkout flow to improve user experience and conversion','Modernized foundational technology to increase speed of development by 200%'}
+                ]
+        },
+        {
             'website': 'mobcrush.com',
             'logo': 'img/jobs/mobcrushlogo.png',
             'title': 'Senior Product Manager',
             'description': 'Responsible for developing the product management function to support scale.  Includes building the structure for an agile development process across business, product, design, and engineering.  Mentoring other product managers for excellence.',
             'year_start': 2016,
-            'year_end': 'Present',
+            'year_end': '2016',
             'company': 'Mobcrush',
             'experience': [{'item': 'Developed the strategic roadmap and manage features to insure successful growth post-launch.'}
                 ]
