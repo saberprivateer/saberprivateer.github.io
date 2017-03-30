@@ -10,7 +10,7 @@ workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
             'year_start': 2016,
             'year_end': 'Present',
             'company': 'Beachbody',
-            'experience': [{'item': 'Increased conversion by >2% through optimization','Redesigned the checkout flow to improve user experience and conversion','Modernized foundational technology to increase speed of development by 200%'}
+            'experience': [{'item': 'Increased conversion by >2% through optimization'},{'Redesigned the checkout flow to improve user experience and conversion'},{'Modernized foundational technology to increase speed of development by 200%'}
                 ]
         },
         {
