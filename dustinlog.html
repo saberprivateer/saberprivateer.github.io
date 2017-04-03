@@ -3,9 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dustin's Activity Log</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.36.0.min.js"></script>
@@ -18,9 +20,9 @@
 			IdentityPoolId: "us-west-2:b576c10a-fb24-4eed-922e-9d0b6956aa4e",
 			RoleArn: "arn:aws:iam::899686992599:role/Cognito_DynamoPoolUnauth"
 		});
-
+		var dcOptions = {'convertEmptyValues': true };
 		var dynamodb = new AWS.DynamoDB();
-		var docClient = new AWS.DynamoDB.DocumentClient();
+		var docClient = new AWS.DynamoDB.DocumentClient(dcOptions);
 		var my_form = {};
 
 		function getFormData(log_date,notes){ 
@@ -37,12 +39,10 @@
 			var params = {
 				TableName :"Infant_Logs",
 				Item:{
-					"year": 2011,
-					"title": "testing",
-					"Date": "something",
+					"Date": my_form.log_date.toString(),
 					"Name": "Daniel",
-					"Notes": my_form.notes				
-my/*"info":{
+					"Notes": my_form.notes.toString()	
+					/*"info":{
 						"plot": "Nothing happens at all.",
 						"rating": 0
 					}*/
@@ -52,10 +52,10 @@ my/*"info":{
 			console.log("I am params: "+JSON.stringify(params));
 			docClient.put(params, function(err, data) {
 				if (err) {
-					//console.log("Unable to add item: "+"\n"+JSON.stringify(err, undefined,2));
+					console.log("Unable to add item: "+"\n"+JSON.stringify(err, undefined,2));
 					document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
 				} else {
-					//console.log("PutItem succeeded: "+"\n"+JSON.stringify(data,undefined,2));
+					console.log("PutItem succeeded: "+"\n"+JSON.stringify(data,undefined,2));
 					document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
 				}
 			});
@@ -79,16 +79,27 @@ my/*"info":{
 	</script>
 
 </head>
-<body>
+<body ng-app="BlankApp" ng-cloak>
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--middle mdl-cell--4-col">
 			<b>Dustin's Activity Log</b>
-			<br><br>
+			<md-content ng-controller="AppCtrl as ctrl" layout-padding ng-cloak>
+				<div layout-gt-xs="row">
+					<div flex-gt-xs>
+						<!--<h8>Date</h8>-->
+						<md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
+					</div>
+				</div>
+			</md-content>
 			<form>
+				
 				Date: <input type="date" id="log_date" name="log_date">
 				<br><br>
 				Notes: <input type="text" id="parent_notes" name="parent_notes">
-				<br><br>
+				        <md-input-container class="md-block">
+          <label>Notes</label>
+          <textarea ng-model="notes" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+        </md-input-container>
 				Feeding
 				<table class="mdl-data-table">
 					<thead>
@@ -116,5 +127,28 @@ my/*"info":{
 		<br><br>
 		<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
 	</div>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+	<!-- Your application bootstrap  -->
+	<script type="text/javascript">    
+    /**
+     * You must include the dependency on 'ngMaterial' 
+     */
+     angular.module('BlankApp', ['ngMaterial','ngMessages','material.svgAssetsCache'])
+     .controller('AppCtrl', function() {
+     	this.myDate = new Date();
+     	this.isOpen = false;
+     });
+ 	</script>
+
 </body>
 </html>
