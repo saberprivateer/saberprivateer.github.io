@@ -1,45 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Dustin's Activity Log</title>
+	<meta charset="UTF-8">
+	<title>Dustin's Activity Log</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.36.0.min.js"></script>
+	<script type="text/javascript">
+		//Set the Region
+		AWS.config.update({
+			region: "us-west-2" });
+		//Allow Unauthed users to access DynamoDB
+		AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+			IdentityPoolId: "us-west-2:b576c10a-fb24-4eed-922e-9d0b6956aa4e",
+			RoleArn: "arn:aws:iam::899686992599:role/Cognito_DynamoPoolUnauth"
+		});
+
+		var dynamodb = new AWS.DynamoDB();
+		var docClient = new AWS.DynamoDB.DocumentClient();
+		var my_form = {};
+
+		function getFormData(log_date,notes){ 
+			my_form.log_date=document.getElementById('log_date').value;
+			my_form.notes=document.getElementById('parent_notes').value;
+			console.log("I got form data of "+my_form.log_date+" and "+my_form.notes);
+			/* some other fields */
+			/* now call ur function by passing the above values */
+		}
+
+		function createItem() {
+			getFormData();
+			console.log("in createItem:"+my_form.log_date+" and "+my_form.notes);
+			var params = {
+				TableName :"Infant_Logs",
+				Item:{
+					"year": 2011,
+					"title": "testing",
+					"Date": "something",
+					"Name": "Daniel",
+					"Notes": "none"
+					/*"info":{
+						"plot": "Nothing happens at all.",
+						"rating": 0
+					}*/
+				}
+			};
+
+			console.log("I am params: "+JSON.stringify(params));
+			docClient.put(params, function(err, data) {
+				if (err) {
+					//console.log("Unable to add item: "+"\n"+JSON.stringify(err, undefined,2));
+					document.getElementById('textarea').innerHTML = "Unable to add item: " + "\n" + JSON.stringify(err, undefined, 2);
+				} else {
+					//console.log("PutItem succeeded: "+"\n"+JSON.stringify(data,undefined,2));
+					document.getElementById('textarea').innerHTML = "PutItem succeeded: " + "\n" + JSON.stringify(data, undefined, 2);
+				}
+			});
+			console.log("The end of creation");
+		}
+
+		function listMovies() {
+			var params = {};
+			dynamodb.listTables(params, function(err, data) {
+				if (err){
+					console.log("I totally err");
+					document.getElementById('textarea').innerHTML = "Unable to list tables: " + "\n" + JSON.stringify(err, undefined, 2);
+				}
+				else{
+					console.log("I totally werk "+JSON.stringify(data,undefined,2));
+					document.getElementById('textarea').innerHTML = "List of tables: " + "\n" + JSON.stringify(data, undefined, 2);
+				}
+			});
+		}
+
+	</script>
+
 </head>
 <body>
-<div class="mdl-grid">
-<div class="mdl-cell mdl-cell--middle mdl-cell--4-col"></div>
-<div class="mdl-cell mdl-cell--middle mdl-cell--4-col">
-<b>Dustin's Activity Log</b>
-<br><br>
-<form>
-Date: <input type="date" name="log_date">
-<br><br>
-Notes: <input type="text" name="parent-notes">
-<br><br>
-Feeding
-<table class="mdl-data-table">
-<thead>
-<tr>
-<th>Time</th>
-<th>Description</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tr>
-<th><input type="time"></th>
-<th><input type="text"></th>
-<th><input type="text"></th>
-</tr>
-</table>
-<br><br>
-<button class="mdl-button mdl-button--raised" type="submit">Submit
-</button>
+	<div class="mdl-grid">
+		<div class="mdl-cell mdl-cell--middle mdl-cell--4-col">
+			<b>Dustin's Activity Log</b>
+			<br><br>
+			<form>
+				Date: <input type="date" id="log_date" name="log_date">
+				<br><br>
+				Notes: <input type="text" id="parent_notes" name="parent_notes">
+				<br><br>
+				Feeding
+				<table class="mdl-data-table">
+					<thead>
+						<tr>
+							<th>Time</th>
+							<th>Description</th>
+							<th>Comments</th>
+						</tr>
+					</thead>
+					<tr>
+						<th><input type="time"></th>
+						<th><input type="text"></th>
+						<th><input type="text"></th>
+					</tr>
+				</table>
+				<br><br>
+				<button class="mdl-button mdl-button--raised" type="submit" onclick="createItem();">Submit
+				</button>
 
-</form>
-</div>
-</div>
+			</form>
+		</div>
+	</div>
+	<div>
+		<button class="mdl-button mdl-js-button mdl-button--raised" onclick="listMovies();">LIST</button>
+		<br><br>
+		<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
+	</div>
 </body>
 </html>
