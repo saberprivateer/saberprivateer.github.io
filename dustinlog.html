@@ -5,11 +5,14 @@
 	<title>Dustin's Activity Log</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<!--Google stuff-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 	<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+	<!--AWS stuff-->
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.36.0.min.js"></script>
 	<script type="text/javascript">
 		//Set the Region
@@ -24,7 +27,6 @@
 		var dynamodb = new AWS.DynamoDB();
 		var docClient = new AWS.DynamoDB.DocumentClient(dcOptions);
 		var my_form = {};
-
 		function getFormData(log_date,notes){ 
 			my_form.log_date=document.getElementById('log_date').value;
 			my_form.notes=document.getElementById('parent_notes').value;
@@ -32,7 +34,6 @@
 			/* some other fields */
 			/* now call ur function by passing the above values */
 		}
-
 		function createItem() {
 			getFormData();
 			console.log("in createItem:"+my_form.log_date+" and "+my_form.notes);
@@ -48,7 +49,6 @@
 					}*/
 				}
 			};
-
 			console.log("I am params: "+JSON.stringify(params));
 			docClient.put(params, function(err, data) {
 				if (err) {
@@ -61,7 +61,6 @@
 			});
 			console.log("The end of creation");
 		}
-
 		function listMovies() {
 			var params = {};
 			dynamodb.listTables(params, function(err, data) {
@@ -75,31 +74,130 @@
 				}
 			});
 		}
-
 	</script>
 
 </head>
 <body ng-app="BlankApp" ng-cloak>
-	<div class="mdl-grid">
-		<div class="mdl-cell mdl-cell--middle mdl-cell--4-col">
-			<b>Dustin's Activity Log</b>
-			<md-content ng-controller="AppCtrl as ctrl" layout-padding ng-cloak>
+
+	<!--Date Navigator-->
+	<md-toolbar layout="row" layout-align="space-around center" class="md-hue-2">
+		<!-- <md-icon md-font-icon="keyboard_arrow_left"></md-icon> -->
+		<div>
+			<md-button class="md-icon-button"><md-icon>keyboard_arrow_left</md-icon></md-button>
+		</div>
+		<div>
+			<h4>TODAY</h4>
+		</div>
+		<div>
+			<md-button class="md-icon-button"><md-icon>keyboard_arrow_right</md-icon></md-button>
+		</div>
+	</md-toolbar>
+
+
+	<div layout="column" layout-align="none stretch">
+		<!--Notes for the day-->
+		<div style="margin-left: 10px">
+			<p style="margin-bottom:0px" class="md-caption"><i><b>A note from Mother and Father...</b></i></p>			
+			Lorem ipsum dolor sit amet, leo facilisis. Maecenas velit proin tellus, vel ipsum mollis.
+			<md-divider></md-divider>
+		</div>
+
+		<!--Activity Log-->
+		<div style="margin:5px">
+			<center>What Child did today!</center>
+		</div>
+
+		<md-card>
+			<md-card-content style="padding: 5px" layout="row" layout-alignment="space-between space-between">
+				<div flex="none">
+					<img style="width:30px;height:30px;padding: 5px" class="md-user-avatar" src="bottle.jpg">
+				</div>
+				<div flex="grow" layout = "column">
+					<span class="md-caption"><i>I drank...</i></span>
+					<div layout="row">
+						<span style="margin-right: 10px" class="md-caption">12:30 am</span>
+						<span class="md-caption"> description of the food even longer</span>
+					</div>
+					<div layout="row" layout-align="start">
+						<span flex="nogrow" style="margin-right: 10px" class="md-caption">12:30 am</span>
+						<span flex class="md-caption"> description of the food so long that it spans multiple lines</span>
+					</div>
+				</div>
+				<div style="width:24px" flex="nogrow">
+					<md-card-actions style="position: relative;right:28px;bottom: 10px;">
+						<md-button class="md-icon-button" >
+							<md-icon>mode_edit</md-icon>
+						</md-button>
+					</md-card-actions>
+				</div>
+			</md-card-content>
+		</md-card>
+
+		<md-card>
+			<md-card-content style="padding: 5px" layout="row" layout-alignment="space-between space-between">
+				<div flex="none">
+					<img style="width:30px;height:30px;padding: 5px" class="md-user-avatar" src="bib.png">
+				</div>
+				<div flex="grow" layout = "column">
+					<span class="md-caption"><i>I ate...</i></span>
+					<div layout="row">
+						<span style="margin-right: 10px" class="md-caption">12:30 am</span>
+						<span class="md-caption"> description of the food even longer</span>
+					</div>
+					<div layout="row" layout-align="start">
+						<span flex="nogrow" style="margin-right: 10px" class="md-caption">12:30 am</span>
+						<span flex class="md-caption"> description of the food so long that it spans multiple lines</span>
+					</div>
+				</div>
+				<div style="width:24px" flex="nogrow">
+					<md-card-actions style="position: relative;right:28px;bottom: 10px;">
+						<md-button class="md-icon-button" >
+							<md-icon>mode_edit</md-icon>
+						</md-button>
+					</md-card-actions>
+				</div>
+			</md-card-content>
+		</md-card>
+
+		<md-divider></md-divider>
+		<md-input-container class="md-block">
+			<label>Notes:</label>
+			<textarea rows="2"></textarea>
+		</md-input-container>
+
+	</div>
+	<footer layout="row" layout-align="space-around">
+	<md-button style="height: 80px;width: 80px" class="md-icon-button">
+			<md-icon style="font-size: 48px;height: auto;width: auto;">error_outline</md-icon>
+		</md-button>
+		<md-button style="height: 80px;width: 80px" class="md-icon-button">
+			<md-icon style="font-size: 48px;height: auto;width: auto;">timeline</md-icon>
+		</md-button>
+		<md-button style="height: 80px;width: 80px" class="md-icon-button">
+			<md-icon style="font-size: 48px;height: auto;width: auto;">settings</md-icon>
+		</md-button>
+	</footer>
+
+
+
+
+<!-- 			<md-content ng-controller="AppCtrl as ctrl" layout-padding ng-cloak>
 				<div layout-gt-xs="row">
 					<div flex-gt-xs>
-						<!--<h8>Date</h8>-->
+						<h8>Date</h8>
 						<md-datepicker ng-model="ctrl.myDate" md-placeholder="Enter date"></md-datepicker>
 					</div>
 				</div>
 			</md-content>
 			<form>
-				
+
 				Date: <input type="date" id="log_date" name="log_date">
 				<br><br>
 				Notes: <input type="text" id="parent_notes" name="parent_notes">
-				        <md-input-container class="md-block">
-          <label>Notes</label>
-          <textarea ng-model="notes" md-maxlength="150" rows="3" md-select-on-focus></textarea>
-        </md-input-container>
+				<md-input-container class="md-block">
+					<label>Notes</label>
+					<textarea ng-model="notes" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+				</md-input-container>
 				Feeding
 				<table class="mdl-data-table">
 					<thead>
@@ -126,7 +224,7 @@
 		<button class="mdl-button mdl-js-button mdl-button--raised" onclick="listMovies();">LIST</button>
 		<br><br>
 		<textarea readonly id= "textarea" style="width:400px; height:800px"></textarea>
-	</div>
+	</div>-->
 
 
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -148,7 +246,7 @@
      	this.myDate = new Date();
      	this.isOpen = false;
      });
- 	</script>
+ </script>
 
 </body>
 </html>
