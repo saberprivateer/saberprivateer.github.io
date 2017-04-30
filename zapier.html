@@ -1,157 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Zapier - Zapbook Designs</title>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="author" content="Zapier" />
-    <meta name="keywords" content="zapier, web apps, automation, syncing, integrations" />
+  <meta charset="UTF-8">
+  <title>Zapier - Zapbook Designs</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="author" content="Zapier" />
+  <meta name="keywords" content="zapier, web apps, automation, syncing, integrations" />
 
 
-    <meta name="robots" content="all" />
+  <meta name="robots" content="all" />
 
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta http-equiv="X-UA-Compatible" content="chrome=IE8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var s=f[m[n]];return s&&s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&&d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-963.min.js"},w=d&&v&&v[p]&&!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"c342879a4c","agent":"","transactionName":"M1ZRYEQCXktZUkNdCgocdUFYAERRV18YRwsFQ1FbWQgeTlFUQEdfFlZQXUYGb1xRQ2hbCwFsQFFEFVlbXQ==","applicationID":"17152027","errorBeacon":"bam.nr-data.net","applicationTime":4219}</script>
-    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
-    <meta name="google-site-verification" content="Mplw0unXm1SQzihRuuBFgiBxjBXgfRw64bSZCfEUhlw" />
-    <meta name="pocket-site-verification" content="e3616a9b06fea1f1ec3cc8180f2a68" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <title>Google Calendar Integrations - Zapbook - Zapier</title>
-    <meta name="description" content="Google Calendar lets you organize your schedule and share events with co-workers and friends. With Google&#39;s free online calendar, it&#39;s easy to keep track of your daily schedule."></meta>
-
-    <link rel="mask-icon" href="https://zapier.cachefly.net/static/Cvbyoe/images/logo_zapier_black.svg" color="#FF4A00" />
-
-    <link rel="icon" href="https://zapier.cachefly.net/static/Cvbyoe/images/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="https://zapier.cachefly.net/static/Cvbyoe/images/favicon.ico" type="image/x-icon" />
-
-    <script type="text/javascript">
-  (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script");r.type="text/javascript";
-  r.async=true;r.src="https://d24n15hnbwhuhn.cloudfront.net/libs/amplitude-3.0.1-min.gz.js";
-  r.onload=function(){e.amplitude.runQueuedFunctions()};var i=t.getElementsByTagName("script")[0];
-  i.parentNode.insertBefore(r,i);function s(e,t){e.prototype[t]=function(){this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  return this}}var o=function(){this._q=[];return this};var a=["add","append","clearAll","prepend","set","setOnce","unset"];
-  for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[];return this;
-  };var p=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"];
-  for(var l=0;l<p.length;l++){s(c,p[l])}n.Revenue=c;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId"];
-  function v(e){function t(t){e[t]=function(){e._q.push([t].concat(Array.prototype.slice.call(arguments,0)));
-  }}for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){e=(!e||e.length===0?"$default_instance":e).toLowerCase();
-  if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]};e.amplitude=n;
-  })(window,document);
-
-  amplitude.getInstance().init("721d32ae43efb1f9d3e3c5da7374e162");
-</script>
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-68149561-1', 'auto');
-  ga('send', 'pageview');
-  ga('send', 'zapier');
-
-</script>
-
-
-    <script type="text/javascript">
-    var DEBUG = false;
-
-    var preload = {};
-    var BASE_CONFIG = BASE_CONFIG || {};
-
-    BASE_CONFIG.path = '/zapbook/google-calendar/';
-    BASE_CONFIG.mediaUrl = 'https://zapier.cachefly.net/static/Cvbyoe/';
-    BASE_CONFIG.stripePubApiKey = 'pk_phnG9Y3BlUIYXVpH1gkMOJ25RGbsI';
-
-    BASE_CONFIG.titleAppend = ' - Zapier';
-
-    BASE_CONFIG.partnerEnvironment = null;
-    BASE_CONFIG.personas = ["Contractor", "Customer Support", "Designer", "Developer", "Education", "Freelancer", "Government", "Human Resource", "Information Technology", "Journalist", "Lawyer", "Marketer", "Non-Profit", "Real Estate", "Sales", "Small Business Owner", "Other"];
-
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript">
-  window.tests = window.tests || {};
-
-  window.tests.aatest = true;
-  window.tests.promptUpgradeEditor = true;
-</script>
-
-
-
-    <link href="https://zapier.cachefly.net/static/Cvbyoe/build/app.css" rel="stylesheet" type="text/css" />
-    <link href="https://zapier.cachefly.net/static/Cvbyoe/build/view.css" rel="stylesheet" type="text/css" />
-
-    <link href="https://zapier.cachefly.net/static/Cvbyoe/build/app-bundle.css" rel="stylesheet" type="text/css" />
-
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.cyan-indigo.min.css" />
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <style>
+    section.section--center {
+      max-width: 860px;
+    }
+    .mdl-card__actions {
+      background-color: lightgreen;
+    }
+  </style>
 
 
 </head>
 <body>
-<div class="topbar hide">
-    <div class="message"></div>
+
+  <main class="mdl-layout__content">
+
+<table>
+<tr>
+<td style="width: 500px">
+   <div style="padding-left: 40px;padding-right: 40px">
+   <br>
+   <p>This page lists a discussion of 3 alternative designs for <a href="https://zapier.com/zapbook/google-calendar/" target="_blank">these pages</a>.  I decided to build them using the current CSS/layout to make them feel familiar and to minimize rework using a dedicated design/wireframe tool. For all of these designs, I would want to track the overall conversion on the page and engagement with the specific features.  While each individual section might improve the overall performance could also drop.</p>
+
+    <p>Like what you see? The click the link!<br> <a href="mailto:daniel.kamerling@gmail.com?Subject=Interview Next Steps with Zapier">We're considering hiring Daniel Kamerling!</a></p>
+
+
 </div>
-
-<div id="header">
-    <div class="container">
-
-        <div class="logo logged-out">
-            <a href="/"></a>
-        </div>
-
-
-     <span class="hiring">
-       <a href="mailto:daniel.kamerling@gmail.com?Subject=Interview Next Steps with Zapier">we're considering hiring Daniel Kamerling!</a>
-     </span>
-
-
-
-
-        <div class="links-container">
-            <ul class="links logged-out">
-                <li><a href="numba1.html" target="_blank" onclick="amplitude.logEvent('Design1');">Design 1</a></li>
-                <li><a href="numba2.html" target="_blank" onclick="amplitude.logEvent('Design2');">Design 2</a></li>
-                <li><a href="numba3.html" target="_blank" onclick="amplitude.logEvent('Design3');">Design 3</a></li>
-                <!--<li><a href="/app/login">Log In</a></li>-->
-                <!--<li><a href="/sign-up/" class="signup button">Sign Up</a></li>-->
-            </ul>
-        </div>
-
-
-
+</td>
+<td>
+<br>
+   <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-card__supporting-text">
+        <h4>Design 1 - Social Confidence</h4>
+        By the time a user has reached a page for an app in the Zapbook they have probably already been exposed to the "500+ apps" marketing.  The frame of mind at this point is to narrow the scope to find a particular zap.  With >100 options to scroll through this can be overwhelming! Plus, there is no indication currently why these are "recommended zaps".  By showing that other users have used these same zaps will provide the user with confidence to either try one out or continue exploring.<br> <br> <b>Hypothesis:</b> Currently, the right button for "1-5 (of 100)" isn't clicked all that often resulting in low click-through for recommended zaps.  With this design, seeing that zaps have been used by others will provide confidence and result in more click-through. <br><br><b>Metrics:</b> % click and conversion via recommended apps.
+      </div>
+      <div class="mdl-card__actions">
+        <a target="_blank" onclick="amplitude.logEvent('Social Confidence');" href="numba1.html" class="mdl-button"><b>View the Prototype</b></a>
+      </div>
     </div>
-</div>
-<div id="static-content"></div>
+  </section>
+  <br>
+  </td>
+<tr>
+<td></td>
+<td>
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp">
+   <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text">
+      <h4>Design 2 - Take Action!</h4>
+      <p>When showing the page to a friend they remarked, "I didn't even know you could scroll down." This design attempts to make the most of the users attention the moment they reach the page to get them invested through action.  My attempt with the design is to proactively prompt thinking in the user as to how they might combine a specific app. It would also eliminate much of the various other sections to focus on building a zap.  The more the user interacts with the site (without hitting a wall of frustration) the more likely they are to understand the value and sign-up.
+        <br><br>
+        <b>Hypothesis:</b> Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By creating obvious interactive elements the user is more likely to find a matched app and follow through with zap creation.
+        <br><br>
+        <b>Metrics:</b> % selection of an app and conversion through "continue".</p>
+      </div>
+      <div class="mdl-card__actions">
+        <a target="_blank" onclick="amplitude.logEvent('Take Action');" href="numba2.html" class="mdl-button"><b>View the Prototype</b></a>
+      </div>
+    </div>  
+  </section>
 
-    <div class="zapbook-container" align="center">
-        <div class="container">
-            <p>Listed below is a discussion of 3 alternative designs for <a href="https://zapier.com/zapbook/google-calendar/" target="_blank">these pages</a>.  I decided to build them using the current CSS/layout to make them feel familiar and to minimize rework using a dedicated design/wireframe tool. For all of these designs, I would want to track the overall conversion of the page.  While each individual section might improve from the changes the overall performance could also drop.</p>
-
-                <a target="_blank" onclick="amplitude.logEvent('Social Confidence');" href="numba1.html"><h3 class="subtitle">Design 1 - Social Confidence</h3></a>
-                <p class="description">By the time a user has reached a page for an app in the Zapbook they have probably already been exposed to the "500+ apps" marketing.  The frame of mind at this point is to narrow the scope to find a particular zap.  With >100 options to scroll through this can be overwhelming! Plus, there is no indication currently why these are "recommended zaps".  By showing that other users have used these same zaps will provide the user with confidence to either try one out or continue exploring.<br> <br> Hypothesis: Currently, the right button for "1-5 (of 100)" isn't clicked all that often resulting in low click-through for recommended zaps.  With this design, seeing that zaps have been used by others will provide confidence and result in more click-through. <br><br>Metrics: % click and conversion via recommended apps</p>
-
-            <a target="_blank" href="numba2.html" onclick="amplitude.logEvent('Take Action');"><h3 class="subtitle">Design 2 - Take Action!</h3></a>
-            <p class="description">When showing the page to a friend they remarked, "I didn't even know you could scroll down." This design attempts to make the most of the users attention the moment they reach the page to get them invested through action.  My attempt with the design is to proactively prompt thinking in the user as to how they might combine a specific app. It would also eliminate much of the various other sections to focus on building a zap.  The more the user interacts with the site (without hitting a wall of frustration) the more likely they are to understand the value and sign-up.<br> <br> Hypothesis: Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By creating obvious interactive elements the user is more likely to find a matched app and follow through with zap creation.<br><br>Metrics: % selection of an app and conversion through "continue".</p>
-
-
-            <a target="_blank" href="numba3.html" onclick="amplitude.logEvent('Human Touch');"><h3 class="subtitle">Design 3 - Human Touch</h3></a>
-            <p class="description">Users may not yet have the confidence that "even I can create a zap."  A reference will help to build that confidence and also validate the value of a zap.  The particular reference can be rotated (using existing segmentation I found in the page source of lawyer, journalist, etc) based on the user to build as close a connection as possible.<br> <br> Hypothesis: Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By showing a compelling reference the equation is completed and the user feels confident to sign-up.<br><br>Metrics: % clicking "sign-up" right away!</p>
-
+  <br>
+  <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--6dp">
+    <div class="mdl-card mdl-cell mdl-cell--12-col">
+      <div class="mdl-card__supporting-text">
+        <h4>Design 3 - Human Touch</h4>
+        <p class="description">Users may not yet have the confidence that "even I can create a zap."  A reference will help to build that confidence and also validate the value of a zap.  The particular reference can be rotated (using existing segmentation I found in the page source of lawyer, journalist, etc) based on the user to build as close a connection as possible.
+          <br><br>
+          <b>Hypothesis:</b> Currently, users mostly abandon the page or scroll down without clicking the first CTA.  By showing a compelling reference the equation is completed and the user feels confident to sign-up.
+          <br><br>
+          <b>Metrics:</b> % clicking "sign-up" right away!</p>
         </div>
-    </div>
+        <div class="mdl-card__actions">
+          <a target="_blank" onclick="amplitude.logEvent('Human Touch');" href="numba3.html" class="mdl-button"><b>View the Prototype</b></a>
+        </div>
+      </div>
+    </section>
+    <br><br><br><br>
+    </td>
+    </tr>
+    </table>
+  </main>
 
 </body>
 </html>
