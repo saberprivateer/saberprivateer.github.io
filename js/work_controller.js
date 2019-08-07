@@ -3,12 +3,23 @@ var workhistApp = angular.module('workhistApp', []);
 workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
         {
+            'website': 'stadia.dev',
+            'logo': 'img/jobs/stadia_logo.jpeg',
+            'title': 'Product Manager - Stadia',
+            'description': 'Responsible for building an amazing developer experience for making games on Stadia.',
+            'year_start': 2018,
+            'year_end': 'Present',
+            'company': 'Google',
+            'experience': [{'item': 'Lead the announcement of Stadia at GDC 2019'},{'item': 'Responsible for gamer services and technical certification.'},{'item': 'Part of the launch team.'}
+                ]
+        },
+        {
             'website': 'beachbody.com',
             'logo': 'img/jobs/beachbody.png',
             'title': 'Senior Manager - Product Management',
             'description': 'Responsible for ecommerce, conversion optimization through testing, and introducing modern design approaches.',
             'year_start': 2016,
-            'year_end': 'Present',
+            'year_end': 2018,
             'company': 'Beachbody',
             'experience': [{'item': 'Increased conversion by >2% through optimization'},{'item': 'Redesigned the checkout flow to improve user experience and conversion'},{'item': 'Modernized foundational technology to increase speed of development by 200%'}
                 ]
