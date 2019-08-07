@@ -4,7 +4,7 @@ workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
         {
             'website': 'stadia.dev',
-            'logo': 'img/jobs/stadia_logo.jpeg',
+            'logo': 'img/jobs/stadia_logo.png',
             'title': 'Product Manager - Stadia',
             'description': 'Responsible for building an amazing developer experience for making games on Stadia.',
             'year_start': 2018,
