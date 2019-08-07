@@ -55,7 +55,7 @@ eduhistApp.controller('EduHistCtrl', function ($scope) {
      'title': 'Coursera',
      'major':'Gamification, Business of Sports, Algorithms',
      'description':'',
-     'year_start': 2014,
+     'year_start': 2013,
      'year_end': 2015,
      'company':'Coursera',
      'display_order':4,
