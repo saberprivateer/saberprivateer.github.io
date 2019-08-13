@@ -7,6 +7,41 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/50a5ba6d4c.js"></script>
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
+<style>
+body {    
+font-family: 'Lexend Deca', sans-serif;
+    
+    }
+    
+    .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+    
+    
+      /* The hero image */
+.hero-image {
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://christandpopculture.com/wp-content/uploads/2018/03/maxresdefault1-e1521194328553.jpg");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+      </style>
+    
     </head>
   <body>
       <header>
@@ -20,26 +55,95 @@
        </form>
 </nav>
       </header>
-      <section>
-      <h1 class="text-center pb-3 pt-3">Summon a Dungeon Master</h1>
-      <h2 class="text-center pb-3">Begin your quest!</h2>
       
-      <div class="row">
-          <div class="col-md-6 offset-md-3">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for a Dungeon Master" aria-label="Search for a Dungeon Master">
-      <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span class="fas fa-search"></span></button>
-      </div>
+      <section class="hero-image" style="color:white;height:600px;">
+          <div class="h-25"></div>
+          <h1 class="text-center pb-3 pt-3 display-4">Summon a Dungeon Master</h1>
+      <h2 class="text-center pb-3 display-4">Begin your quest!</h2>
+      
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter a city to search for a Dungeon Master" aria-label="Search for a Dungeon Master">
+                        <div class="input-group-append" style="background-color:white;">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><span class="fas fa-search"></span></button>
+                        </div>
+                        </div>
+                    </div>
+          </div>
+      </div>        
+      </section>
+      
+      <section style="height:200px">
+          <div class="h-50"></div>
+          <p class="text-center h3 pb-3">Want to be a hero?
+          Just show up.</p>
+      </section>
+      
+      <section>
+          <div class="container pt-3">
+              <div class="row">
+                  <div class="col">
+          
+          <div class="card" style="width: 18rem;">
+  <img style="height:199px;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/hire_te5y.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Find a DM</h5>
+    <p class="card-text">Search 100s of DMs in 100s of cities to find the one that's right for you.</p>
+  </div>
+</div>
+                      
+                  </div>
+                  <div class="col">
+                      
+                       <div class="card" style="width: 18rem;">
+  <img style="height:199px;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/booking_33fn.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Book a time to play</h5>
+    <p class="card-text">Sessions are typically 3-4 hours long.  Allow time for setup and snacks.</p>
+  </div>
+</div>
+                      
+                  </div>
+                  <div class="col">
+
+                       <div class="card" style="width: 18rem;height:100%;">
+  <img style="height:199px;" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/having_fun_iais.svg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Have fun!</h5>
+    <p class="card-text">Explore your creative side and save the land!</p>
+  </div>
+</div>
+                      
+                  </div>
+                  
               </div>
           </div>
-
-              </div>
+          
       </section>
+      
+      <section style="height:200px;">
+      </section>
+      
   <footer>
+      <section class="border-bottom border-top" style="height:100px">
+          <div class="container">
+              <div class="row">
+                  <div class="col-1">
+                      About
+                  </div>
+                  <div class="col-1">
+                      Contact
+                  </div>
+              </div>
+          </div>
+     </section>
+      
+      <img style="width:100%;height:250px;" src="https://i.pinimg.com/originals/56/15/fa/5615fa15660794529de2eed8c67be58b.jpg">
   </footer>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
-  </html>
+  </body>
+      </html>
