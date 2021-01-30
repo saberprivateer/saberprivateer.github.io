@@ -3,12 +3,23 @@ var workhistApp = angular.module('workhistApp', []);
 workhistApp.controller('WorkHistCtrl', function ($scope, $modal, $log) {
     $scope.jobs = [
         {
+            'website': 'developer.oculus.com',
+            'logo': 'img/jobs/oculus.png',
+            'title': 'Product Manager - Oculus',
+            'description': 'Responsible for building an amazing developer experience for making apps on Oculus Quest.',
+            'year_start': 2020,
+            'year_end': 'Present',
+            'company': 'Facebook',
+            'experience': [{'item': 'Built publisher insights for growing and engaging with customers'},{'item': 'Launched comms platform for informing devs on a rapidly changing space.'},{'item': 'Modernized the website to be journey based.'}
+                ]
+        },
+        {
             'website': 'stadia.dev',
             'logo': 'img/jobs/stadia_logo.png',
             'title': 'Product Manager - Stadia',
             'description': 'Responsible for building an amazing developer experience for making games on Stadia.',
             'year_start': 2018,
-            'year_end': 'Present',
+            'year_end': '2020',
             'company': 'Google',
             'experience': [{'item': 'Lead the announcement of Stadia at GDC 2019'},{'item': 'Responsible for gamer services and technical certification.'},{'item': 'Part of the launch team.'}
                 ]
