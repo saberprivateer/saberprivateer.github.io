@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Minecraft with Your Kids</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #56ccf2, #2f80ed);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        header, footer {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .img-fluid {
+            animation: rotateImages 10s infinite;
+        }
+
+        @keyframes rotateImages {
+            0% { content: url('https://via.placeholder.com/600x400?text=Image1'); }
+            33% { content: url('https://via.placeholder.com/600x400?text=Image2'); }
+            66% { content: url('https://via.placeholder.com/600x400?text=Image3'); }
+            100% { content: url('https://via.placeholder.com/600x400?text=Image1'); }
+        }
+
+        h1 {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        h3 {
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .card-body {
+            background-color: #0056b3;
+            color: #fff;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <header class="text-center mb-4">
+            <h1>Learn Minecraft with Your Kids</h1>
+            <p class="lead">Bridge the gap and build stronger bonds through Minecraft!</p>
+        </header>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/600x400?text=Image1" class="img-fluid rounded" alt="Minecraft splash image">
+            </div>
+            <div class="col-md-6">
+                <h3>Class Details</h3>
+                <ul class="list-unstyled">
+                    <li><strong>Time:</strong> Saturdays, 10:00 AM - 12:00 PM</li>
+                    <li><strong>Location:</strong> Community Center, Main Street</li>
+                    <li><strong>Price:</strong> $25 per session</li>
+                </ul>
+                <p>To reserve your spot, reach out via email or check out the FAQ section below for more details.</p>
+            </div>
+        </div>
+
+        <section class="mt-5">
+            <h3>Upcoming Classes</h3>
+            <ul>
+                <li>Pokemon TCG (Date: TBD)</li>
+                <li>Lego Fortnite (Date: TBD)</li>
+                <li>Magic the Gathering (Date: TBD)</li>
+            </ul>
+        </section>
+
+        <section class="mt-5">
+            <h3>About Me</h3>
+            <p>I'm a geeky dad with two wonderful kids, living right here in the community. I love gaming, building, and finding new ways to connect with my children through creative and fun activities.</p>
+        </section>
+
+        <section class="mt-5">
+            <h3>FAQ</h3>
+            <div class="accordion" id="faqAccordion">
+                <div class="card">
+                    <div class="card-header" id="faq1">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                What do I need to bring?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse1" class="collapse show" aria-labelledby="faq1" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Just bring a laptop or tablet with Minecraft installed, and a willingness to learn!
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="faq2">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Is this class for beginners?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse2" class="collapse" aria-labelledby="faq2" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Yes! This class is designed for parents with little to no knowledge of Minecraft.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="faq3">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Can I bring my child to the class?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapse3" class="collapse" aria-labelledby="faq3" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Absolutely! This class is designed to be an interactive experience for parents and children.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-5 text-center">
+            <p>For inquiries or to sign up, email me at <a href="mailto:myemail@email.com">myemail@email.com</a></p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
