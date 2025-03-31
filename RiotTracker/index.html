@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riot Games Spawn Tracker</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Riot Games Spawn Tracker</h1>
+    <div class="subtitle">Tracking the Future of Gaming</div>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="summary">
+      <p>Welcome to Riot Games Spawn Tracker - your n00b destination for monitoring venture capital investments in the gaming industry based on the parent company. We track funding rounds, founding teams, and game development progress for the most innovative studios backed by investors worldwide. This tracker has a special focus on companies founded by former Riot Games employees who have secured significant venture funding.</p>
+    </div>
+    
+    <div class="filters">
+      <div class="filter-group">
+        <select class="filter-select" id="filterSelect">
+          <option value="all">All Companies</option>
+          <option value="active">Active</option>
+          <option value="acquired">Acquired</option>
+          <option value="inactive">Inactive</option>
+        </select>
+        <select class="filter-select" id="typeSelect">
+          <option value="all">All Types</option>
+          <option value="games">Games</option>
+          <option value="content">Content</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="sort-group">
+        <select class="sort-select" id="sortSelect">
+          <option value="name">Sort by Name</option>
+          <option value="funding">Sort by Funding</option>
+          <option value="year">Sort by Year</option>
+        </select>
+        <button class="sort-direction-btn" id="sortDirection">
+          <i class="fas fa-sort-amount-down"></i>
+        </button>
+      </div>
+    </div>
+    
+    <div class="company-grid">
+      <!-- Phoenix Labs -->
+      <div class="company-card" data-status="acquired" data-type="games">
+        <div class="card-header">
+          <img src="images/Phoenix_Labs_Logo.png" alt="Phoenix Labs Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Phoenix Labs</h2>
+            <div class="funding">150M (Acquired) • 2014</div>
+            <div class="status status-acquired">Acquired</div>
+            <div class="status status-inactive">Shutting Down</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/jessehouston/" target="_blank" class="founder-link">Jesse Houston</a>
+              <a href="https://www.linkedin.com/in/seanbender/" target="_blank" class="founder-link">Sean Bender</a>
+              <a href="https://www.linkedin.com/in/robinmayne/" target="_blank" class="founder-link">Robin Mayne</a>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Dauntless, Fae Farm</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/dauntless.jpg" alt="Dauntless screenshot" class="active">
+            <img src="images/fae-farm.jpg" alt="Fae Farm screenshot">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Founded in 2014 by former Riot Games employees, Phoenix Labs developed Dauntless as their first game, which became a successful free-to-play action RPG. The studio was acquired by Garena in 2020 for $150M, but faced challenges maintaining momentum. In 2024, they announced the closure of their Vancouver studio and the end of development for Dauntless, marking a significant transition in their journey.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://phxlabs.ca/" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Singularity 6 -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/singularity-6-logo.png" alt="Singularity 6 Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Singularity 6</h2>
+            <div class="funding">68M+ • 2018</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/anthonyleung/" target="_blank" class="founder-link">Anthony Leung</a>
+              <a href="https://www.linkedin.com/in/aidankarabaich/" target="_blank" class="founder-link">Aidan Karabaich</a>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Palia</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/palia-screenshot.txt" alt="Palia screenshot" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Founded in 2018 by former Riot Games employees, Singularity 6 is developing Palia, a cozy MMO that combines social simulation with farming mechanics. The studio raised $68M+ in funding, with notable investors including FunPlus, Andreessen Horowitz, and LVP. Their unique approach to MMO design focuses on community and player interaction rather than traditional combat mechanics.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://singularity6.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Theorycraft Games -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/theorycraft-logo.jpg" alt="Theorycraft Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Theorycraft Games</h2>
+            <div class="funding">87.5M • 2020</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/joetung/" target="_blank" class="founder-link">Joe Tung</a>
+              <a href="https://www.linkedin.com/in/miketipul/" target="_blank" class="founder-link">Mike Tipul</a>
+              <a href="https://www.linkedin.com/in/michaelevans/" target="_blank" class="founder-link">Michael Evans</a>
+              <a href="https://www.linkedin.com/in/areebpirani/" target="_blank" class="founder-link">Areeb Pirani</a>
+              <a href="https://www.linkedin.com/in/mobyfrancke/" target="_blank" class="founder-link">Moby Francke</a>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Supervive</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/project-loki-teaser.txt" alt="Project Loki teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Founded by a team of industry veterans including former Riot Games executives, Theorycraft Games raised $87.5M in funding to develop Project Loki, a competitive team-based game. The studio combines expertise from Riot, Blizzard, and Bungie, with a focus on creating innovative competitive experiences. Their funding round was led by NetEase Games.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://theorycraftgames.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Lightforge Games -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/lightforge-logo.png" alt="Lightforge Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Lightforge Games</h2>
+            <div class="funding">20M • 2021</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/mattschembari/" target="_blank" class="founder-link">Matt Schembari</a>
+              <a href="https://www.linkedin.com/in/danhertzka/" target="_blank" class="founder-link">Dan Hertzka</a>
+              <a href="https://www.linkedin.com/in/nathanfairbanks/" target="_blank" class="founder-link">Nathan Fairbanks</a>
+              <a href="https://www.linkedin.com/in/glennrane/" target="_blank" class="founder-link">Glenn Rane</a>
+              <a href="https://www.linkedin.com/in/marchutcheson/" target="_blank" class="founder-link">Marc Hutcheson</a>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Unannounced RPG (Project ORCS)</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/project-orcs-teaser.txt" alt="Project ORCS teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Lightforge Games, founded by former Riot Games employees, raised $20M to develop Project ORCS, an innovative RPG. The studio is known for its focus on narrative-driven experiences and unique gameplay mechanics. Their team brings together talent from Riot, Blizzard, and Epic Games, with a vision to create the next generation of role-playing experiences.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://lightforge.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Gardens -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/gardens-logo.png" alt="Gardens Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Gardens</h2>
+            <div class="funding">31.3M • 2021</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/chrisbell/" target="_blank" class="founder-link">Chris Bell</a>
+              <a href="https://www.linkedin.com/in/lexiedostal/" target="_blank" class="founder-link">Lexie Dostal</a>
+              <a href="https://www.linkedin.com/in/stephenbell/" target="_blank" class="founder-link">Stephen Bell</a>
+              <span class="founder-note">(Chris Bell worked at Riot)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Unannounced online fantasy adventure game</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/gardens-teaser.txt" alt="Gardens game teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Gardens, founded by Chris Bell (former Riot Games employee) and his team, raised $31.3M to develop an online fantasy adventure game. The studio aims to create a unique social gaming experience that combines traditional MMO elements with innovative social features. Their funding round was led by Andreessen Horowitz, with participation from other notable gaming investors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://gardens.gg" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- The Believer Company -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/believer-logo.png" alt="The Believer Company Logo" class="company-logo">
+          <div class="company-name">
+            <h2>The Believer Company</h2>
+            <div class="funding">55M • 2022</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/michaelchow/" target="_blank" class="founder-link">Michael Chow</a>
+              <span class="founder-note">(Former VP)</span>
+              <a href="https://www.linkedin.com/in/stevensnow/" target="_blank" class="founder-link">Steven Snow</a>
+              <span class="founder-note">(Former EP)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Unannounced next-generation open-world game</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/believer-teaser.txt" alt="Believer game teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>The Believer Company, founded by former Riot Games VP Michael Chow and EP Steven Snow, raised $55M to develop a next-generation open-world game. The studio combines expertise from Riot, Rockstar, and other major gaming companies. Their vision focuses on creating immersive worlds with innovative gameplay mechanics and compelling narratives.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://believercompany.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Vela Games -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/vela-logo.png" alt="Vela Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Vela Games</h2>
+            <div class="funding">20.4M • 2019</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/travisgeorge/" target="_blank" class="founder-link">Travis George</a>
+              <span class="founder-note">(Former Lead Producer)</span>
+              <a href="https://www.linkedin.com/in/briankaiser/" target="_blank" class="founder-link">Brian Kaiser</a>
+              <a href="https://www.linkedin.com/in/lisanewongeorge/" target="_blank" class="founder-link">Lisa Newon George</a>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Evercore Heroes (Competitive PVE game)</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/evercore-screenshot.txt" alt="Evercore Heroes screenshot" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Vela Games, founded by former Riot Games Lead Producer Travis George and his team, raised $20.4M to develop Evercore Heroes, a competitive PVE game. The studio aims to innovate in the competitive gaming space by focusing on cooperative gameplay and strategic depth. Their unique approach combines elements from MOBAs and competitive PVE experiences.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://velagames.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Molten Games (Historical Example) -->
+      <div class="company-card" data-status="inactive" data-type="games">
+        <div class="card-header">
+          <img src="images/molten-logo.png" alt="Molten Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Molten Games</h2>
+            <div class="funding">8M+ • 2015</div>
+            <div class="status status-inactive">Inactive</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/jungwonhahn/" target="_blank" class="founder-link">Jungwon Hahn</a>
+              <span class="founder-note">(Former CEO of Riot Games Korea)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Blunderbuss (Previously Project Titan - Unreleased)</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/blunderbuss-concept.txt" alt="Blunderbuss concept" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Molten Games, founded by former Riot Games Korea CEO Jungwon Hahn, raised $8M+ to develop Blunderbuss (previously known as Project Titan). The studio faced challenges in development and eventually became inactive. This serves as a historical example of the challenges faced by gaming startups, even with experienced leadership from major companies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="website-link" style="background-color: #777;">Historical Info <i class="fas fa-info-circle"></i></a>
+        </div>
+      </div>
+      
+      <!-- Elodie Games -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/elodie-logo.png" alt="Elodie Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Elodie Games</h2>
+            <div class="funding">32.5M • 2021</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/christinanorman/" target="_blank" class="founder-link">Christina Norman</a>
+              <span class="founder-note">(Former Riot Games)</span>
+              <a href="https://www.linkedin.com/in/davidbanks/" target="_blank" class="founder-link">David Banks</a>
+              <span class="founder-note">(Former Riot Games)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Unannounced social co-op game</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/elodie-teaser.txt" alt="Elodie Games teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Elodie Games, founded by former Riot Games employees Christina Norman and David Banks, raised $32.5M to develop a social co-op game. The studio aims to remove barriers in social multiplayer gaming by focusing on cross-platform play and reducing friction in playing with friends. Their funding round was led by Galaxy Interactive and Andreessen Horowitz, with participation from Patron and Electric Ant. The team has grown to 30 members and is focused on creating endlessly engaging experiences.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://elodiegames.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Treehouse Games -->
+      <div class="company-card" data-status="active" data-type="games">
+        <div class="card-header">
+          <img src="images/treehouse-logo.png" alt="Treehouse Games Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Treehouse Games</h2>
+            <div class="funding">2.6M • 2020</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/michaelchu/" target="_blank" class="founder-link">Michael Chu</a>
+              <span class="founder-note">(Former Riot Games)</span>
+              <a href="https://www.linkedin.com/in/ryansullivan/" target="_blank" class="founder-link">Ryan Sullivan</a>
+              <span class="founder-note">(Former Sirvo Studios)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">Unannounced cooperative game</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/treehouse-teaser.txt" alt="Treehouse Games teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Treehouse Games, founded by Michael Chu (former Riot Games employee) and Ryan Sullivan (co-founder of Sirvo Studios), raised $2.6M in seed funding to develop cooperative games. The studio aims to create games that "evoke the camaraderie of a road trip, allow generosity among friends, and celebrate lasting accomplishments." Their funding round was led by London Venture Partners. The team combines talent from both AAA companies and startups, focusing on creating social gaming experiences that go beyond traditional competitive gameplay.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://treehousegames.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Venn -->
+      <div class="company-card" data-status="inactive" data-type="content">
+        <div class="card-header">
+          <img src="images/venn-logo.png" alt="Venn Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Venn</h2>
+            <div class="funding">26M • 2020</div>
+            <div class="status status-inactive">Inactive</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/benkusin/" target="_blank" class="founder-link">Ben Kusin</a>
+              <span class="founder-note">(Former Riot Games)</span>
+              <a href="https://www.linkedin.com/in/arielhorn/" target="_blank" class="founder-link">Ariel Horn</a>
+              <span class="founder-note">(Co-founder)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Content</div>
+            <div class="games-names">Gaming-focused streaming network</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/venn-teaser.txt" alt="Venn streaming network" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Venn, founded by former Riot Games employee Ben Kusin, raised $26M to create a gaming-focused streaming network. The company aimed to be gaming's answer to MTV, offering video game-themed entertainment and streaming celebrity features. Their funding round was led by Bitkraft and Nexstar Media Group, with plans to distribute content across broadcast television in major American cities. The network was available on various streaming services including Roku Channel, Plex, Xumo, Samsung TV Plus, and Vizio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="#" class="website-link" style="background-color: #777;">Historical Info <i class="fas fa-info-circle"></i></a>
+        </div>
+      </div>
+      
+      <!-- Pragma -->
+      <div class="company-card" data-status="active" data-type="other">
+        <div class="card-header">
+          <img src="images/pragma-logo.png" alt="Pragma Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Pragma</h2>
+            <div class="funding">50M+ • 2020</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/edenchen/" target="_blank" class="founder-link">Eden Chen</a>
+              <span class="founder-note">(Former Fishermen Labs)</span>
+              <a href="https://www.linkedin.com/in/chriscobb/" target="_blank" class="founder-link">Chris Cobb</a>
+              <span class="founder-note">(Former Riot Games)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Other</div>
+            <div class="games-names">Pragma Engine - Backend Game Platform</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/pragma-engine.txt" alt="Pragma Engine platform" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Pragma, founded in 2020 by Eden Chen (Fishermen Labs) and Chris Cobb (former Riot Games backend tech lead), has raised over $50M to develop Pragma Engine, a comprehensive backend platform for live-service games. The platform provides essential services including matchmaking, analytics, monetization, player data, and more. Their technology is being used by studios like Gardens Interactive, People Can Fly, Frost Giant Studios, and Square Enix External Studios. The company has over 50 employees and recently acquired FirstLook, a player engagement platform. Their funding rounds include investments from Square Enix, Upfront Ventures, Greylock Partners, and Insight Partners.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://pragma.gg" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+      
+      <!-- Wonderstorm -->
+      <div class="company-card" data-status="active" data-type="content">
+        <div class="card-header">
+          <img src="images/wonderstorm-logo.png" alt="Wonderstorm Logo" class="company-logo">
+          <div class="company-name">
+            <h2>Wonderstorm</h2>
+            <div class="funding">35M • 2023</div>
+            <div class="status status-active">Active</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="founders">
+            <div class="founders-label">Founders with Riot History</div>
+            <div class="founders-list">
+              <a href="https://www.linkedin.com/in/justinrichmond/" target="_blank" class="founder-link">Justin Richmond</a>
+              <span class="founder-note">(Former Lead Game Designer)</span>
+              <a href="https://www.linkedin.com/in/aronshane/" target="_blank" class="founder-link">Aaron Ehasz</a>
+              <span class="founder-note">(Former Lead Writer)</span>
+            </div>
+          </div>
+          
+          <div class="games-list">
+            <div class="games-label">Video Games</div>
+            <div class="games-names">The Dragon Prince: Xadia</div>
+          </div>
+          
+          <div class="carousel">
+            <img src="images/dragon-prince-teaser.txt" alt="The Dragon Prince: Xadia teaser" class="active">
+            <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+          </div>
+          
+          <div class="more-info">
+            <div class="more-info-header">
+              <h3>More Info</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="more-info-content">
+              <p>Wonderstorm, founded by former Riot Games Lead Game Designer Justin Richmond and Lead Writer Aaron Ehasz, raised $35M to develop The Dragon Prince: Xadia, a game based on their successful animated series. The studio combines storytelling expertise from Riot and animation experience from Avatar: The Last Airbender to create an immersive fantasy world. Their funding round was led by Andreessen Horowitz, with participation from other notable media and gaming investors.</p>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <a href="https://wonderstorm.com" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <p>© 2025 Riot Games Spawn Tracker | All data is updated sometimes</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple carousel functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousels = document.querySelectorAll('.carousel');
+      const companyGrid = document.querySelector('.company-grid');
+      const cards = Array.from(document.querySelectorAll('.company-card'));
+      
+      // More Info section functionality
+      const moreInfoHeaders = document.querySelectorAll('.more-info-header');
+      moreInfoHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const content = header.nextElementSibling;
+          const isExpanded = header.classList.contains('expanded');
+          
+          // Toggle expanded state
+          header.classList.toggle('expanded');
+          content.classList.toggle('expanded');
+        });
+      });
+      
+      carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('img');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+        let currentSlide = 0;
+        
+        function showSlide(n) {
+          slides.forEach(slide => slide.classList.remove('active'));
+          currentSlide = (n + slides.length) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }
+        
+        prevBtn.addEventListener('click', () => {
+          showSlide(currentSlide - 1);
+        });
+        
+        nextBtn.addEventListener('click', () => {
+          showSlide(currentSlide + 1);
+        });
+        
+        // Auto rotate slides
+        setInterval(() => {
+          showSlide(currentSlide + 1);
+        }, 5000);
+      });
+      
+      // Filter functionality
+      const filterSelect = document.getElementById('filterSelect');
+      const typeSelect = document.getElementById('typeSelect');
+      
+      function applyFilters() {
+        const statusFilter = filterSelect.value;
+        const typeFilter = typeSelect.value;
+        
+        // Filter cards
+        cards.forEach(card => {
+          const statusMatch = statusFilter === 'all' || card.getAttribute('data-status') === statusFilter;
+          const typeMatch = typeFilter === 'all' || card.getAttribute('data-type') === typeFilter;
+          
+          if (statusMatch && typeMatch) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+      
+      filterSelect.addEventListener('change', applyFilters);
+      typeSelect.addEventListener('change', applyFilters);
+
+      // Sort functionality
+      const sortSelect = document.getElementById('sortSelect');
+      const sortDirectionBtn = document.getElementById('sortDirection');
+      let sortDirection = 'asc';
+
+      sortSelect.addEventListener('change', () => {
+        sortCards();
+      });
+
+      sortDirectionBtn.addEventListener('click', () => {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+        sortDirectionBtn.querySelector('i').className = 
+          sortDirection === 'asc' ? 'fas fa-sort-amount-down' : 'fas fa-sort-amount-up';
+        sortCards();
+      });
+
+      function sortCards() {
+        const sortType = sortSelect.value;
+        
+        // Sort cards
+        cards.sort((a, b) => {
+          let valueA, valueB;
+
+          switch(sortType) {
+            case 'name':
+              valueA = a.querySelector('h2').textContent;
+              valueB = b.querySelector('h2').textContent;
+              break;
+            case 'funding':
+              valueA = parseInt(a.querySelector('.funding').textContent.match(/\d+/)[0]);
+              valueB = parseInt(b.querySelector('.funding').textContent.match(/\d+/)[0]);
+              break;
+            case 'year':
+              valueA = parseInt(a.querySelector('.funding').textContent.match(/\d{4}$/)[0]);
+              valueB = parseInt(b.querySelector('.funding').textContent.match(/\d{4}$/)[0]);
+              break;
+          }
+
+          if (sortDirection === 'asc') {
+            return valueA > valueB ? 1 : -1;
+          } else {
+            return valueA < valueB ? 1 : -1;
+          }
+        });
+
+        // Reorder cards in the DOM
+        cards.forEach(card => {
+          companyGrid.appendChild(card);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
