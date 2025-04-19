@@ -5,16 +5,22 @@
 window.afterContentLoad = function(page) {
   // Only run company card logic on home page
   if (page === 'index.html') {
-    renderCompanyCards();
-    setupCompanyFilters();
-    setupCompanySort();
-    setupSummaryClose();
+    renderCompanyCards().then(() => {
+      setupCompanyFilters();
+      setupCompanySort();
+      setupSummaryClose();
+      initializeCarousels();
+    });
+  } else if (page === 'pages/about.html') {
+    // about page logic
+  } else if (page === 'pages/future.html') {
+    // future page logic
   }
   // Add any other per-page JS here as needed
 };
 
 function renderCompanyCards() {
-  fetch('./companies.json')
+  return fetch('./companies.json')
     .then(response => {
       if (!response.ok) {
         throw new Error('Failed to fetch companies.json: ' + response.status);
@@ -176,9 +182,33 @@ document.querySelectorAll('.status-chip').forEach(chip => {
   });
 });
 
-// Optionally, re-initialize carousel functionality if needed
-if (typeof initializeCarousels === 'function') {
-  initializeCarousels();
+function initializeCarousels() {
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('img');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    let currentSlide = 0;
+    // Hide arrows if only one slide
+    if (slides.length <= 1) {
+      if (prevBtn) prevBtn.style.display = 'none';
+      if (nextBtn) nextBtn.style.display = 'none';
+    } else {
+      if (prevBtn) prevBtn.style.display = '';
+      if (nextBtn) nextBtn.style.display = '';
+    }
+    if (slides.length > 0) slides[0].classList.add('active');
+    function showSlide(n) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    if (prevBtn) {
+      prevBtn.onclick = () => showSlide(currentSlide - 1);
+    }
+    if (nextBtn) {
+      nextBtn.onclick = () => showSlide(currentSlide + 1);
+    }
+  });
 }
 
 // More Info section functionality
@@ -189,38 +219,6 @@ moreInfoHeaders.forEach(header => {
     header.classList.toggle('expanded');
     content.classList.toggle('expanded');
   });
-});
-
-// Initialize carousels
-const carousels = document.querySelectorAll('.carousel');
-carousels.forEach(carousel => {
-  const slides = carousel.querySelectorAll('img');
-  const prevBtn = carousel.querySelector('.carousel-prev');
-  const nextBtn = carousel.querySelector('.carousel-next');
-  let currentSlide = 0;
-  // Hide arrows if only one slide
-  if (slides.length <= 1) {
-    if (prevBtn) prevBtn.style.display = 'none';
-    if (nextBtn) nextBtn.style.display = 'none';
-  } else {
-    if (prevBtn) prevBtn.style.display = '';
-    if (nextBtn) nextBtn.style.display = '';
-  }
-  if (slides.length > 0) slides[0].classList.add('active');
-  prevBtn && prevBtn.addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-  });
-  nextBtn && nextBtn.addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-  });
-  function showSlide(n) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    currentSlide = (n + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  setInterval(() => {
-    showSlide(currentSlide + 1);
-  }, 5000);
 });
 
 // Dismiss summary card functionality with persistence
