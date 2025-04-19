@@ -9,14 +9,7 @@
   <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Riot Games Spawn Tracker</h1>
-    <div class="subtitle">Tracking the Future of Gaming</div>
-    <nav class="main-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="about.html" class="nav-link active">About</a>
-    </nav>
-  </header>
+  <header id="site-header"></header>
   
   <div class="container">
     <div class="about-content">
@@ -64,8 +57,24 @@
   
   <footer>
     <div class="container">
-      <p>© 2025 Riot Games Spawn Tracker | Data is updated sometimes and may be unreliable</p>
+      <p> 2025 Riot Games Spawn Tracker | Data is updated sometimes and may be unreliable</p>
     </div>
   </footer>
+  
+  <script>
+    // Inject header.html inner content only
+    fetch('header.html').then(r => r.text()).then(html => {
+      document.getElementById('site-header').innerHTML = html;
+      // Highlight active nav link
+      const navLinks = document.querySelectorAll('.main-nav .nav-link');
+      navLinks.forEach(link => {
+        if (window.location.pathname.endsWith(link.getAttribute('data-nav'))) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    });
+  </script>
 </body>
-</html> 
+</html>

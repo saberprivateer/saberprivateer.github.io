@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="summary">
+    <button class="summary-close" aria-label="Dismiss summary">&times;</button>
+    <p>Riot Games Spawn Tracker - your n00b destination for monitoring venture capital investments in the gaming industry based on the parent company. We track funding rounds, founding teams, and game development progress for the most innovative studios backed by investors worldwide. This tracker has a special focus on companies founded by former Riot Games employees who have secured significant venture funding.</p>
+  </div>
+  <div class="filters">
+    <div class="filter-group">
+      <select class="filter-select" id="filterSelect">
+        <option value="all">All Companies</option>
+        <option value="active">Active</option>
+        <option value="acquired">Acquired</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <select class="filter-select" id="typeSelect">
+        <option value="all">All Types</option>
+        <option value="games">Games</option>
+        <option value="content">Content</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    <div class="sort-group">
+      <select class="sort-select" id="sortSelect">
+        <option value="name">Sort by Name</option>
+        <option value="funding">Sort by Funding</option>
+        <option value="year">Sort by Year</option>
+      </select>
+      <button class="sort-direction-btn" id="sortDirection">
+        <i class="fas fa-sort-amount-down"></i>
+      </button>
+    </div>
+  </div>
+  <div class="company-grid">
+    <!-- Company cards are now dynamically rendered by main.js from companies.json -->
+  </div>
+</div>
