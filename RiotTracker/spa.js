@@ -9,7 +9,7 @@ const PAGE_MAP = {
 
 // --- HEADER INJECTION FOR SPA ---
 function injectHeader() {
-  fetch('/partials/header.html')
+  fetch('partials/header.html')
     .then(r => r.text())
     .then(html => {
       // Parse and extract only the <header> content (for safety)
