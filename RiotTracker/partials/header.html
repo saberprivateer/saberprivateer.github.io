@@ -9,6 +9,8 @@
     // Dynamically set navigation links for localhost and GitHub Pages subfolder
     (function() {
       const isGhPages = window.location.hostname.endsWith('github.io');
+      console.log(isGhPages);
+      console.log("will this work?");
       const base = isGhPages ? '/RiotTracker/' : '/';
       document.getElementById('nav-home').setAttribute('href', base + 'index.html');
       document.getElementById('nav-about').setAttribute('href', base + 'pages/about.html');
