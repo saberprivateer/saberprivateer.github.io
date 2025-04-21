@@ -1,32 +1,18 @@
 <header>
   <h1>Riot Games Spawn Tracker</h1>
   <nav class="main-nav">
-    <a href="../index.html" class="nav-link" data-nav="index.html">Home</a>
-    <a href="../pages/about.html" class="nav-link" data-nav="pages/about.html">About</a>
-    <a href="../pages/future.html" class="nav-link" data-nav="pages/future.html">Future</a>
+    <a id="nav-home" class="nav-link" href="/index.html">Home</a>
+    <a id="nav-about" class="nav-link" href="/pages/about.html">About</a>
+    <a id="nav-future" class="nav-link" href="/pages/future.html">Future</a>
   </nav>
   <script>
-    // Adjust navigation links based on current location
+    // Dynamically set navigation links for localhost and GitHub Pages subfolder
     (function() {
-      // Detect if we're in the root or in a subpage
-      const path = window.location.pathname;
-      const inSubpage = path.includes('/pages/');
-      
-      // Get all navigation links
-      const links = document.querySelectorAll('.main-nav .nav-link');
-      
-      // Update href attributes based on location
-      links.forEach(link => {
-        const dataNav = link.getAttribute('data-nav');
-        if (dataNav === 'index.html') {
-          // Home link
-          link.href = inSubpage ? '../index.html' : 'index.html';
-        } else if (dataNav.includes('pages/')) {
-          // About and Future links
-          const pageName = dataNav.split('/')[1]; // Extract page name (about.html, future.html)
-          link.href = inSubpage ? pageName : 'pages/' + pageName;
-        }
-      });
+      const isGhPages = window.location.hostname.endsWith('github.io');
+      const base = isGhPages ? '/RiotTracker/' : '/';
+      document.getElementById('nav-home').setAttribute('href', base + 'index.html');
+      document.getElementById('nav-about').setAttribute('href', base + 'pages/about.html');
+      document.getElementById('nav-future').setAttribute('href', base + 'pages/future.html');
     })();
   </script>
 </header>
