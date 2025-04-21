@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Future Upgrades - Riot Games Spawn Tracker</title>
+  <title>Future - Riot Games Spawn Tracker</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
   <link href="../styles.css" rel="stylesheet">
@@ -13,9 +13,30 @@
     .future-list { margin: 1rem 0 0 1rem; }
     .future-list li { margin-bottom: 0.7rem; }
     .feature-demo { background: rgba(0,0,0,0.15); border-radius: 6px; padding: 1rem; margin: 1rem 0; }
-    .founder-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-    .founder-card { background: rgba(60,60,90,0.85); border-radius: 6px; padding: 1rem; width: 180px; text-align: center; }
-    .founder-card img { border-radius: 50%; width: 80px; height: 80px; object-fit: cover; margin-bottom: 0.5rem; border: 2px solid var(--accent); }
+    .founder-grid-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: flex-start;
+      align-items: stretch;
+      margin: 1em 0;
+    }
+    .founder-card-horizontal {
+      background: #23272e;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 1em 1.2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 120px;
+      max-width: 150px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .founder-card-horizontal:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.16);
+    }
     .timeline-demo { display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0; }
     .timeline-event { display: flex; align-items: center; gap: 0.7rem; }
     .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); }
@@ -46,39 +67,8 @@
         </div>
       </div>
       <div class="feature-demo">
-        <h3><i class="fas fa-id-badge"></i> Founder Gallery (Example)</h3>
-        <div class="founder-grid">
-          <div class="founder-card">
-            <svg width="80" height="80" viewBox="0 0 80 80" style="background:#666;border-radius:50%;display:block;margin:0 auto;">
-              <circle cx="40" cy="40" r="38" fill="#888" stroke="#00e676" stroke-width="1" />
-              <circle cx="40" cy="32" r="16" fill="#fff" />
-              <ellipse cx="40" cy="60" rx="20" ry="12" fill="#fff" />
-            </svg>
-            <div><b>Christina Norman</b></div>
-            <div>Elodie Games</div>
-            <div style="font-size:0.9em; color:#aaa;">Former Riot/BioWare dev</div>
-          </div>
-          <div class="founder-card">
-            <svg width="80" height="80" viewBox="0 0 80 80" style="background:#666;border-radius:50%;display:block;margin:0 auto;">
-              <circle cx="40" cy="40" r="38" fill="#888" stroke="#00e676" stroke-width="1" />
-              <circle cx="40" cy="32" r="16" fill="#fff" />
-              <ellipse cx="40" cy="60" rx="20" ry="12" fill="#fff" />
-            </svg>
-            <div><b>Ben Brode</b></div>
-            <div>Second Dinner</div>
-            <div style="font-size:0.9em; color:#aaa;">Former Hearthstone Director</div>
-          </div>
-          <div class="founder-card">
-            <svg width="80" height="80" viewBox="0 0 80 80" style="background:#666;border-radius:50%;display:block;margin:0 auto;">
-              <circle cx="40" cy="40" r="38" fill="#888" stroke="#00e676" stroke-width="1" />
-              <circle cx="40" cy="32" r="16" fill="#fff" />
-              <ellipse cx="40" cy="60" rx="20" ry="12" fill="#fff" />
-            </svg>
-            <div><b>Joe Tung</b></div>
-            <div>Theorycraft Games</div>
-            <div style="font-size:0.9em; color:#aaa;">Former Riot Exec Producer</div>
-          </div>
-        </div>
+        <h3><i class="fas fa-id-badge"></i> Founder Gallery (Live)</h3>
+        <div id="founder-gallery" class="founder-grid-horizontal"></div>
       </div>
       <div class="feature-demo">
         <h3><i class="fas fa-stream"></i> Timeline (Example)</h3>
@@ -109,30 +99,54 @@
       </div>
     </div>
   </main>
+  
   <footer>
     <div class="container">
       <p>2025 Riot Games Spawn Tracker | All data is updated sometimes</p>
     </div>
   </footer>
+
   <script>
-    // Inject header.html inner content only (matches index.html)
-    fetch('../partials/header.html').then(r => r.text()).then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const headerContent = doc.body.innerHTML;
-      document.getElementById('site-header').innerHTML = headerContent;
-      // Highlight active nav link
-      const navLinks = document.querySelectorAll('.main-nav .nav-link');
-      navLinks.forEach(link => {
-        if (window.location.pathname.endsWith(link.getAttribute('data-nav'))) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
-        }
+    // Load the header
+    fetch('../partials/header.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        // Set active nav
+        document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+          if (link.getAttribute('data-nav') === 'pages/future.html') {
+            link.classList.add('active');
+          }
+        });
       });
-    });
+    // Founder Gallery: Render horizontally from companies.json
+    fetch('../companies.json')
+      .then(r => r.json())
+      .then(companies => {
+        const founders = [];
+        companies.forEach(company => {
+          (company.founders || []).forEach(founder => {
+            founders.push({
+              name: founder.name,
+              company: company.name,
+              logo: company.logo,
+              linkedin: founder.linkedin
+            });
+          });
+        });
+        const gallery = document.getElementById('founder-gallery');
+        // Only show the first 3 founders for the example showcase
+        const foundersToShow = founders.slice(0, 3);
+        gallery.innerHTML = foundersToShow.map(f => `
+          <div class="founder-card-horizontal">
+            <img src="${f.logo}" alt="${f.company} Logo" style="width:60px;height:60px;border-radius:50%;background:#eee;object-fit:cover;display:block;margin:0 auto 0.5em;">
+            <div><b>${f.name}</b></div>
+            <div style="font-size:0.9em;color:#888;">${f.company}</div>
+            <a href="${f.linkedin}" target="_blank" style="font-size:0.8em;">LinkedIn</a>
+          </div>
+        `).join('');
+      });
   </script>
   <script src="../main.js"></script>
-  <script src="../spa.js"></script>
 </body>
 </html>

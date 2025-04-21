@@ -11,7 +11,7 @@
 <body>
   <header id="site-header"></header>
   
-  <main></main>
+  <main id="main-content"></main>
   
   <footer>
     <div class="container">
@@ -20,24 +20,30 @@
   </footer>
 
   <script>
-    // Inject header.html inner content only
-    fetch('partials/header.html').then(r => r.text()).then(html => {
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const headerContent = doc.body.innerHTML;
-      document.getElementById('site-header').innerHTML = headerContent;
-      // Highlight active nav link
-      const navLinks = document.querySelectorAll('.main-nav .nav-link');
-      navLinks.forEach(link => {
-        if (window.location.pathname.endsWith(link.getAttribute('data-nav'))) {
-          link.classList.add('active');
-        } else {
-          link.classList.remove('active');
+    // Load the header
+    fetch('partials/header.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+        // Set active nav
+        document.querySelectorAll('.main-nav .nav-link').forEach(link => {
+          if (link.getAttribute('data-nav') === 'index.html') {
+            link.classList.add('active');
+          }
+        });
+      });
+      
+    // Load the main content
+    fetch('partials/index-content.html')
+      .then(r => r.text())
+      .then(html => {
+        document.getElementById('main-content').innerHTML = html;
+        // Initialize all functionality after content is loaded
+        if (window.afterContentLoad) {
+          window.afterContentLoad('index.html');
         }
       });
-    });
   </script>
   <script src="main.js"></script>
-  <script src="spa.js"></script>
 </body>
 </html>
