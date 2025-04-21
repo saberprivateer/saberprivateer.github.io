@@ -4,7 +4,8 @@
     "status": "acquired",
     "type": "games",
     "logo": "images/phoenix-labs/logo.png",
-    "funding": "150M (Acquired) • 2014",
+    "fundingAmount": "150M",
+    "fundingYear": "2014",
     "statuses": ["Acquired", "Shutting Down"],
     "founders": [
       {"name": "Jesse Houston", "linkedin": "https://www.linkedin.com/in/jessehouston/"},
@@ -23,7 +24,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/singularity-6/logo.png",
-    "funding": "68M+ • 2018",
+    "fundingAmount": "68M+",
+    "fundingYear": "2018",
     "statuses": ["Active"],
     "founders": [
       {"name": "Aidan Karabaich", "linkedin": "https://www.linkedin.com/in/aidankarabaich/"},
@@ -40,7 +42,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/theorycraft/logo.jpg",
-    "funding": "87.5M • 2020",
+    "fundingAmount": "87.5M",
+    "fundingYear": "2020",
     "statuses": ["Active"],
     "founders": [
       {"name": "Michael Evans", "linkedin": "https://www.linkedin.com/in/michaelevans/"},
@@ -58,7 +61,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/lightforge/logo.png",
-    "funding": "20M • 2021",
+    "fundingAmount": "20M",
+    "fundingYear": "2021",
     "statuses": ["Active"],
     "founders": [
       {"name": "Matt Schembari", "linkedin": "https://www.linkedin.com/in/mattschembari/"},
@@ -75,7 +79,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/gardens/logo.jpg",
-    "funding": "31.3M • 2021",
+    "fundingAmount": "31.3M",
+    "fundingYear": "2021",
     "statuses": ["Active"],
     "founders": [
       {"name": "Chris Bell", "linkedin": "https://www.linkedin.com/in/chris-bell-8a7b0b42/"},
@@ -92,7 +97,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/believer/logo.png",
-    "funding": "55M • 2022",
+    "fundingAmount": "55M",
+    "fundingYear": "2022",
     "statuses": ["Active"],
     "founders": [
       {"name": "Michael Chow", "linkedin": "https://www.linkedin.com/in/michaelchu/"},
@@ -109,7 +115,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/vela/logo.jpg",
-    "funding": "20.4M • 2019",
+    "fundingAmount": "20.4M",
+    "fundingYear": "2019",
     "statuses": ["Active"],
     "founders": [
       {"name": "Travis George", "linkedin": "https://www.linkedin.com/in/travis-george-3b9b2a2/"},
@@ -126,7 +133,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/elodie/logo.png",
-    "funding": "32.5M • 2021",
+    "fundingAmount": "32.5M",
+    "fundingYear": "2021",
     "statuses": ["Active"],
     "founders": [
       {"name": "Christina Norman", "linkedin": "https://www.linkedin.com/in/christinanorman/"},
@@ -143,7 +151,8 @@
     "status": "active",
     "type": "games",
     "logo": "images/treehouse/logo.jpg",
-    "funding": "2.6M • 2020",
+    "fundingAmount": "2.6M",
+    "fundingYear": "2020",
     "statuses": ["Active"],
     "founders": [
       {"name": "Michael Chu", "linkedin": "https://www.linkedin.com/in/michaelchu/"},
@@ -160,7 +169,8 @@
     "status": "inactive",
     "type": "content",
     "logo": "images/venn/logo.png",
-    "funding": "26M • 2020",
+    "fundingAmount": "26M",
+    "fundingYear": "2020",
     "statuses": ["Inactive"],
     "founders": [
       {"name": "Ben Kusin", "linkedin": "https://www.linkedin.com/in/benkusin/"},
@@ -177,7 +187,8 @@
     "status": "active",
     "type": "other",
     "logo": "images/pragma/logo.png",
-    "funding": "50M+ • 2020",
+    "fundingAmount": "50M+",
+    "fundingYear": "2020",
     "statuses": ["Active"],
     "founders": [
       {"name": "Eden Chen", "linkedin": "https://www.linkedin.com/in/edenchen/"},
@@ -194,7 +205,8 @@
     "status": "active",
     "type": "content",
     "logo": "images/wonderstorm/logo.png",
-    "funding": "35M • 2023",
+    "fundingAmount": "35M",
+    "fundingYear": "2023",
     "statuses": ["Active"],
     "founders": [
       {"name": "Aaron Ehasz", "linkedin": "https://www.linkedin.com/in/aaronehasz/"},
@@ -205,5 +217,23 @@
     ],
     "moreInfo": "Wonderstorm is the studio behind the hit animated series The Dragon Prince and its upcoming game Xadia. Founded by former Riot and Naughty Dog talent, Wonderstorm blends storytelling and interactive experiences.",
     "website": "https://wonderstorm.net/"
+  },
+  {
+    "name": "Ganymede Games",
+    "status": "active",
+    "type": "games",
+    "logo": "images/ganymede/logo.png",
+    "fundingAmount": "920K",
+    "fundingYear": "2022",
+    "statuses": ["Active"],
+    "founders": [
+      {"name": "Jerry Prochazka", "linkedin": "https://www.linkedin.com/in/jerryprochazka/"},
+      {"name": "Rob Thompson", "linkedin": ""}
+    ],
+    "games": [
+      {"title": "Dark Sky", "image": "images/ganymede/dark-sky.jpg"}
+    ],
+    "moreInfo": "Founded by Jerry Prochazka (ex-Riot Director of People) and Rob Thompson (ex-Riot/Wargaming), Ganymede Games is an independent studio based in Las Cruces, NM. Focused on creating immersive worlds that respect players' time, their first title is 'Dark Sky,' a card-based RPG adventure available on Steam.",
+    "website": "https://www.ganymede.games/"
   }
 ]

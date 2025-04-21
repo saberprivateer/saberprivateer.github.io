@@ -10,6 +10,7 @@ window.afterContentLoad = function(page) {
       setupCompanySort();
       setupSummaryClose();
       initializeCarousels();
+      setupMoreInfoExpanders();
     });
   } else if (page === 'pages/about.html') {
     // about page logic
@@ -31,6 +32,8 @@ function renderCompanyCards() {
       if (!Array.isArray(companies)) {
         throw new Error('companies.json does not contain an array!');
       }
+      // Sort companies alphabetically by name before rendering
+      companies.sort((a, b) => a.name.localeCompare(b.name));
       console.log('Fetched companies:', companies);
       const grid = document.querySelector('.company-grid');
       if (!grid) return;
@@ -47,10 +50,12 @@ function renderCompanyCards() {
         card.setAttribute('data-type', company.type || 'other');
         card.innerHTML = `
           <div class="card-header">
-            <img src="${company.logo || ''}" alt="${company.name} Logo" class="company-logo">
+            <img src="${company.logo || ''}" alt="${company.name} Logo" class="company-logo" />
             <div class="company-name">
               <h2>${company.name}</h2>
-              <div class="funding">${company.funding || ''}</div>
+              <div class="funding">
+                ${company.fundingAmount} • ${company.fundingYear}
+              </div>
               ${(company.statuses || []).map(status => `<div class="status status-${status.toLowerCase()} status-chip" data-status-chip="${status.toLowerCase()}">${status}</div>`).join('')}
             </div>
           </div>
@@ -137,12 +142,12 @@ function setupCompanySort() {
           valueB = b.querySelector('h2').textContent;
           break;
         case 'funding':
-          valueA = parseInt(a.querySelector('.funding').textContent.match(/\d+/)?.[0] || 0);
-          valueB = parseInt(b.querySelector('.funding').textContent.match(/\d+/)?.[0] || 0);
+          valueA = parseFloat(a.querySelector('.funding-amount').textContent.replace(/[^\d.]/g, '')) || 0;
+          valueB = parseFloat(b.querySelector('.funding-amount').textContent.replace(/[^\d.]/g, '')) || 0;
           break;
         case 'year':
-          valueA = parseInt(a.querySelector('.funding').textContent.match(/\d{4}$/)?.[0] || 0);
-          valueB = parseInt(b.querySelector('.funding').textContent.match(/\d{4}$/)?.[0] || 0);
+          valueA = parseInt(a.querySelector('.funding-year').textContent.replace(/[^\d]/g, '')) || 0;
+          valueB = parseInt(b.querySelector('.funding-year').textContent.replace(/[^\d]/g, '')) || 0;
           break;
       }
       if (sortDirection === 'asc') {
@@ -211,15 +216,16 @@ function initializeCarousels() {
   });
 }
 
-// More Info section functionality
-const moreInfoHeaders = document.querySelectorAll('.more-info-header');
-moreInfoHeaders.forEach(header => {
-  header.addEventListener('click', () => {
-    const content = header.nextElementSibling;
-    header.classList.toggle('expanded');
-    content.classList.toggle('expanded');
+function setupMoreInfoExpanders() {
+  const moreInfoHeaders = document.querySelectorAll('.more-info-header');
+  moreInfoHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+      const content = header.nextElementSibling;
+      header.classList.toggle('expanded');
+      content.classList.toggle('expanded');
+    });
   });
-});
+}
 
 // Dismiss summary card functionality with persistence
 const summaryCloseBtn = document.querySelector('.summary-close');
