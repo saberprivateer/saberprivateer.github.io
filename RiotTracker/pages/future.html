@@ -139,7 +139,11 @@
         const foundersToShow = founders.slice(0, 3);
         gallery.innerHTML = foundersToShow.map(f => `
           <div class="founder-card-horizontal">
-            <img src="${f.logo}" alt="${f.company} Logo" style="width:60px;height:60px;border-radius:50%;background:#eee;object-fit:cover;display:block;margin:0 auto 0.5em;">
+          <svg width="80" height="80" viewBox="0 0 80 80" style="background:#666;border-radius:50%;display:block;margin:0 auto;">
+          <circle cx="40" cy="40" r="38" fill="#888" stroke="#00e676" stroke-width="1" />
+          <circle cx="40" cy="32" r="16" fill="#fff" />
+          <ellipse cx="40" cy="60" rx="20" ry="12" fill="#fff" />
+        </svg>
             <div><b>${f.name}</b></div>
             <div style="font-size:0.9em;color:#888;">${f.company}</div>
             <a href="${f.linkedin}" target="_blank" style="font-size:0.8em;">LinkedIn</a>
