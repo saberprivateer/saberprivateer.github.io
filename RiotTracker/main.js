@@ -94,6 +94,12 @@ function renderCompanyCards() {
       // After rendering, update cards variable for filtering/sorting
       window.cards = Array.from(document.querySelectorAll('.company-card'));
     })
+    .then(() => {
+      // Remove type chips if present
+      document.querySelectorAll('.type-chip').forEach(el => el.remove());
+      document.querySelectorAll('.company-type-label').forEach(el => el.remove());
+      setupStatusChipFiltering();
+    })
     .catch(err => {
       console.error('Error loading or rendering companies:', err);
       const grid = document.querySelector('.company-grid');
@@ -105,17 +111,52 @@ function setupCompanyFilters() {
   const filterSelect = document.getElementById('filterSelect');
   const typeSelect = document.getElementById('typeSelect');
   if (!filterSelect || !typeSelect) return;
-  filterSelect.addEventListener('change', applyFilters);
-  typeSelect.addEventListener('change', applyFilters);
-  function applyFilters() {
-    const statusFilter = filterSelect.value;
-    const typeFilter = typeSelect.value;
-    document.querySelectorAll('.company-card').forEach(card => {
-      const statusMatch = statusFilter === 'all' || card.getAttribute('data-status') === statusFilter;
-      const typeMatch = typeFilter === 'all' || card.getAttribute('data-type') === typeFilter;
-      card.style.display = (statusMatch && typeMatch) ? 'flex' : 'none';
+  filterSelect.addEventListener('change', applyAllFilters);
+  typeSelect.addEventListener('change', applyAllFilters);
+  setupCompanySearch();
+  applyAllFilters();
+}
+
+function setupCompanySearch() {
+  const searchInput = document.getElementById('companySearch');
+  if (!searchInput) return;
+  searchInput.addEventListener('input', function() {
+    applyAllFilters();
+  });
+}
+
+function setupStatusChipFiltering() {
+  document.querySelectorAll('.status-chip').forEach(chip => {
+    chip.style.cursor = 'pointer';
+    chip.title = 'Click to filter by this status';
+    chip.addEventListener('click', function(e) {
+      const status = chip.getAttribute('data-status-chip');
+      const filterSelect = document.getElementById('filterSelect');
+      if (filterSelect) {
+        filterSelect.value = status;
+        filterSelect.dispatchEvent(new Event('change'));
+      }
     });
-  }
+  });
+}
+
+function applyAllFilters() {
+  const filterSelect = document.getElementById('filterSelect');
+  const typeSelect = document.getElementById('typeSelect');
+  const searchInput = document.getElementById('companySearch');
+  const status = filterSelect ? filterSelect.value : 'all';
+  const type = typeSelect ? typeSelect.value : 'all';
+  const search = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  window.cards.forEach(card => {
+    let show = true;
+    if (status !== 'all' && card.getAttribute('data-status') !== status) show = false;
+    if (type !== 'all' && card.getAttribute('data-type') !== type) show = false;
+    if (search) {
+      const name = card.querySelector('h2')?.textContent.toLowerCase() || '';
+      show = show && name.includes(search);
+    }
+    card.style.display = show ? '' : 'none';
+  });
 }
 
 function setupCompanySort() {
@@ -171,21 +212,6 @@ function setupSummaryClose() {
     });
   });
 }
-
-// Add click listeners to status chips for filtering
-document.querySelectorAll('.status-chip').forEach(chip => {
-  chip.style.cursor = 'pointer';
-  chip.title = 'Click to filter by this status';
-  chip.addEventListener('click', function(e) {
-    const status = chip.getAttribute('data-status-chip');
-    // Set filter select to this status and trigger change
-    const filterSelect = document.getElementById('filterSelect');
-    if (filterSelect) {
-      filterSelect.value = status;
-      filterSelect.dispatchEvent(new Event('change'));
-    }
-  });
-});
 
 function initializeCarousels() {
   document.querySelectorAll('.carousel').forEach(carousel => {
