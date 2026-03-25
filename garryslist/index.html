@@ -191,6 +191,84 @@
             margin-top: 16px;
         }
 
+        /* Decorators */
+        .card-image-wrap { position: relative; }
+        
+        /* Action Banner Style */
+        .banner-action {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--color-bridge);
+            color: white;
+            padding: 8px 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transform: rotate(-45deg) translate(-25%, -60%);
+            transform-origin: top left;
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            font-family: var(--font-sans);
+        }
+
+        /* Essential Event Badge */
+        .badge-event {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(47, 44, 39, 0.9);
+            backdrop-filter: blur(4px);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            z-index: 10;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .action-cta {
+            margin-top: 14px;
+            font-size: 0.85rem;
+            color: var(--color-bridge);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(176, 74, 50, 0.2);
+            transition: all 0.2s;
+        }
+        .card:hover .action-cta {
+            gap: 10px;
+            border-bottom-color: var(--color-bridge);
+        }
+
+        .event-info {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            font-size: 0.85rem;
+            color: var(--color-earth);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .event-label {
+            font-weight: 700;
+            color: var(--color-coffee);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .event-date {
+            font-style: italic;
+        }
+
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .article-grid { grid-template-columns: 1fr; }
@@ -236,11 +314,13 @@
                     <!-- Articles 2-4 -->
                     <a href="#" class="card">
                         <div class="card-image-wrap">
-                            <img src="/garryslist/img/tech.png" alt="AI Med" class="card-img">
+                            <span class="banner-action">Action Alert</span>
+                            <img src="/garryslist/img/ai_medical.png" alt="AI Med" class="card-img">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">AI Diagnostics vs. The Medical Board</h3>
                             <div class="card-meta"><span>Mar 14, 2026</span><span class="dot"></span><span>12 min read</span></div>
+                            <span class="action-cta">Contact your representative →</span>
                         </div>
                     </a>
                     <a href="#" class="card">
@@ -254,11 +334,16 @@
                     </a>
                     <a href="#" class="card">
                         <div class="card-image-wrap">
-                            <img src="/garryslist/img/tech.png" alt="Lab" class="card-img">
+                            <span class="badge-event">Gathering</span>
+                            <img src="/garryslist/img/desktop_lab.png" alt="Lab" class="card-img">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">The Desktop Research Lab Revolution</h3>
                             <div class="card-meta"><span>Mar 10, 2026</span><span class="dot"></span><span>15 min read</span></div>
+                            <div class="event-info">
+                                <span class="event-label">Upcoming Event</span>
+                                <span class="event-date">March 20, 6:00 PM</span>
+                            </div>
                         </div>
                     </a>
                 </div>
