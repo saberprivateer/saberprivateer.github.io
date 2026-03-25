@@ -3,19 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garry’s List Suggestion | Prototype</title>
+    <title>Garry’s List Suggestion | Prototype v3</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://garryslist.org/icon.png">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/garry_action_text.css">
     <style>
-        /* CSS Variables - Extracted from Garryslist.org */
+        /* UI Design Tokens - Based on Garryslist.org Scan */
         :root {
             --color-white: #ffffff;
-            --color-glass-fog: rgba(240, 236, 231, 0.5);
-            --color-fog: #f0ece7;
             --color-coffee: #2f2c27;
             --color-earth: #4a4840;
             --color-bridge: #b04a32;
+            --color-fog: #f0ece7;
             --font-serif: "Fraunces", serif;
             --font-sans: "Source Sans 3", sans-serif;
             --container-max: 1100px;
@@ -24,7 +26,7 @@
         /* Reset & Base */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            background-color: var(--color-white);
+            background-color: var(--color-white); /* Returning to clean white background */
             color: var(--color-coffee);
             font-family: var(--font-sans);
             line-height: 1.5;
@@ -54,25 +56,22 @@
             color: var(--color-coffee);
             text-decoration: none;
         }
-        .nav-links {
-            display: flex;
-            gap: 24px;
-            align-items: center;
-        }
         .nav-link {
             text-decoration: none;
             color: var(--color-coffee);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            margin-left: 24px;
         }
         .btn-join {
             background-color: var(--color-bridge);
             color: white;
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: opacity 0.2s;
+            margin-left: 24px;
         }
         .btn-join:hover { opacity: 0.9; }
 
@@ -94,7 +93,6 @@
             font-size: 2.2rem;
             font-weight: 400;
             margin-bottom: 12px;
-            color: var(--color-coffee);
         }
         .section-summary {
             color: var(--color-earth);
@@ -102,17 +100,17 @@
             max-width: 700px;
         }
 
-        /* Article Grid */
+        /* Article Grid - Forced 4 columns for desktop */
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
             margin-bottom: 64px;
         }
 
-        /* Card Component */
+        /* Modernized Card Component */
         .card {
-            background-color: var(--color-glass-fog);
+            background-color: rgba(240, 236, 231, 0.5); /* Fog hint */
             border-radius: 8px;
             overflow: hidden;
             text-decoration: none;
@@ -130,8 +128,8 @@
         .card-image-wrap {
             width: 100%;
             aspect-ratio: 16 / 9;
-            background-color: #ddd;
             overflow: hidden;
+            background-color: #eee;
         }
         .card-img {
             width: 100%;
@@ -143,11 +141,11 @@
             transform: scale(1.05);
         }
         .card-body {
-            padding: 20px;
+            padding: 16px; /* Slightly reduced padding for smaller cards */
             flex-grow: 1;
         }
         .card-title {
-            font-size: 1.15rem;
+            font-size: 1rem; /* Smaller title to fit the 4-across layout */
             font-weight: 600;
             margin-bottom: 8px;
             line-height: 1.3;
@@ -155,26 +153,47 @@
         .card-meta {
             color: var(--color-earth);
             font-size: 0.85rem;
-        }
-
-        /* Utilities */
-        .back-nav {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-        }
-        .btn-outline {
-            color: var(--color-earth);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
+        }
+        .dot { width: 3px; height: 3px; background: currentColor; border-radius: 50%; opacity: 0.5; }
+
+        /* Suggestion Form Section */
+        .suggestion-box {
+            background: var(--color-fog);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 80px;
+        }
+        .suggestion-box h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .editor-wrap {
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            padding: 8px;
+            margin-top: 24px;
+        }
+        .btn-submit {
+            background-color: var(--color-bridge);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 16px;
         }
 
         @media (max-width: 600px) {
             h1 { font-size: 1.8rem; }
             .article-grid { grid-template-columns: 1fr; }
+            .suggestion-box { padding: 24px; }
         }
     </style>
 </head>
@@ -182,11 +201,11 @@
     <div class="container">
         <header>
             <a href="#" class="logo">Garry’s List</a>
-            <div class="nav-links">
+            <nav>
                 <a href="#" class="nav-link">Channels</a>
                 <a href="#" class="nav-link">About</a>
                 <a href="#" class="btn-join">Join</a>
-            </div>
+            </nav>
         </header>
 
         <main>
@@ -205,48 +224,63 @@
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">The Irreversible Shift in Energy</h3>
-                            <p class="card-meta">Mar 16, 2026</p>
+                            <div class="card-meta">
+                                <span>Mar 16, 2026</span>
+                                <span class="dot"></span>
+                                <span>6 min read</span>
+                            </div>
                         </div>
                     </a>
 
-                    <!-- Article 2 -->
+                    <!-- Articles 2-4 -->
                     <a href="#" class="card">
                         <div class="card-image-wrap">
-                            <img src="img/garryslist_tech.png" alt="AI Med" class="card-img">
+                            <img src="img/garryslist_tech.png" alt="AI" class="card-img">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">AI Diagnostics vs. The Medical Board</h3>
-                            <p class="card-meta">Mar 14, 2026</p>
+                            <div class="card-meta"><span>Mar 14, 2026</span><span class="dot"></span><span>12 min read</span></div>
                         </div>
                     </a>
-
-                    <!-- Article 3 -->
                     <a href="#" class="card">
                         <div class="card-image-wrap">
                             <img src="img/garryslist_tech.png" alt="Math" class="card-img">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">Cracking the 20-Year Math Enigma</h3>
-                            <p class="card-meta">Mar 12, 2026</p>
+                            <div class="card-meta"><span>Mar 12, 2026</span><span class="dot"></span><span>8 min read</span></div>
                         </div>
                     </a>
-
-                    <!-- Article 4 -->
                     <a href="#" class="card">
                         <div class="card-image-wrap">
                             <img src="img/garryslist_tech.png" alt="Lab" class="card-img">
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">The Desktop Research Lab Revolution</h3>
-                            <p class="card-meta">Mar 10, 2026</p>
+                            <div class="card-meta"><span>Mar 10, 2026</span><span class="dot"></span><span>15 min read</span></div>
                         </div>
                     </a>
                 </div>
             </section>
+
+            <!-- Prototype for Suggestion Page gaps -->
+            <section class="suggestion-box">
+                <h2>Suggest a new Tech insight</h2>
+                <p>Have something for Garry's List? Use the editor below to provide a summary and link.</p>
+                
+                <div class="editor-wrap">
+                    <!-- Simulating a Trix Editor with the provided Action Text styles -->
+                    <div class="trix-content">
+                        <p><strong>[Example Content]</strong></p>
+                        <p>I suggest looking into the recent breakthrough in carbon sequestration from MIT...</p>
+                    </div>
+                </div>
+                <button class="btn-submit">Submit Suggestion</button>
+            </section>
         </main>
 
-        <footer class="back-nav">
-            <a href="index.html" class="btn-outline">
+        <footer style="margin-top: 40px; padding: 24px 0; border-top: 1px solid rgba(0,0,0,0.05);">
+            <a href="index.html" style="text-decoration: none; color: var(--color-earth); font-size: 0.9rem;">
                 ← Back to Personal Portfolio
             </a>
         </footer>
