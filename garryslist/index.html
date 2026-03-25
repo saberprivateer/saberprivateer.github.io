@@ -194,58 +194,46 @@
         /* Decorators */
         .card-image-wrap { position: relative; }
         
-        /* Action Banner Style */
-        .banner-action {
+        .chip {
             position: absolute;
-            top: 0;
-            left: 0;
-            background: var(--color-bridge);
-            color: white;
-            padding: 8px 30px;
+            top: 12px;
+            right: 12px;
+            padding: 4px 12px;
+            border-radius: 100px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            transform: rotate(-45deg) translate(-25%, -60%);
-            transform-origin: top left;
-            z-index: 10;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            font-family: var(--font-sans);
-        }
-
-        /* Essential Event Badge */
-        .badge-event {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(47, 44, 39, 0.9);
-            backdrop-filter: blur(4px);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 0.05em;
             z-index: 10;
-            border: 1px solid rgba(255,255,255,0.1);
+            font-family: var(--font-sans);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .chip-action {
+            background-color: #f59e0b; /* Vibrant Orange */
+            color: white;
+        }
+
+        .chip-event {
+            background-color: #0d9488; /* Teal / Sea Green - pops better than brown */
+            color: white;
         }
 
         .action-cta {
             margin-top: 14px;
             font-size: 0.85rem;
-            color: var(--color-bridge);
+            color: #b45309; /* Matches orange theme better */
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 6px;
             padding: 4px 0;
-            border-bottom: 1px solid rgba(176, 74, 50, 0.2);
+            border-bottom: 1px solid rgba(180, 83, 9, 0.2);
             transition: all 0.2s;
         }
         .card:hover .action-cta {
             gap: 10px;
-            border-bottom-color: var(--color-bridge);
+            border-bottom-color: #b45309;
         }
 
         .event-info {
@@ -260,7 +248,7 @@
         }
         .event-label {
             font-weight: 700;
-            color: var(--color-coffee);
+            color: #0d9488; /* Matching Teal */
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -314,7 +302,7 @@
                     <!-- Articles 2-4 -->
                     <a href="#" class="card">
                         <div class="card-image-wrap">
-                            <span class="banner-action">Action Alert</span>
+                            <span class="chip chip-action">Action Alert</span>
                             <img src="/garryslist/img/ai_medical.png" alt="AI Med" class="card-img">
                         </div>
                         <div class="card-body">
@@ -334,7 +322,7 @@
                     </a>
                     <a href="#" class="card">
                         <div class="card-image-wrap">
-                            <span class="badge-event">Gathering</span>
+                            <span class="chip chip-event">Gathering</span>
                             <img src="/garryslist/img/desktop_lab.png" alt="Lab" class="card-img">
                         </div>
                         <div class="card-body">
