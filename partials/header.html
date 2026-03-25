@@ -58,7 +58,7 @@
                     <i class="material-icons right" style="padding-top:5px">arrow_drop_down</i>Projects
                 </md-button>
                 <md-menu-content width="2">
-                    <md-menu-item ng-repeat="item in [{link:'hobbes',nav: 'Hobbes Sim'}, {link:'garrys_list_suggestion', nav: 'Garry’s List Suggestion'}]">
+                    <md-menu-item ng-repeat="item in [{link:'hobbes',nav: 'Hobbes Sim'}, {link:'garryslist/index', nav: 'Garry’s List Suggestion'}]">
                         <md-button ng-click="ctrl.announceClick($index)">
                             <div layout="row">
                                 <a ng-href="{{item.link}}.html" target="_blank"><p flex>{{item.nav}}</p></a>

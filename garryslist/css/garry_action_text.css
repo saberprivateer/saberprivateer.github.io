@@ -588,8 +588,8 @@ trix-editor .attachment__metadata .attachment__size {
 
 /* --- Added Garry's List Theme Overrides --- */
 :root {
-    --color-bridge: #b04a32;
-    --color-fog: #f0ece7;
+  --color-bridge: #b04a32;
+  --color-fog: #f0ece7;
 }
 
 trix-toolbar .trix-button.trix-active {
@@ -599,8 +599,7 @@ trix-toolbar .trix-button.trix-active {
 
 trix-toolbar .trix-button--icon.trix-active::before {
     opacity: 1;
-    filter: sepia(1) hue-rotate(-50deg) saturate(3);
-    /* Tinting default black SVG icons to Terra Cotta */
+    filter: sepia(1) hue-rotate(-50deg) saturate(3); /* Tinting default black SVG icons to Terra Cotta */
 }
 
 trix-toolbar .trix-dialog {

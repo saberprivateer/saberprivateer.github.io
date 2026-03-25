@@ -31,6 +31,12 @@ This repository serves as a multi-project personal hub, hosting various independ
 - **Purpose**: Historical projects (e.g., a 2016 election polling tracker).
 - **Dependencies**: Uses `bower_components` and local JSON datasets (`polls.json`).
 
+### 5. Garry's List (Prototypes)
+
+- **Tech Stack**: Vanilla JS/CSS (Scanned from garryslist.org).
+- **Architecture**: A dedicated folder containing design suggestions and prototypes.
+- **Location**: `/garryslist/`
+
 ---
 
 ## 🛠️ Build & Development
@@ -49,6 +55,7 @@ This repository serves as a multi-project personal hub, hosting various independ
 | `/utility` | Flutter source code |
 | `/web` | Flutter web distribution files |
 | `/app/src` | Legacy AngularJS polling application |
+| `/garryslist` | Garry's List design prototypes and assets |
 
 ---
 Last Updated: March 2026
