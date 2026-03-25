@@ -10,6 +10,7 @@
   "description": "Personal Website",
   "main": "gulpfile.js",
   "scripts": {
+    "start": "npx serve .",
     "test": "gulp"
   },
   "repository": {

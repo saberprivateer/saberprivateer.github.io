@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garry’s List Suggestion | Prototype</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://garryslist.org/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - Extracted from Garryslist.org */
+        :root {
+            --color-white: #ffffff;
+            --color-glass-fog: rgba(240, 236, 231, 0.5);
+            --color-fog: #f0ece7;
+            --color-coffee: #2f2c27;
+            --color-earth: #4a4840;
+            --color-bridge: #b04a32;
+            --font-serif: "Fraunces", serif;
+            --font-sans: "Source Sans 3", sans-serif;
+            --container-max: 1100px;
+        }
+
+        /* Reset & Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--color-white);
+            color: var(--color-coffee);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Prototype */
+        header {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 16px 0;
+            margin-bottom: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: var(--color-coffee);
+            text-decoration: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-coffee);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .btn-join {
+            background-color: var(--color-bridge);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        .btn-join:hover { opacity: 0.9; }
+
+        /* Section Headings */
+        .section-header {
+            margin-bottom: 32px;
+        }
+        .section-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-bridge);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: var(--color-coffee);
+        }
+        .section-summary {
+            color: var(--color-earth);
+            font-size: 1.15rem;
+            max-width: 700px;
+        }
+
+        /* Article Grid */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+            margin-bottom: 64px;
+        }
+
+        /* Card Component */
+        .card {
+            background-color: var(--color-glass-fog);
+            border-radius: 8px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid transparent;
+        }
+        .card:hover {
+            background-color: var(--color-fog);
+            transform: translateY(-4px);
+            border-color: rgba(176, 74, 50, 0.1);
+        }
+        .card-image-wrap {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .card:hover .card-img {
+            transform: scale(1.05);
+        }
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .card-meta {
+            color: var(--color-earth);
+            font-size: 0.85rem;
+        }
+
+        /* Utilities */
+        .back-nav {
+            margin-top: 40px;
+            padding: 20px 0;
+            border-top: 1px solid #eee;
+        }
+        .btn-outline {
+            color: var(--color-earth);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .article-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">Garry’s List</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link">Channels</a>
+                <a href="#" class="nav-link">About</a>
+                <a href="#" class="btn-join">Join</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="topic-section">
+                <div class="section-header">
+                    <span class="section-tag">Explore Topic</span>
+                    <h1>Tech</h1>
+                    <p class="section-summary">Exploring the intersection of silicon and society, where GPT-5 math solutions meet the latest in hardware engineering.</p>
+                </div>
+
+                <div class="article-grid">
+                    <!-- Article 1 -->
+                    <a href="#" class="card">
+                        <div class="card-image-wrap">
+                            <img src="img/garryslist_tech.png" alt="Energy" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">The Irreversible Shift in Energy</h3>
+                            <p class="card-meta">Mar 16, 2026</p>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 -->
+                    <a href="#" class="card">
+                        <div class="card-image-wrap">
+                            <img src="img/garryslist_tech.png" alt="AI Med" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">AI Diagnostics vs. The Medical Board</h3>
+                            <p class="card-meta">Mar 14, 2026</p>
+                        </div>
+                    </a>
+
+                    <!-- Article 3 -->
+                    <a href="#" class="card">
+                        <div class="card-image-wrap">
+                            <img src="img/garryslist_tech.png" alt="Math" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Cracking the 20-Year Math Enigma</h3>
+                            <p class="card-meta">Mar 12, 2026</p>
+                        </div>
+                    </a>
+
+                    <!-- Article 4 -->
+                    <a href="#" class="card">
+                        <div class="card-image-wrap">
+                            <img src="img/garryslist_tech.png" alt="Lab" class="card-img">
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">The Desktop Research Lab Revolution</h3>
+                            <p class="card-meta">Mar 10, 2026</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="back-nav">
+            <a href="index.html" class="btn-outline">
+                ← Back to Personal Portfolio
+            </a>
+        </footer>
+    </div>
+</body>
+</html>
