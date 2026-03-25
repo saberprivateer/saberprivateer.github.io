@@ -41,40 +41,118 @@
             padding: 0 24px;
         }
 
-        /* Header Prototype */
-        header {
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 16px 0;
+        /* Existing Header Prototype - Redefined */
+        .main-header {
+            background-color: var(--color-white);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px 0;
             margin-bottom: 48px;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .logo {
-            font-family: var(--font-serif);
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: var(--color-coffee);
-            text-decoration: none;
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 40px;
         }
-        .nav-link {
+        .header-logo {
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            color: var(--color-coffee);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 24px;
+            color: inherit;
         }
-        .btn-join {
-            background-color: var(--color-bridge);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 4px;
+        .logo-img {
+            height: 54px;
+            width: auto;
+        }
+        .header-nav {
+            display: flex;
+            gap: 24px;
+        }
+        .header-nav-link {
             text-decoration: none;
+            color: #4a4840;
             font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.15s;
+        }
+        .header-nav-link:hover {
+            color: var(--color-bridge);
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 0.95rem;
+            color: #4a4840;
+        }
+        .header-search {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #4a4840;
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            opacity: 0.8;
             transition: opacity 0.2s;
-            margin-left: 24px;
         }
-        .btn-join:hover { opacity: 0.9; }
+        .header-search:hover { opacity: 1; }
+        .header-about {
+            text-decoration: none;
+            color: #4a4840;
+            font-weight: 500;
+        }
+        .member-badge {
+            background-color: #f3f4f6;
+            color: #92400e;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .member-badge .status-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+            background: #b04a32;
+            color: white;
+            border-radius: 50%;
+        }
+        .header-separator {
+            color: #d1d5db;
+            margin: 0 4px;
+            font-weight: 300;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .user-name {
+            font-weight: 500;
+            color: #2f2c27;
+        }
+        .btn-logout {
+            color: #6b7280;
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.2s;
+        }
+        .btn-logout:hover { color: var(--color-bridge); }
 
         /* Section Headings */
         .section-header {
@@ -265,16 +343,45 @@
     </style>
 </head>
 <body>
+    <header class="main-header">
+        <div class="header-inner container">
+            <div class="header-left">
+                <a href="#" class="header-logo">
+                    <!-- High fidelity logo from garryslist.org -->
+                    <img src="https://garryslist.org/assets/logo-2915167e.png" alt="Garry's List" class="logo-img">
+                </a>
+                <nav class="header-nav">
+                    <a href="#" class="header-nav-link">Top Stories</a>
+                    <a href="#" class="header-nav-link">Issues</a>
+                    <a href="#" class="header-nav-link">My List</a>
+                    <a href="#" class="header-nav-link">Your Political AI</a>
+                    <a href="#" class="header-nav-link">Submit Idea</a>
+                </nav>
+            </div>
+            <div class="header-right">
+                <button class="header-search" title="Search">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <a href="#" class="header-about">About Us</a>
+                <div class="member-badge">
+                    <div class="status-icon">
+                        <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="4">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                    <span>Member</span>
+                </div>
+                <div class="user-info">
+                    <span class="header-separator">|</span>
+                    <span class="user-name">Daniel Kamerling</span>
+                    <a href="#" class="btn-logout">Log out</a>
+                </div>
+            </div>
+    </header>
     <div class="container">
-        <header>
-            <a href="#" class="logo">Garry’s List</a>
-            <nav>
-                <a href="#" class="nav-link">Channels</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="btn-join">Join</a>
-            </nav>
-        </header>
-
         <main>
             <section class="topic-section">
                 <div class="section-header">
