@@ -1,19 +1,21 @@
 import React from 'react';
+import kelloggLogo from '../assets/logos/kellogg.png';
+
 
 const projects = [
   {
     title: 'App Development',
-    description: 'Developed and launched multiple applications including a Defold idle game, a Flutter mobile app, and an AI-based facial recognition sample.',
+    description: <>Developed and launched multiple applications including a <span className="highlight">Defold idle game</span>, a <span className="highlight">Flutter mobile app</span>, and an <span className="highlight">AI-based facial recognition sample</span>.</>,
     tags: ['Defold', 'Flutter', 'AI', 'Game Dev']
   },
   {
     title: 'Advisory Board Member @ Lightform',
-    description: 'Advised a hardware AR start-up on product strategy and go-to-market. (2013 - 2021)',
+    description: <>Advised a <span className="highlight">hardware AR start-up</span> on product strategy and go-to-market. (2013 - 2021)</>,
     tags: ['AR', 'Hardware', 'Advising']
   },
   {
     title: 'Mentor @ Hire Heroes USA',
-    description: 'Volunteering to help boost candidate pipelines with veterans. (2015 - Present)',
+    description: <>Volunteering to help <span className="highlight">boost candidate pipelines</span> with <span className="highlight">veterans</span>. (2015 - Present)</>,
     tags: ['Mentorship', 'Volunteering']
   }
 ];
@@ -22,8 +24,10 @@ const education = [
   {
     degree: 'MBA + MEM',
     school: 'Kellogg School of Management, Northwestern University',
-    location: 'Evanston, IL'
+    location: 'Evanston, IL',
+    logo: kelloggLogo
   },
+
   {
     degree: 'MS in Mechanical Engineering',
     school: 'Florida Institute of Technology',
@@ -50,8 +54,28 @@ const Projects = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {projects.map((proj, index) => (
               <div key={index} className="editorial-block fade-up delay-1">
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{proj.title}</h3>
-                <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>{proj.description}</p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  {proj.title !== 'App Development' && (
+                    <div style={{ 
+                      width: '36px', 
+                      height: '36px', 
+                      borderRadius: '8px', 
+                      background: 'var(--bg-primary)', 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      border: '1px solid var(--border-color)',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      color: 'var(--accent-primary)'
+                    }}>
+                      {proj.title.charAt(0)}
+                    </div>
+                  )}
+
+                  <h3 style={{ fontSize: '1.25rem', marginBottom: 0 }}>{proj.title}</h3>
+                </div>
+                <p style={{ fontSize: '1rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>{proj.description}</p>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {proj.tags.map((tag, i) => (
                     <span key={i} style={{ 
@@ -79,9 +103,34 @@ const Projects = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {education.map((edu, index) => (
               <div key={index} className="editorial-block fade-up delay-2">
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--accent-primary)' }}>{edu.degree}</h3>
-                <p style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: '0.25rem', fontWeight: 500 }}>{edu.school}</p>
-                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+                  <div style={{ 
+                    width: '36px', 
+                    height: '36px', 
+                    borderRadius: '8px', 
+                    background: 'var(--bg-primary)', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    border: '1px solid var(--border-color)',
+                    fontSize: '1.1rem',
+                    fontWeight: 'bold',
+                    color: 'var(--accent-primary)',
+                    overflow: 'hidden'
+                  }}>
+                    {edu.logo ? (
+                      <img src={edu.logo} alt={`${edu.school} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    ) : (
+                      edu.school.charAt(0)
+                    )}
+                  </div>
+
+                  <div style={{ flex: 1 }}>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem', color: 'var(--accent-primary)' }}>{edu.degree}</h3>
+                    <p style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: 0, fontWeight: 500 }}>{edu.school}</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)', fontSize: '0.9rem', paddingLeft: 'calc(36px + 1rem)' }}>
                   <span>{edu.location}</span>
                   {edu.details && <span>{edu.details}</span>}
                 </div>

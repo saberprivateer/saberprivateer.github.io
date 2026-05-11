@@ -37,6 +37,17 @@
   padding: 0;
 }
 
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+  cursor: none;
+}
+
+.highlight {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);

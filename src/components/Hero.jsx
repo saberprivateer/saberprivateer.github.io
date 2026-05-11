@@ -1,4 +1,5 @@
 import React from 'react';
+import TooltipText from './TooltipText';
 
 const Hero = () => {
   return (
@@ -58,7 +59,7 @@ const Hero = () => {
               <span style={{ fontSize: '1.5rem' }}>👋</span> Beyond the Screen
             </h3>
             <p style={{ fontSize: '1rem', marginBottom: '0' }}>
-              I believe great products come from human connection and a light-hearted approach to hard problems. When I'm not strategizing the next tech leap, I'm usually exploring hobbies with my kids, volunteering with Hire Heroes USA, or tinkering in "The Lab". Let's connect!
+              I believe great products come from human connection and a light-hearted approach to hard problems. When I'm not strategizing the next tech leap, I'm usually exploring hobbies with my kids, volunteering with Hire Heroes USA, or tinkering in <TooltipText tooltip="My experimental playground for new tech!">"The Lab"</TooltipText>. Let's connect!
             </p>
           </div>
         </div>
