@@ -1,0 +1,45 @@
+ Daniel 
+ Kamerling 
+ (224) 420-6130 
+ daniel.kamerling@gmail.com 
+ linkedin.com/in/danielkamerling 
+ saberprivateer.github.io/ 
+ Product leader driving business growth by launching cutting-edge technology platforms (Cloud Gaming, AR/VR, 
+ Robotics, and AI) and scaling high-performing product/engineering organizations. Impact includes 10x increase 
+ in customers, developer platform creating $200M+ in revenue, and the launch of 20+ AAA games representing 
+ $30M+ of investment. 
+ EXPERIENCE 
+ Intrinsic - Group Product Manager  2023-Present 
+ ●  Spearheaded shift from a high-touch integration model to a scalable self-serve platform, unlocking scale 
+ needed to gain a 10x increase in customers and an increase in company valuation by 60%. 
+ ●  Hire and grow a team of 4 PMs which are leading ~40+ engineers to build the end-to-end experience for 
+ creating automation with robotics including low-code, APIs, LLMs, developer environment, digital twin 
+ creation, onboarding, component catalogs and publishing, documentation, enterprise tools, and billing. 
+ ●  Collaborate cross-functionally:  With marketing to define and launch beta experience for 50+ industry 
+ participants and experience for multiple trade shows with 100,000s of visitors. Work with sales to define 
+ target industries and pricing strategy. 
+ ●  Mature the organization by creating a transparent and performing product culture including passion for 
+ users (all PMs perform customer support), everyday use of AI, and reviews to improve decision velocity. 
+ Meta - Lead Product Manager  2020-2023 
+ ●  Scaled the Quest developer platform to 10,000s MAU that launched 100s of apps per year with a 
+ revenue of $200M+ through strategic initiatives including segmentation/targeting platform for marketing 
+ automation, cross-platform infrastructure for XR future,  complete site redesign  , and more. 
+ ●  Speaker at Meta Connect  and founding member of the  Orion (AR glasses) developer platform. 
+ Google - Product Manager  2018-2020 
+ ●  Drove the launch of 20+ AAA games on Stadia representing $10Ms of investment. 
+ ●  Defined and executed Stadia’s GDC presence which served ~30k industry attendees including  6 stage 
+ talks,  two dozen demos, and launch of developer site. 
+ PREVIOUS EXPERIENCE 
+ Beachbody -  Senior Manager of Product Management  A/B  testing resulting in $8M ARR 
+ Pivotal Labs -  Senior Product Manager  that built analytics  tool that won business from a top bank 
+ Riot Games - Product Manager  for store with ~60M MAU  and incremental $100Ms revenue 
+ IBM Strategy -  Sr. Consultant  achieved savings of  $50M from portfolio rationalization 
+ Mechanical Engineer in the Defense Industry  w/Top  Secret clearance. 
+ ADDITIONAL EXPERIENCE 
+ App Development -  Defold  idle game,  launched a Flutter  app  ,  AI for facial recognition sample 
+ Mentor and Volunteer for Hire Heroes USA  (2015-Present)  -  Boost your candidate pipeline with veterans! 
+ Advisory Board for Lightform  (2013-2021) -  A hardware  AR start-up 
+ EDUCATION 
+ Kellogg School of Management, Northwestern University  MBA + MEM  Evanston, IL 
+ Florida Institute of Technology  MS in Mechanical Engineering  w/thesis in robotics  Melbourne, FL 
+ University of Virginia  BS in Mechanical Engineering  Charlottesville, VA 
