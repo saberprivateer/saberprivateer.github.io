@@ -1,5 +1,10 @@
 import React from 'react';
 import TooltipText from './TooltipText';
+import netflixLogo from '../assets/logos/netflix.png';
+import metaLogo from '../assets/logos/meta.png';
+import googleLogo from '../assets/logos/google.png';
+import riotLogo from '../assets/logos/riot_games.png';
+
 
 const Hero = () => {
   return (
@@ -61,6 +66,32 @@ const Hero = () => {
             <p style={{ fontSize: '1rem', marginBottom: '0' }}>
               I believe great products come from human connection and a light-hearted approach to hard problems. When I'm not strategizing the next tech leap, I'm usually exploring hobbies with my kids, volunteering with Hire Heroes USA, or tinkering in <TooltipText tooltip="My experimental playground for new tech!">"The Lab"</TooltipText>. Let's connect!
             </p>
+            
+            {/* Fun Logo Splash */}
+            <div style={{ 
+              position: 'relative', 
+              height: '80px', 
+              marginTop: '1.5rem',
+              borderTop: '1px solid var(--border-color)',
+              paddingTop: '1rem',
+              display: 'flex',
+              justifyContent: 'space-around',
+              alignItems: 'center'
+            }}>
+              <a href="#experience" title="Netflix" style={{ animation: 'float-logo-1 6s ease-in-out infinite', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={netflixLogo} alt="Netflix" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+              </a>
+              <a href="#experience" title="Meta" style={{ animation: 'float-logo-2 5s ease-in-out infinite', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={metaLogo} alt="Meta" style={{ width: '40px', height: '40px', objectFit: 'contain' }} />
+              </a>
+              <a href="#experience" title="Google" style={{ animation: 'float-logo-1 4s ease-in-out infinite', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={googleLogo} alt="Google" style={{ width: '48px', height: '48px', objectFit: 'contain' }} />
+              </a>
+              <a href="#experience" title="Riot Games" style={{ animation: 'float-logo-2 7s ease-in-out infinite', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={riotLogo} alt="Riot Games" style={{ width: '28px', height: '28px', objectFit: 'contain' }} />
+              </a>
+            </div>
+
           </div>
         </div>
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import netflixLogo from '../assets/logos/netflix.png';
 import metaLogo from '../assets/logos/meta.png';
 import googleLogo from '../assets/logos/google.png';
+import intrinsicLogo from '../assets/logos/intrinsic.svg';
+import riotLogo from '../assets/logos/riot_games.png';
 
 
 const experiences = [
@@ -18,9 +20,12 @@ const experiences = [
     ]
   },
   {
-    company: 'Intrinsic',
+    company: 'Intrinsic (acquired by Google)',
+    logo: intrinsicLogo,
+    logoScale: 0.6,
     role: 'Group Product Manager',
-    duration: '2023 - Present',
+    duration: '2023 - 2026',
+
     bullets: [
       <>Spearheaded shift from a high-touch integration model to a scalable self-serve platform, unlocking scale needed to gain a <span className="highlight">10x increase in customers</span> and an increase in company valuation by <span className="highlight">60%</span>.</>,
       <>Hire and grow a team of 4 PMs which are leading <span className="highlight">~40+ engineers</span> to build the end-to-end experience for creating automation with robotics including low-code, APIs, LLMs, developer environment, digital twin creation, onboarding, component catalogs and publishing, documentation, enterprise tools, and billing.</>,
@@ -43,7 +48,9 @@ const experiences = [
   {
     company: 'Google',
     logo: googleLogo,
+    logoScale: 1.2,
     role: 'Product Manager (Stadia)',
+
 
     duration: '2018 - 2020',
     bullets: [
@@ -81,6 +88,8 @@ const experiences = [
   },
   {
     company: 'Riot Games',
+    logo: riotLogo,
+    logoScale: 0.8,
     role: 'Product Manager',
     duration: '2013 - 2015',
     bullets: [
@@ -148,10 +157,11 @@ const Experience = () => {
                 overflow: 'hidden'
               }}>
                 {exp.logo ? (
-                  <img src={exp.logo} alt={`${exp.company} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  <img src={exp.logo} alt={`${exp.company} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain', transform: exp.logoScale ? `scale(${exp.logoScale})` : 'none' }} />
                 ) : (
                   exp.company.charAt(0)
                 )}
+
               </div>
 
               <div style={{ flex: 1 }}>
@@ -186,9 +196,14 @@ const Experience = () => {
                   border: '1px solid var(--border-color)',
                   fontSize: '1.5rem',
                   fontWeight: 'bold',
-                  color: 'var(--text-primary)'
+                  color: 'var(--text-primary)',
+                  overflow: 'hidden'
                 }}>
-                  {exp.company.charAt(0)}
+                  {exp.logo ? (
+                    <img src={exp.logo} alt={`${exp.company} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain', transform: exp.logoScale ? `scale(${exp.logoScale})` : 'none' }} />
+                  ) : (
+                    exp.company.charAt(0)
+                  )}
                 </div>
               )}
 

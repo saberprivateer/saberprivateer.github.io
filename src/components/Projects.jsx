@@ -1,5 +1,8 @@
 import React from 'react';
 import kelloggLogo from '../assets/logos/kellogg.png';
+import hireHeroesLogo from '../assets/logos/hire_heroes.png';
+import uvaLogo from '../assets/logos/uva.png';
+import amazonLogo from '../assets/logos/amazon.png';
 
 
 const projects = [
@@ -9,12 +12,15 @@ const projects = [
     tags: ['Defold', 'Flutter', 'AI', 'Game Dev']
   },
   {
-    title: 'Advisory Board Member @ Lightform',
+    title: 'Advisory Board Member @ Lightform (acquired by Amazon)',
+    logo: amazonLogo,
     description: <>Advised a <span className="highlight">hardware AR start-up</span> on product strategy and go-to-market. (2013 - 2021)</>,
     tags: ['AR', 'Hardware', 'Advising']
   },
   {
     title: 'Mentor @ Hire Heroes USA',
+    logo: hireHeroesLogo,
+    logoScale: 0.8,
     description: <>Volunteering to help <span className="highlight">boost candidate pipelines</span> with <span className="highlight">veterans</span>. (2015 - Present)</>,
     tags: ['Mentorship', 'Volunteering']
   }
@@ -25,8 +31,10 @@ const education = [
     degree: 'MBA + MEM',
     school: 'Kellogg School of Management, Northwestern University',
     location: 'Evanston, IL',
-    logo: kelloggLogo
+    logo: kelloggLogo,
+    logoScale: 0.8
   },
+
 
   {
     degree: 'MS in Mechanical Engineering',
@@ -37,7 +45,9 @@ const education = [
   {
     degree: 'BS in Mechanical Engineering',
     school: 'University of Virginia',
-    location: 'Charlottesville, VA'
+    location: 'Charlottesville, VA',
+    logo: uvaLogo,
+    logoScale: 0.8
   }
 ];
 
@@ -55,7 +65,7 @@ const Projects = () => {
             {projects.map((proj, index) => (
               <div key={index} className="editorial-block fade-up delay-1">
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  {proj.title !== 'App Development' && (
+                  {(proj.title !== 'App Development' || proj.logo) && (
                     <div style={{ 
                       width: '36px', 
                       height: '36px', 
@@ -67,9 +77,14 @@ const Projects = () => {
                       border: '1px solid var(--border-color)',
                       fontSize: '1.1rem',
                       fontWeight: 'bold',
-                      color: 'var(--accent-primary)'
+                      color: 'var(--accent-primary)',
+                      overflow: 'hidden'
                     }}>
-                      {proj.title.charAt(0)}
+                      {proj.logo ? (
+                        <img src={proj.logo} alt={`${proj.title} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain', transform: proj.logoScale ? `scale(${proj.logoScale})` : 'none' }} />
+                      ) : (
+                        proj.title.charAt(0)
+                      )}
                     </div>
                   )}
 
@@ -119,7 +134,8 @@ const Projects = () => {
                     overflow: 'hidden'
                   }}>
                     {edu.logo ? (
-                      <img src={edu.logo} alt={`${edu.school} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                      <img src={edu.logo} alt={`${edu.school} logo`} style={{ width: '100%', height: '100%', objectFit: 'contain', transform: edu.logoScale ? `scale(${edu.logoScale})` : 'none' }} />
+
                     ) : (
                       edu.school.charAt(0)
                     )}

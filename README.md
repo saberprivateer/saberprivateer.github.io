@@ -5,7 +5,7 @@
 
 Hey there! I'm Daniel. I'm a Product Leader who loves building cutting-edge tech platforms—from Cloud Gaming and AR/VR to Robotics and AI.
 
-By day, I'm leading product teams at **Intrinsic** (Alphabet's robotics company). By night, I'm hacking on side projects and testing out new tech in my "Lab" (like this site!).
+By day, I'm leading product teams at **Intrinsic** (acquired by Google). By night, I'm hacking on side projects and testing out new tech in my "Lab" (like this site!).
 
 ---
 

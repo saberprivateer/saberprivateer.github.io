@@ -167,6 +167,18 @@ p {
   }
 }
 
+@keyframes float-logo-1 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float-logo-2 {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
 /* Grid Layouts */
 .grid-2 {
   display: grid;
