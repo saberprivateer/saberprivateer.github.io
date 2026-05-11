@@ -105,17 +105,20 @@ const Experience = () => {
 
   return (
     <section id="experience" className="section container">
-      <h2 className="text-gradient fade-up" style={{ marginBottom: '3rem', textAlign: 'center' }}>Experience</h2>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+      <div style={{ borderTop: '2px solid var(--text-primary)', paddingTop: '2rem', marginBottom: '3rem' }}>
+        <h2 className="fade-up" style={{ fontSize: '2rem' }}>Experience</h2>
+      </div>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {featuredExperiences.map((exp, index) => (
-          <div key={index} className={`glass-card fade-up delay-${(index % 3) + 1}`}>
+          <div key={index} className={`editorial-block fade-up delay-${(index % 3) + 1}`}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', marginBottom: '1rem' }}>
-              <h3>{exp.role} <span style={{ color: 'var(--accent-secondary)', fontWeight: 400 }}>@ {exp.company}</span></h3>
-              <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{exp.duration}</span>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: 0 }}>{exp.company}</h3>
+              <span style={{ color: 'var(--text-secondary)', fontWeight: 500, fontSize: '1rem' }}>{exp.duration}</span>
             </div>
+            <p style={{ color: 'var(--accent-primary)', fontWeight: 500, fontSize: '1.125rem', marginBottom: '1.5rem' }}>{exp.role}</p>
             <ul style={{ paddingLeft: '1.5rem', color: 'var(--text-secondary)' }}>
               {exp.bullets.map((bullet, idx) => (
-                <li key={idx} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                <li key={idx} style={{ marginBottom: '0.75rem', lineHeight: '1.5' }}>{bullet}</li>
               ))}
             </ul>
           </div>
@@ -123,26 +126,27 @@ const Experience = () => {
 
         {/* Collapsible Section for Older Experience */}
         {showAll && olderExperiences.map((exp, index) => (
-          <div key={index + 3} className="glass-card fade-up" style={{ opacity: 0.9 }}>
+          <div key={index + 3} className="editorial-block fade-up">
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', flexWrap: 'wrap', marginBottom: '1rem' }}>
-              <h3>{exp.role} <span style={{ color: 'var(--accent-secondary)', fontWeight: 400 }}>@ {exp.company}</span></h3>
-              <span style={{ color: 'var(--text-secondary)', fontWeight: 500 }}>{exp.duration}</span>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: 0 }}>{exp.company}</h3>
+              <span style={{ color: 'var(--text-secondary)', fontWeight: 500, fontSize: '1rem' }}>{exp.duration}</span>
             </div>
+            <p style={{ color: 'var(--text-primary)', fontWeight: 500, fontSize: '1.125rem', marginBottom: '1.5rem' }}>{exp.role}</p>
             <ul style={{ paddingLeft: '1.5rem', color: 'var(--text-secondary)' }}>
               {exp.bullets.map((bullet, idx) => (
-                <li key={idx} style={{ marginBottom: '0.5rem' }}>{bullet}</li>
+                <li key={idx} style={{ marginBottom: '0.75rem', lineHeight: '1.5' }}>{bullet}</li>
               ))}
             </ul>
           </div>
         ))}
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
           <button 
             onClick={() => setShowAll(!showAll)} 
             className="btn btn-outline"
-            style={{ padding: '0.5rem 1.5rem', fontSize: '1rem' }}
+            style={{ padding: '0.75rem 2rem' }}
           >
-            {showAll ? 'Show Less' : 'View Older Experience'}
+            {showAll ? 'Show Less' : 'View Previous Roles'}
           </button>
         </div>
       </div>

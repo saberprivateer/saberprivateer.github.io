@@ -44,19 +44,22 @@ const Projects = () => {
       <div className="grid-2">
         {/* Projects / Additional Exp */}
         <div>
-          <h2 className="text-gradient fade-up" style={{ marginBottom: '2rem' }}>Additional Experience</h2>
+          <div style={{ borderTop: '2px solid var(--text-primary)', paddingTop: '2rem', marginBottom: '2rem' }}>
+            <h2 className="fade-up" style={{ fontSize: '2rem' }}>Additional Experience</h2>
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {projects.map((proj, index) => (
-              <div key={index} className="glass-card fade-up delay-1" style={{ padding: '1.5rem' }}>
+              <div key={index} className="editorial-block fade-up delay-1">
                 <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{proj.title}</h3>
                 <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>{proj.description}</p>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {proj.tags.map((tag, i) => (
                     <span key={i} style={{ 
                       fontSize: '0.8rem', 
-                      background: 'rgba(255,255,255,0.1)', 
+                      background: 'var(--bg-primary)', 
+                      border: '1px solid var(--border-color)',
                       padding: '0.25rem 0.75rem', 
-                      borderRadius: '50px',
+                      borderRadius: '4px',
                       color: 'var(--text-secondary)'
                     }}>
                       {tag}
@@ -70,12 +73,14 @@ const Projects = () => {
 
         {/* Education */}
         <div>
-          <h2 className="text-gradient fade-up" style={{ marginBottom: '2rem' }}>Education</h2>
+          <div style={{ borderTop: '2px solid var(--text-primary)', paddingTop: '2rem', marginBottom: '2rem' }}>
+            <h2 className="fade-up" style={{ fontSize: '2rem' }}>Education</h2>
+          </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             {education.map((edu, index) => (
-              <div key={index} className="glass-card fade-up delay-2" style={{ padding: '1.5rem' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--accent-secondary)' }}>{edu.degree}</h3>
-                <p style={{ fontSize: '1.1rem', color: 'white', marginBottom: '0.25rem', fontWeight: 500 }}>{edu.school}</p>
+              <div key={index} className="editorial-block fade-up delay-2">
+                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem', color: 'var(--accent-primary)' }}>{edu.degree}</h3>
+                <p style={{ fontSize: '1.1rem', color: 'var(--text-primary)', marginBottom: '0.25rem', fontWeight: 500 }}>{edu.school}</p>
                 <div style={{ display: 'flex', justifyContent: 'space-between', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
                   <span>{edu.location}</span>
                   {edu.details && <span>{edu.details}</span>}
@@ -88,18 +93,20 @@ const Projects = () => {
 
       {/* The Lab / Playground */}
       <div style={{ marginTop: '4rem' }}>
-        <h2 className="text-gradient fade-up" style={{ marginBottom: '2rem' }}>The Lab & Playground</h2>
+        <div style={{ borderTop: '2px solid var(--text-primary)', paddingTop: '2rem', marginBottom: '2rem' }}>
+          <h2 className="fade-up" style={{ fontSize: '2rem' }}>The Lab & Playground</h2>
+        </div>
         <p className="fade-up" style={{ marginBottom: '2rem' }}>This site serves as a testing ground for my personal projects. Here are some of the experiments and tools I've built:</p>
         <div className="grid-2">
-          <div className="glass-card fade-up delay-1" style={{ padding: '1.5rem' }}>
+          <div className="editorial-block fade-up delay-1">
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Riot Tracker</h3>
             <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>A tool or tracker related to Riot Games (League of Legends), likely exploring APIs or player data.</p>
-            <a href="/legacy/RiotTracker/index.html" className="btn btn-outline" style={{ padding: '0.25rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+            <a href="/legacy/RiotTracker/index.html" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
           </div>
-          <div className="glass-card fade-up delay-2" style={{ padding: '1.5rem' }}>
+          <div className="editorial-block fade-up delay-2">
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Garry's List</h3>
             <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Another legacy project or tool hosted on the site.</p>
-            <a href="/legacy/garryslist/index.html" className="btn btn-outline" style={{ padding: '0.25rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+            <a href="/legacy/garryslist/index.html" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
           </div>
         </div>
       </div>
