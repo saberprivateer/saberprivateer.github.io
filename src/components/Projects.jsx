@@ -84,7 +84,24 @@ const Projects = () => {
             ))}
           </div>
         </div>
+      </div>
 
+      {/* The Lab / Playground */}
+      <div style={{ marginTop: '4rem' }}>
+        <h2 className="text-gradient fade-up" style={{ marginBottom: '2rem' }}>The Lab & Playground</h2>
+        <p className="fade-up" style={{ marginBottom: '2rem' }}>This site serves as a testing ground for my personal projects. Here are some of the experiments and tools I've built:</p>
+        <div className="grid-2">
+          <div className="glass-card fade-up delay-1" style={{ padding: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Riot Tracker</h3>
+            <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>A tool or tracker related to Riot Games (League of Legends), likely exploring APIs or player data.</p>
+            <a href="/legacy/RiotTracker/index.html" className="btn btn-outline" style={{ padding: '0.25rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+          </div>
+          <div className="glass-card fade-up delay-2" style={{ padding: '1.5rem' }}>
+            <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Garry's List</h3>
+            <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Another legacy project or tool hosted on the site.</p>
+            <a href="/legacy/garryslist/index.html" className="btn btn-outline" style={{ padding: '0.25rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+          </div>
+        </div>
       </div>
     </section>
   );

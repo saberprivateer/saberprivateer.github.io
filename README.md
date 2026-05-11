@@ -1,16 +1,23 @@
-# React + Vite
+# Daniel Kamerling's Portfolio 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielkamerling/)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/saberprivateer)
 
-Currently, two official plugins are available:
+Hey there! I'm Daniel. I'm a Product Leader who loves building cutting-edge tech platforms—from Cloud Gaming and AR/VR to Robotics and AI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+By day, I'm leading product teams at **Intrinsic** (Alphabet's robotics company). By night, I'm hacking on side projects and testing out new tech in my "Lab" (like this site!).
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ The Stack
 
-## Expanding the ESLint configuration
+I wanted this site to be fast, modern, and a bit unique. Here's what I'm running:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework:** [React](https://reactjs.org/) (because it's the standard)
+- **Build Tool:** [Vite](https://vitejs.dev/) (because fast is fun)
+- **Runtime & Package Manager:** [Bun](https://bun.sh/) (cutting edge speed)
+- **Styling:** Vanilla CSS (no Tailwind here—crafted a bespoke Glassmorphic dark mode design system)
+
+## 🧪 The Lab
+
+I use this site as a playground for personal projects. Check out the code or visit the site to see what I'm playing with!
