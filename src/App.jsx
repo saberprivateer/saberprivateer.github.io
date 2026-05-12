@@ -3,6 +3,8 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Leadership from './components/Leadership';
+import ScrollToTop from './components/ScrollToTop';
+import posthog from 'posthog-js';
 
 
 
@@ -68,6 +70,24 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const sections = ['hero', 'experience', 'leadership', 'projects'];
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          posthog.capture('section_viewed', { section: entry.target.id });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="app-container">
       <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Theme">
@@ -88,6 +108,8 @@ function App() {
       <footer className="container section text-center" style={{ borderTop: '1px solid var(--border-color)', marginTop: '4rem', paddingTop: '2rem' }}>
         <p>© {new Date().getFullYear()} Daniel Kamerling. All rights reserved.</p>
       </footer>
+
+      <ScrollToTop />
     </div>
   );
 }
