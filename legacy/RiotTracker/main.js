@@ -50,7 +50,7 @@ function renderCompanyCards() {
         card.setAttribute('data-type', company.type || 'other');
         card.innerHTML = `
           <div class="card-header">
-            <img src="${company.logo || ''}" alt="${company.name} Logo" class="company-logo" />
+            ${company.logo ? `<img src="${company.logo}" alt="${company.name} Logo" class="company-logo" />` : `<div class="company-logo placeholder">${company.name.charAt(0)}</div>`}
             <div class="company-name">
               <h2>${company.name}</h2>
               <div class="funding">
@@ -69,11 +69,13 @@ function renderCompanyCards() {
             <div class="games-list">
               <div class="games-label">${company.type === 'content' ? 'Content' : 'Video Games'}</div>
               <div class="games-names">${(company.games || []).map(g => g.title).join(', ')}</div>
+              ${(company.games || []).some(g => g.image) ? `
               <div class="carousel">
-                ${(company.games || []).map((g, idx) => `<img src="${g.image}" alt="${g.title}" class="${idx === 0 ? 'active' : ''}">`).join('')}
+                ${(company.games || []).filter(g => g.image).map((g, idx) => `<img src="${g.image}" alt="${g.title}" class="${idx === 0 ? 'active' : ''}">`).join('')}
                 <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
                 <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
               </div>
+              ` : ''}
             </div>
             <div class="more-info">
               <div class="more-info-header">

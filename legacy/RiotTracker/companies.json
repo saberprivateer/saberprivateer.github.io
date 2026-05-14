@@ -1,22 +1,22 @@
 [
   {
     "name": "Phoenix Labs",
-    "status": "acquired",
+    "status": "shut down",
     "type": "games",
     "logo": "images/phoenix-labs/logo.png",
     "fundingAmount": "150M",
     "fundingYear": "2014",
-    "statuses": ["Acquired", "Shutting Down"],
+    "statuses": ["Shut Down"],
     "founders": [
       {"name": "Jesse Houston", "linkedin": "https://www.linkedin.com/in/jessehouston/"},
       {"name": "Sean Bender", "linkedin": "https://www.linkedin.com/in/seanbender/"},
       {"name": "Robin Mayne", "linkedin": "https://www.linkedin.com/in/robinmayne/"}
     ],
     "games": [
-      {"title": "Dauntless", "image": "images/phoenix-labs/dauntless.jpg"},
+      {"title": "Dauntless (Shut Down)", "image": "images/phoenix-labs/dauntless.jpg"},
       {"title": "Fae Farm", "image": "images/phoenix-labs/fae-farm.jpg"}
     ],
-    "moreInfo": "Founded in 2014 by former Riot Games employees, Phoenix Labs developed Dauntless as their first game, which became a successful free-to-play action RPG. The studio was acquired by Garena in 2020 for $150M, but faced challenges maintaining momentum. In 2024, they announced the closure of their Vancouver studio and the end of development for Dauntless, marking a significant transition in their journey.",
+    "moreInfo": "Founded in 2014 by former Riot Games employees. Phoenix Labs effectively ceased operations in 2025 following massive layoffs and the shutdown of their flagship title, Dauntless, on May 29, 2025. Read more on [Game Developer](https://www.gamedeveloper.com/).",
     "website": "https://phxlabs.ca"
   },
   {
@@ -50,28 +50,28 @@
       {"name": "Joe Tung", "linkedin": "https://www.linkedin.com/in/joe-tung-6b9b3a2/"}
     ],
     "games": [
-      {"title": "Supervive", "image": "images/theorycraft/supervive1.jpg"},
+      {"title": "Supervive (Shut Down)", "image": "images/theorycraft/supervive1.jpg"},
       {"title": "Supervive (alt)", "image": "images/theorycraft/supervive2.jpg"}
     ],
-    "moreInfo": "Theorycraft Games is a studio founded by ex-Riot, Blizzard, and Bungie veterans. Their mission is to create highly replayable, competitive games that bring players together. Their first project, Supervive, is currently in development.",
+    "moreInfo": "Theorycraft Games is a studio founded by ex-Riot, Blizzard, and Bungie veterans. Their first project, Supervive, was shut down in February 2026 as it failed to maintain a large enough player base. The studio remains active and plans to focus on smaller, sharply focused games. Read more on [PC Gamer](https://www.pcgamer.com/).",
     "website": "https://theorycraftgames.com/"
   },
   {
     "name": "Lightforge Games",
-    "status": "active",
+    "status": "shut down",
     "type": "games",
     "logo": "images/lightforge/logo.png",
     "fundingAmount": "20M",
     "fundingYear": "2021",
-    "statuses": ["Active"],
+    "statuses": ["Shut Down"],
     "founders": [
       {"name": "Matt Schembari", "linkedin": "https://www.linkedin.com/in/mattschembari/"},
       {"name": "Glenn Rane", "linkedin": "https://www.linkedin.com/in/glennrane/"}
     ],
     "games": [
-      {"title": "Project ORCS", "image": "images/lightforge/project-orcs-teaser.png"}
+      {"title": "Project ORCS (Cancelled)", "image": ""}
     ],
-    "moreInfo": "Lightforge Games, founded by former Riot Games employees, raised $20M to develop Project ORCS, an innovative RPG. The studio is known for its focus on narrative-driven experiences and unique gameplay mechanics. Their team brings together talent from both AAA companies and startups, focusing on creating the next generation of role-playing experiences.",
+    "moreInfo": "Lightforge Games laid off the majority of its staff and paused development on Project ORCS in May 2024 due to funding issues. The company is effectively out of business. Read more on [Game Developer](https://www.gamedeveloper.com/).",
     "website": "https://lightforge.gg/"
   },
   {
@@ -87,7 +87,7 @@
       {"name": "Stephen Bell", "linkedin": "https://www.linkedin.com/in/stephen-bell-2b4a2a4/"}
     ],
     "games": [
-      {"title": "Gardens (unannounced)", "image": "images/gardens/gardens-teaser.png"}
+      {"title": "Gardens (unannounced)", "image": ""}
     ],
     "moreInfo": "Gardens is an indie studio founded by former Riot and Journey developers. Their mission is to create beautiful, cooperative multiplayer experiences. Their first game is still unannounced.",
     "website": "https://gardens.dev/"
@@ -105,7 +105,7 @@
       {"name": "Ryan Sullivan", "linkedin": "https://www.linkedin.com/in/ryansullivan/"}
     ],
     "games": [
-      {"title": "Unannounced", "image": "images/believer/believer-teaser.png"}
+      {"title": "Unannounced", "image": ""}
     ],
     "moreInfo": "The Believer Company is focused on building games that foster camaraderie and generosity among players. Founded by ex-Riot and Sirvo Studios talent, they are working on an unannounced cooperative game.",
     "website": "https://believer.gg/"
@@ -123,27 +123,27 @@
       {"name": "Mike O'Dell", "linkedin": "https://www.linkedin.com/in/mikeodell/"}
     ],
     "games": [
-      {"title": "Evercore Heroes", "image": "images/vela/evercore-heroes1.jpg"}
+      {"title": "Evercore Heroes (Shut Down)", "image": "images/vela/evercore_heroes1.jpg"}
     ],
-    "moreInfo": "Vela Games was founded by former Riot Games and EA veterans. Their first game, Evercore Heroes, is a team-based PvE competitive game.",
+    "moreInfo": "Vela Games remains active, but shut down the servers for Evercore Heroes in October 2025 due to low player counts and funding challenges. Read more on [PCGamesN](https://www.pcgamesn.com/).",
     "website": "https://velagames.com/"
   },
   {
     "name": "Elodie Games",
-    "status": "active",
+    "status": "shut down",
     "type": "games",
     "logo": "images/elodie/logo.png",
     "fundingAmount": "32.5M",
     "fundingYear": "2021",
-    "statuses": ["Active"],
+    "statuses": ["Shut Down"],
     "founders": [
       {"name": "Christina Norman", "linkedin": "https://www.linkedin.com/in/christinanorman/"},
       {"name": "David Banks", "linkedin": "https://www.linkedin.com/in/david-banks-6b9b3a2/"}
     ],
     "games": [
-      {"title": "Seekers of Skyveil", "image": "images/elodie/seekers-skyveil.jpg"}
+      {"title": "Seekers of Skyveil (Shut Down)", "image": ""}
     ],
-    "moreInfo": "Elodie Games was an independent studio founded by veterans from Riot, BioWare, and Blizzard. Their flagship title, Seekers of Skyveil, was a free-to-play MOBA-extraction hybrid shooter that launched in early access in March 2025. Despite an innovative blend of genres and a focus on social/co-op play, the game struggled to retain players and received a mixed reception on Steam. Just 18 days after launch, Elodie Games announced the shutdown of both Seekers of Skyveil and the studio itself, citing insurmountable financial challenges. The studio had previously pivoted from a social co-op project to create Seekers of Skyveil. All in-game purchases were refunded, and the studio expressed gratitude to its community for their support.",
+    "moreInfo": "Elodie Games shut down on March 31, 2025, just 18 days after launching Seekers of Skyveil in Early Access, citing financial challenges. Read more on [MMOs.com](https://mmos.com/).",
     "website": "https://elodie.games/"
   },
   {
@@ -159,27 +159,27 @@
       {"name": "Ryan Sullivan", "linkedin": "https://www.linkedin.com/in/ryansullivan/"}
     ],
     "games": [
-      {"title": "Unannounced cooperative game", "image": "images/treehouse/treehouse-teaser.png"}
+      {"title": "Unannounced cooperative game", "image": ""}
     ],
     "moreInfo": "Treehouse Games, founded by Michael Chu (former Riot Games employee) and Ryan Sullivan (co-founder of Sirvo Studios), raised $2.6M in seed funding to develop cooperative games. The studio aims to create games that 'evoke the camaraderie of a road trip, allow generosity among friends, and celebrate lasting accomplishments.' Their funding round was led by London Venture Partners. The team combines talent from both AAA companies and startups, focusing on creating social gaming experiences that go beyond traditional competitive gameplay.",
     "website": "https://treehousegames.com/"
   },
   {
     "name": "Venn",
-    "status": "inactive",
+    "status": "shut down",
     "type": "content",
     "logo": "images/venn/logo.png",
     "fundingAmount": "26M",
     "fundingYear": "2020",
-    "statuses": ["Inactive"],
+    "statuses": ["Shut Down"],
     "founders": [
       {"name": "Ben Kusin", "linkedin": "https://www.linkedin.com/in/benkusin/"},
       {"name": "Ariel Horn", "linkedin": "https://www.linkedin.com/in/arielhorn/"}
     ],
     "games": [
-      {"title": "Gaming-focused streaming network", "image": "images/venn/venn-teaser.png"}
+      {"title": "Gaming-focused streaming network", "image": ""}
     ],
-    "moreInfo": "Venn was a gaming-focused streaming network founded by former Riot Games employees. Despite raising $26M, the network ceased operations after failing to gain sufficient traction.",
+    "moreInfo": "Venn was a gaming-focused streaming network that launched in 2020 and furloughed staff in 2021 before going defunct due to viewership and financial issues. Read more on [Wikipedia](https://en.wikipedia.org/wiki/VENN).",
     "website": "https://venn.tv/"
   },
   {
@@ -195,7 +195,7 @@
       {"name": "Chris Cobb", "linkedin": "https://www.linkedin.com/in/chriscobb/"}
     ],
     "games": [
-      {"title": "Pragma Engine platform", "image": "images/pragma/pragma-engine.png"}
+      {"title": "Pragma Engine platform", "image": ""}
     ],
     "moreInfo": "Pragma provides backend technology for live service games. Founded by ex-Riot and PopCap engineers, Pragma has raised over $50M to support game studios with scalable infrastructure.",
     "website": "https://pragma.gg/"
@@ -213,7 +213,7 @@
       {"name": "Justin Richmond", "linkedin": "https://www.linkedin.com/in/justin-richmond-2b4a2a4/"}
     ],
     "games": [
-      {"title": "The Dragon Prince: Xadia", "image": "images/wonderstorm/wonderstorm-teaser.png"}
+      {"title": "The Dragon Prince: Xadia", "image": ""}
     ],
     "moreInfo": "Wonderstorm is the studio behind the hit animated series The Dragon Prince and its upcoming game Xadia. Founded by former Riot and Naughty Dog talent, Wonderstorm blends storytelling and interactive experiences.",
     "website": "https://wonderstorm.net/"
@@ -222,7 +222,7 @@
     "name": "Ganymede Games",
     "status": "active",
     "type": "games",
-    "logo": "images/ganymede/logo.png",
+    "logo": "",
     "fundingAmount": "920K",
     "fundingYear": "2022",
     "statuses": ["Active"],
@@ -231,9 +231,46 @@
       {"name": "Rob Thompson", "linkedin": ""}
     ],
     "games": [
-      {"title": "Dark Sky", "image": "images/ganymede/dark-sky.jpg"}
+      {"title": "Dark Sky", "image": ""}
     ],
     "moreInfo": "Founded by Jerry Prochazka (ex-Riot Director of People) and Rob Thompson (ex-Riot/Wargaming), Ganymede Games is an independent studio based in Las Cruces, NM. Focused on creating immersive worlds that respect players' time, their first title is 'Dark Sky,' a card-based RPG adventure available on Steam.",
     "website": "https://www.ganymede.games/"
+  },
+  {
+    "name": "Sprocket Games",
+    "status": "active",
+    "type": "games",
+    "logo": "",
+    "fundingAmount": "5M",
+    "fundingYear": "2022",
+    "statuses": ["Active"],
+    "founders": [
+      {"name": "Josiah Kiehl", "linkedin": "https://www.linkedin.com/in/josiahkiehl/"},
+      {"name": "Jo Graylock", "linkedin": ""},
+      {"name": "Nicolas Tittley", "linkedin": ""},
+      {"name": "Reina Sweet", "linkedin": ""}
+    ],
+    "games": [
+      {"title": "Unannounced social adventure game", "image": ""}
+    ],
+    "moreInfo": "Sprocket Games was founded by former Riot Games developers with a focus on cross-platform social adventure games and a developer-focused workplace.",
+    "website": "https://sprocketgames.com/"
+  },
+  {
+    "name": "Pahdo Labs",
+    "status": "active",
+    "type": "games",
+    "logo": "",
+    "fundingAmount": "17.5M",
+    "fundingYear": "2021",
+    "statuses": ["Active"],
+    "founders": [
+      {"name": "Daniel Zou", "linkedin": "https://www.linkedin.com/in/danielzou/"}
+    ],
+    "games": [
+      {"title": "Starlight Re:Volver", "image": ""}
+    ],
+    "moreInfo": "Pahdo Labs is developing anime-style action games and creation platforms, including Starlight Re:Volver. Founded by Daniel Zou and team members from Capcom, Riot, and Ubisoft.",
+    "website": "https://pahdolabs.com/"
   }
 ]

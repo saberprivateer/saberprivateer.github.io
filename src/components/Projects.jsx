@@ -166,12 +166,12 @@ const Projects = () => {
           <div className="editorial-block fade-up delay-1">
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Riot Tracker</h3>
             <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>A tool or tracker related to Riot Games (League of Legends), likely exploring APIs or player data.</p>
-            <a href="/legacy/RiotTracker/index.html" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+            <a href="/legacy/RiotTracker/index.html" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
           </div>
           <div className="editorial-block fade-up delay-2">
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>Garry's List</h3>
-            <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Another legacy project or tool hosted on the site.</p>
-            <a href="/legacy/garryslist/index.html" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
+            <p style={{ fontSize: '1rem', marginBottom: '1rem' }}>Suggestions for improvements</p>
+            <a href="/legacy/garryslist/index.html" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Open Project</a>
           </div>
         </div>
       </div>

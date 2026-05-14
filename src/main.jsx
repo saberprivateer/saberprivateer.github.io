@@ -4,8 +4,8 @@ import './index.css'
 import App from './App.jsx'
 import posthog from 'posthog-js'
 
-posthog.init(import.meta.env.VITE_POSTHOG_KEY, {
-  api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://app.posthog.com',
+posthog.init(import.meta.env.VITE_POSTHOG_KEY || 'phc_OfiW7H2m1cfViB8ovkXiIKxv5hCpsTjK68PajqkSlJl', {
+  api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com',
 })
 
 
