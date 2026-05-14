@@ -11,6 +11,7 @@ window.afterContentLoad = function(page) {
       setupSummaryClose();
       initializeCarousels();
       setupMoreInfoExpanders();
+      setupScrollToTop();
     });
   } else if (page === 'pages/about.html') {
     // about page logic
@@ -35,6 +36,22 @@ function renderCompanyCards() {
       // Sort companies alphabetically by name before rendering
       companies.sort((a, b) => a.name.localeCompare(b.name));
       console.log('Fetched companies:', companies);
+      
+      // Calculate metrics
+      const totalCompanies = companies.length;
+      let totalFunding = 0;
+      companies.forEach(company => {
+        const amountStr = company.fundingAmount || '0';
+        let amount = parseFloat(amountStr.replace(/[^\d.]/g, '')) || 0;
+        if (amountStr.includes('M')) amount *= 1000000;
+        if (amountStr.includes('K')) amount *= 1000;
+        totalFunding += amount;
+      });
+      
+      const compEl = document.getElementById('total-companies');
+      const fundEl = document.getElementById('total-funding');
+      if (compEl) compEl.textContent = totalCompanies;
+      if (fundEl) fundEl.textContent = `$${(totalFunding / 1000000).toFixed(1)}M`;
       const grid = document.querySelector('.company-grid');
       if (!grid) return;
       grid.innerHTML = '';
@@ -273,4 +290,26 @@ if (summary && localStorage.getItem('summaryDismissed') === '1') {
   summary.style.display = 'none';
   const filters = document.querySelector('.filters');
   if (filters) filters.style.paddingTop = '1.2rem';
+}
+
+function setupScrollToTop() {
+  if (document.getElementById('scroll-to-top')) return;
+  const btn = document.createElement('button');
+  btn.id = 'scroll-to-top';
+  btn.className = 'scroll-to-top';
+  btn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+  btn.setAttribute('aria-label', 'Scroll to top');
+  document.body.appendChild(btn);
+  
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 }
