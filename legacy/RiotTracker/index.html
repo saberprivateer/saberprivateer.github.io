@@ -19,12 +19,17 @@
     </div>
   </footer>
 
+  <script src="spa.js"></script>
   <script>
     // Load the header
     fetch('partials/header.html')
       .then(r => r.text())
       .then(html => {
-        document.getElementById('site-header').innerHTML = html;
+        if (window.injectSanitizedHTML) {
+          window.injectSanitizedHTML('#site-header', html);
+        } else {
+          document.getElementById('site-header').innerHTML = html;
+        }
         // Set active nav
         document.querySelectorAll('.main-nav .nav-link').forEach(link => {
           if (link.getAttribute('data-nav') === 'index.html') {
@@ -37,7 +42,11 @@
     fetch('partials/index-content.html')
       .then(r => r.text())
       .then(html => {
-        document.getElementById('main-content').innerHTML = html;
+        if (window.injectSanitizedHTML) {
+          window.injectSanitizedHTML('#main-content', html);
+        } else {
+          document.getElementById('main-content').innerHTML = html;
+        }
         // Initialize all functionality after content is loaded
         if (window.afterContentLoad) {
           window.afterContentLoad('index.html');

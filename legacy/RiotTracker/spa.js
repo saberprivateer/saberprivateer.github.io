@@ -1,6 +1,58 @@
 // Simple SPA navigation for Riot Tracker
 // Loads main content dynamically without reloading the header
 
+// Security Helpers
+function escapeHTML(str) {
+  if (!str) return '';
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function sanitizeHTML(html) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, 'text/html');
+
+  // Remove all script tags
+  const scripts = doc.querySelectorAll('script');
+  scripts.forEach(s => s.remove());
+
+  // Remove all on* event handlers and javascript: links
+  const allElements = doc.querySelectorAll('*');
+  allElements.forEach(el => {
+    // Remove on* attributes
+    Array.from(el.attributes).forEach(attr => {
+      if (attr.name.toLowerCase().startsWith('on')) {
+        el.removeAttribute(attr.name);
+      }
+    });
+
+    // Remove javascript: links
+    if (el.tagName === 'A' && el.hasAttribute('href')) {
+      const href = el.getAttribute('href').trim().toLowerCase();
+      if (href.startsWith('javascript:')) {
+        el.removeAttribute('href');
+      }
+    }
+  });
+
+  return doc.body.innerHTML;
+}
+
+function injectSanitizedHTML(target, html) {
+  if (typeof target === 'string') {
+    target = document.querySelector(target);
+  }
+  if (target) {
+    target.innerHTML = sanitizeHTML(html);
+  }
+}
+
+// Make helpers available globally
+window.escapeHTML = escapeHTML;
+window.sanitizeHTML = sanitizeHTML;
+window.injectSanitizedHTML = injectSanitizedHTML;
+
 const PAGE_MAP = {
   'index.html': 'partials/index-content.html',
   'pages/about.html': 'partials/about-content.html',
@@ -19,11 +71,7 @@ function injectHeader() {
     })
     .then(r => r.text())
     .then(html => {
-      // Parse and extract only the <header> content (for safety)
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(html, 'text/html');
-      const headerContent = doc.body.innerHTML || html;
-      document.getElementById('site-header').innerHTML = headerContent;
+      injectSanitizedHTML('#site-header', html);
       highlightActiveNav(window.location.pathname.split('/').pop() || 'index.html');
     });
 }
@@ -45,7 +93,7 @@ function loadPageContent(page) {
       return r.text();
     })
     .then(html => {
-      main.innerHTML = html;
+      injectSanitizedHTML(main, html);
       window.history.pushState({page}, '', page);
       highlightActiveNav(page);
       window.afterContentLoad && window.afterContentLoad(page);

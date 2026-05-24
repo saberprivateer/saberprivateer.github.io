@@ -44,33 +44,36 @@ function renderCompanyCards() {
           console.warn('Company missing name:', company);
           return;
         }
+
+        const escape = window.escapeHTML || (str => str);
+
         const card = document.createElement('div');
         card.className = 'company-card';
-        card.setAttribute('data-status', company.status || 'unknown');
-        card.setAttribute('data-type', company.type || 'other');
+        card.setAttribute('data-status', escape(company.status) || 'unknown');
+        card.setAttribute('data-type', escape(company.type) || 'other');
         card.innerHTML = `
           <div class="card-header">
-            <img src="${company.logo || ''}" alt="${company.name} Logo" class="company-logo" />
+            <img src="${escape(company.logo) || ''}" alt="${escape(company.name)} Logo" class="company-logo" />
             <div class="company-name">
-              <h2>${company.name}</h2>
+              <h2>${escape(company.name)}</h2>
               <div class="funding">
-                ${company.fundingAmount} • ${company.fundingYear}
+                ${escape(company.fundingAmount)} • ${escape(company.fundingYear)}
               </div>
-              ${(company.statuses || []).map(status => `<div class="status status-${status.toLowerCase()} status-chip" data-status-chip="${status.toLowerCase()}">${status}</div>`).join('')}
+              ${(company.statuses || []).map(status => `<div class="status status-${escape(status.toLowerCase())} status-chip" data-status-chip="${escape(status.toLowerCase())}">${escape(status)}</div>`).join('')}
             </div>
           </div>
           <div class="card-body">
             <div class="founders">
               <div class="founders-label">Founders with Riot History</div>
               <div class="founders-list">
-                ${(company.founders || []).map(f => `<a href="${f.linkedin}" target="_blank" class="founder-link">${f.name}</a>`).join('')}
+                ${(company.founders || []).map(f => `<a href="${escape(f.linkedin)}" target="_blank" class="founder-link">${escape(f.name)}</a>`).join('')}
               </div>
             </div>
             <div class="games-list">
               <div class="games-label">${company.type === 'content' ? 'Content' : 'Video Games'}</div>
-              <div class="games-names">${(company.games || []).map(g => g.title).join(', ')}</div>
+              <div class="games-names">${(company.games || []).map(g => escape(g.title)).join(', ')}</div>
               <div class="carousel">
-                ${(company.games || []).map((g, idx) => `<img src="${g.image}" alt="${g.title}" class="${idx === 0 ? 'active' : ''}">`).join('')}
+                ${(company.games || []).map((g, idx) => `<img src="${escape(g.image)}" alt="${escape(g.title)}" class="${idx === 0 ? 'active' : ''}">`).join('')}
                 <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
                 <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
               </div>
@@ -81,12 +84,12 @@ function renderCompanyCards() {
                 <i class="fas fa-chevron-down"></i>
               </div>
               <div class="more-info-content">
-                <p>${company.moreInfo || ''}</p>
+                <p>${escape(company.moreInfo) || ''}</p>
               </div>
             </div>
           </div>
           <div class="card-footer">
-            <a href="${company.website}" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
+            <a href="${escape(company.website)}" target="_blank" class="website-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
           </div>
         `;
         grid.appendChild(card);
